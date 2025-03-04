@@ -4,21 +4,76 @@
 <Core:StyleSheet id="58d6989a-66f8-11ec-b4c8-0456e5e540ed"/>
 <UML:Package id="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed">
 <name>
-<val>New model</val>
+<val>Pakkediagram</val>
 </name>
+<nestedPackage>
+<reflist>
+<ref refid="8b360ed5-f8dc-11ef-94c9-e90ca197560e"/>
+</reflist>
+</nestedPackage>
 <ownedDiagram>
 <reflist>
-<ref refid="58d6c536-66f8-11ec-b4c8-0456e5e540ed"/>
+<ref refid="62740aca-f8dc-11ef-b38a-e90ca197560e"/>
 </reflist>
 </ownedDiagram>
+<packagedElement>
+<reflist>
+<ref refid="8b360ed5-f8dc-11ef-94c9-e90ca197560e"/>
+</reflist>
+</packagedElement>
 </UML:Package>
-<UML:Diagram id="58d6c536-66f8-11ec-b4c8-0456e5e540ed">
+<UML:PackageDiagram id="62740aca-f8dc-11ef-b38a-e90ca197560e">
 <element>
 <ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
 </element>
 <name>
-<val>New Diagram</val>
+<val>Pakkediagram</val>
 </name>
-</UML:Diagram>
+<ownedPresentation>
+<reflist>
+<ref refid="8b368f75-f8dc-11ef-b2be-e90ca197560e"/>
+</reflist>
+</ownedPresentation>
+</UML:PackageDiagram>
+<UML:Package id="8b360ed5-f8dc-11ef-94c9-e90ca197560e">
+<name>
+<val>Yatzy</val>
+</name>
+<note>
+<val>Den overordnete pakken for Yatzy spillet
+</val>
+</note>
+<owningPackage>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</owningPackage>
+<package>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="8b368f75-f8dc-11ef-b2be-e90ca197560e"/>
+</reflist>
+</presentation>
+</UML:Package>
+<UML:PackageItem id="8b368f75-f8dc-11ef-b2be-e90ca197560e">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 308.4766845703125, 272.1366882324219)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>650.6795043945312</val>
+</width>
+<height>
+<val>308.34765625</val>
+</height>
+<diagram>
+<ref refid="62740aca-f8dc-11ef-b38a-e90ca197560e"/>
+</diagram>
+<subject>
+<ref refid="8b360ed5-f8dc-11ef-94c9-e90ca197560e"/>
+</subject>
+</UML:PackageItem>
 </model>
 </gaphor>
