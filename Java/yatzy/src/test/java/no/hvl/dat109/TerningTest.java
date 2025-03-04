@@ -2,10 +2,7 @@ package no.hvl.dat109;
 
 /**
  * En JUnit-test klasse med følgende metoder.
- * @author Lasse Udjus
- * @author Johan Haavik
- * @author Simen Strømsnes
- * @author Bendik Saxstad
+ * @author 
  */
 
 import org.junit.jupiter.api.Test;
