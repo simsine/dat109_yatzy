@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gaphor xmlns="https://gaphor.org/model" xmlns:Core="https://gaphor.org/modelinglanguage/Core" xmlns:UML="https://gaphor.org/modelinglanguage/UML" version="4" gaphor-version="3.0.0">
+<model>
+<Core:StyleSheet id="58d6989a-66f8-11ec-b4c8-0456e5e540ed"/>
+<UML:Package id="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed">
+<name>
+<val>Klassediagram</val>
+</name>
+<ownedDiagram>
+<reflist>
+<ref refid="58d6c536-66f8-11ec-b4c8-0456e5e540ed"/>
+</reflist>
+</ownedDiagram>
+<ownedType>
+<reflist>
+<ref refid="15891600-f8db-11ef-be17-ac198ef89f5c"/>
+</reflist>
+</ownedType>
+<packagedElement>
+<reflist>
+<ref refid="15891600-f8db-11ef-be17-ac198ef89f5c"/>
+</reflist>
+</packagedElement>
+</UML:Package>
+<UML:Diagram id="58d6c536-66f8-11ec-b4c8-0456e5e540ed">
+<element>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</element>
+<name>
+<val>Klassediagram</val>
+</name>
+<ownedPresentation>
+<reflist>
+<ref refid="1589a2a5-f8db-11ef-a302-ac198ef89f5c"/>
+</reflist>
+</ownedPresentation>
+</UML:Diagram>
+<UML:Class id="15891600-f8db-11ef-be17-ac198ef89f5c">
+<name>
+<val>Yatzy</val>
+</name>
+<owningPackage>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</owningPackage>
+<package>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="1589a2a5-f8db-11ef-a302-ac198ef89f5c"/>
+</reflist>
+</presentation>
+</UML:Class>
+<UML:ClassItem id="1589a2a5-f8db-11ef-a302-ac198ef89f5c">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 312.5, 260.5)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>100.0</val>
+</width>
+<height>
+<val>58.0</val>
+</height>
+<diagram>
+<ref refid="58d6c536-66f8-11ec-b4c8-0456e5e540ed"/>
+</diagram>
+<subject>
+<ref refid="15891600-f8db-11ef-be17-ac198ef89f5c"/>
+</subject>
+</UML:ClassItem>
+</model>
+</gaphor>
