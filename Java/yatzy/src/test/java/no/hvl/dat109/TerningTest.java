@@ -2,7 +2,7 @@ package no.hvl.dat109;
 
 /**
  * En JUnit-test klasse med følgende metoder.
- * @author 
+ * @author Johan
  */
 
 import org.junit.jupiter.api.Test;
