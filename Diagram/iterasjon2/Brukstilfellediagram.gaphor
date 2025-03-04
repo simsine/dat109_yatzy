@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gaphor xmlns="https://gaphor.org/model" xmlns:Core="https://gaphor.org/modelinglanguage/Core" xmlns:UML="https://gaphor.org/modelinglanguage/UML" version="4" gaphor-version="3.0.0">
+<model>
+<Core:StyleSheet id="58d6989a-66f8-11ec-b4c8-0456e5e540ed"/>
+<UML:Package id="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed">
+<name>
+<val>Brukstilfellediagram Itr.2</val>
+</name>
+<ownedDiagram>
+<reflist>
+<ref refid="6412cecc-f8d8-11ef-aa61-a8db6fd6d725"/>
+</reflist>
+</ownedDiagram>
+<ownedType>
+<reflist>
+<ref refid="757ed906-f8d8-11ef-9a96-a8db6fd6d725"/>
+<ref refid="b1f7ca9d-f8d8-11ef-a090-a8db6fd6d725"/>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</reflist>
+</ownedType>
+<packagedElement>
+<reflist>
+<ref refid="757ed906-f8d8-11ef-9a96-a8db6fd6d725"/>
+<ref refid="b1f7ca9d-f8d8-11ef-a090-a8db6fd6d725"/>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</reflist>
+</packagedElement>
+</UML:Package>
+<UML:UseCaseDiagram id="6412cecc-f8d8-11ef-aa61-a8db6fd6d725">
+<element>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</element>
+<name>
+<val>brukstilfellediagram</val>
+</name>
+<ownedPresentation>
+<reflist>
+<ref refid="757f30bd-f8d8-11ef-9171-a8db6fd6d725"/>
+<ref refid="b1f87c78-f8d8-11ef-9ac5-a8db6fd6d725"/>
+<ref refid="fed3f6b6-f8d8-11ef-8384-a8db6fd6d725"/>
+<ref refid="bb6f04fa-f8d8-11ef-8e62-a8db6fd6d725"/>
+</reflist>
+</ownedPresentation>
+</UML:UseCaseDiagram>
+<UML:Actor id="757ed906-f8d8-11ef-9a96-a8db6fd6d725">
+<name>
+<val>Spiller</val>
+</name>
+<owningPackage>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</owningPackage>
+<package>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="757f30bd-f8d8-11ef-9171-a8db6fd6d725"/>
+</reflist>
+</presentation>
+</UML:Actor>
+<UML:ActorItem id="757f30bd-f8d8-11ef-9171-a8db6fd6d725">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 206.0, 282.9225057229163)</val>
+</matrix>
+<top-left>
+<val>(-51.30829015544043, -36.8450114458326)</val>
+</top-left>
+<width>
+<val>180.0</val>
+</width>
+<height>
+<val>241.8450114458326</val>
+</height>
+<diagram>
+<ref refid="6412cecc-f8d8-11ef-aa61-a8db6fd6d725"/>
+</diagram>
+<subject>
+<ref refid="757ed906-f8d8-11ef-9a96-a8db6fd6d725"/>
+</subject>
+</UML:ActorItem>
+<UML:UseCase id="b1f7ca9d-f8d8-11ef-a090-a8db6fd6d725">
+<name>
+<val>Yatzy test </val>
+</name>
+<owningPackage>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</owningPackage>
+<package>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="b1f87c78-f8d8-11ef-9ac5-a8db6fd6d725"/>
+</reflist>
+</presentation>
+</UML:UseCase>
+<UML:UseCaseItem id="b1f87c78-f8d8-11ef-9ac5-a8db6fd6d725">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 687.0, 259.0)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>228.0</val>
+</width>
+<height>
+<val>188.0</val>
+</height>
+<diagram>
+<ref refid="6412cecc-f8d8-11ef-aa61-a8db6fd6d725"/>
+</diagram>
+<subject>
+<ref refid="b1f7ca9d-f8d8-11ef-a090-a8db6fd6d725"/>
+</subject>
+</UML:UseCaseItem>
+<UML:AssociationItem id="bb6f04fa-f8d8-11ef-8e62-a8db6fd6d725">
+<diagram>
+<ref refid="6412cecc-f8d8-11ef-aa61-a8db6fd6d725"/>
+</diagram>
+<head_subject>
+<ref refid="bc8fae45-f8d8-11ef-b1b8-a8db6fd6d725"/>
+</head_subject>
+<horizontal>
+<val>0</val>
+</horizontal>
+<orthogonal>
+<val>0</val>
+</orthogonal>
+<subject>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</subject>
+<tail_subject>
+<ref refid="bc8fbcec-f8d8-11ef-8916-a8db6fd6d725"/>
+</tail_subject>
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 349.0, 428.0)</val>
+</matrix>
+<points>
+<val>[(-14.308290155440432, -68.66825646047761), (338.0, -68.5)]</val>
+</points>
+<head-connection>
+<ref refid="757f30bd-f8d8-11ef-9171-a8db6fd6d725"/>
+</head-connection>
+<tail-connection>
+<ref refid="b1f87c78-f8d8-11ef-9ac5-a8db6fd6d725"/>
+</tail-connection>
+</UML:AssociationItem>
+<UML:Association id="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725">
+<memberEnd>
+<reflist>
+<ref refid="bc8fae45-f8d8-11ef-b1b8-a8db6fd6d725"/>
+<ref refid="bc8fbcec-f8d8-11ef-8916-a8db6fd6d725"/>
+</reflist>
+</memberEnd>
+<ownedEnd>
+<reflist>
+<ref refid="bc8fae45-f8d8-11ef-b1b8-a8db6fd6d725"/>
+<ref refid="bc8fbcec-f8d8-11ef-8916-a8db6fd6d725"/>
+</reflist>
+</ownedEnd>
+<owningPackage>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</owningPackage>
+<package>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</package>
+<presentation>
+<reflist>
+<ref refid="bb6f04fa-f8d8-11ef-8e62-a8db6fd6d725"/>
+</reflist>
+</presentation>
+</UML:Association>
+<UML:Property id="bc8fae45-f8d8-11ef-b1b8-a8db6fd6d725">
+<association>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</association>
+<owningAssociation>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</owningAssociation>
+<type>
+<ref refid="757ed906-f8d8-11ef-9a96-a8db6fd6d725"/>
+</type>
+</UML:Property>
+<UML:Property id="bc8fbcec-f8d8-11ef-8916-a8db6fd6d725">
+<association>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</association>
+<owningAssociation>
+<ref refid="bc8f4a7b-f8d8-11ef-ae16-a8db6fd6d725"/>
+</owningAssociation>
+<type>
+<ref refid="b1f7ca9d-f8d8-11ef-a090-a8db6fd6d725"/>
+</type>
+</UML:Property>
+<UML:Comment id="fed3f18a-f8d8-11ef-98db-a8db6fd6d725">
+<body>
+<val>Yatazy spill
+</val>
+</body>
+<presentation>
+<reflist>
+<ref refid="fed3f6b6-f8d8-11ef-8384-a8db6fd6d725"/>
+</reflist>
+</presentation>
+</UML:Comment>
+<UML:CommentItem id="fed3f6b6-f8d8-11ef-8384-a8db6fd6d725">
+<matrix>
+<val>(1.0, 0.0, 0.0, 1.0, 489.0, 135.0)</val>
+</matrix>
+<top-left>
+<val>(0.0, 0.0)</val>
+</top-left>
+<width>
+<val>616.6917098445596</val>
+</width>
+<height>
+<val>456.0774942770837</val>
+</height>
+<diagram>
+<ref refid="6412cecc-f8d8-11ef-aa61-a8db6fd6d725"/>
+</diagram>
+<subject>
+<ref refid="fed3f18a-f8d8-11ef-98db-a8db6fd6d725"/>
+</subject>
+</UML:CommentItem>
+</model>
+</gaphor>
