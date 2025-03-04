@@ -584,6 +584,9 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="7e97b638-f8d9-11ef-8ca3-b20c18aed95f"/>
 </reflist>
 </memberEnd>
+<name>
+<val>Spiller</val>
+</name>
 <ownedEnd>
 <reflist>
 <ref refid="7e97ac10-f8d9-11ef-8ca3-b20c18aed95f"/>
@@ -796,6 +799,9 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="aee7f93c-f8da-11ef-8ca3-b20c18aed95f"/>
 </reflist>
 </memberEnd>
+<name>
+<val>Tilhører</val>
+</name>
 <ownedEnd>
 <reflist>
 <ref refid="aee7f572-f8da-11ef-8ca3-b20c18aed95f"/>
