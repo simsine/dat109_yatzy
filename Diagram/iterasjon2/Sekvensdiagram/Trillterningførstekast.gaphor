@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<gaphor xmlns="https://gaphor.org/model" xmlns:Core="https://gaphor.org/modelinglanguage/Core" xmlns:UML="https://gaphor.org/modelinglanguage/UML" version="4" gaphor-version="3.0.0">
+<model>
+<Core:StyleSheet id="58d6989a-66f8-11ec-b4c8-0456e5e540ed">
+<styleSheet>
+<val>diagram {
+ /* line-style: sloppy 0.3; */
+}
+
+controlflow {
+  dash-style: 0;
+}
+</val>
+</styleSheet>
+</Core:StyleSheet>
+<UML:Package id="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed">
+<name>
+<val>Sekvensdiagram</val>
+</name>
+<ownedDiagram>
+<reflist>
+<ref refid="ca2fccbc-f8de-11ef-918e-a8db6fd6d725"/>
+</reflist>
+</ownedDiagram>
+</UML:Package>
+<UML:SequenceDiagram id="ca2fccbc-f8de-11ef-918e-a8db6fd6d725">
+<element>
+<ref refid="58d6c2e8-66f8-11ec-b4c8-0456e5e540ed"/>
+</element>
+<name>
+<val>Terning</val>
+</name>
+</UML:SequenceDiagram>
+</model>
+</gaphor>
