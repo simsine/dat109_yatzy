@@ -114,6 +114,9 @@
 <reflist>
 <ref refid="19fabe3a-fe5d-11ef-8b87-b20c18aed960"/>
 <ref refid="e39c259c-fe5f-11ef-8b87-b20c18aed960"/>
+<ref refid="50dd8b8c-fe60-11ef-8b87-b20c18aed960"/>
+<ref refid="52295462-fe60-11ef-8b87-b20c18aed960"/>
+<ref refid="53d44cf4-fe60-11ef-8b87-b20c18aed960"/>
 </reflist>
 </ownedAttribute>
 <ownedOperation>
@@ -135,16 +138,16 @@
 </UML:Class>
 <UML:ClassItem id="914a62de-fe5c-11ef-8b87-b20c18aed960">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 429.2399999999999, 107.90234374999991)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 421.73999999999984, 58.682711581950265)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>100.0</val>
+<val>117.0</val>
 </width>
 <height>
-<val>85.0</val>
+<val>130.0</val>
 </height>
 <diagram>
 <ref refid="58d6c536-66f8-11ec-b4c8-0456e5e540ed"/>
@@ -323,7 +326,7 @@
 <val>(1.0, 0.0, 0.0, 1.0, 482.95226383595156, 162.34940835892556)</val>
 </matrix>
 <points>
-<val>[(-3.71226383595166, 30.552935391074357), (-2.71226383595166, 100.78305634410154)]</val>
+<val>[(-2.7122638359515463, 26.333303223024785), (-2.71226383595166, 100.78305634410154)]</val>
 </points>
 <head-connection>
 <ref refid="914a62de-fe5c-11ef-8b87-b20c18aed960"/>
@@ -404,7 +407,7 @@
 <val>(1.0, 0.0, 0.0, 1.0, 304.8240712277721, 134.2239042628972)</val>
 </matrix>
 <points>
-<val>[(3.544301869056852, 2.586524459708528), (124.4159287722278, 16.17843948710265)]</val>
+<val>[(3.544301869056852, 2.586524459708528), (116.91592877222786, -10.541192680946935)]</val>
 </points>
 <head-connection>
 <ref refid="1589a2a5-f8db-11ef-a302-ac198ef89f5c"/>
@@ -798,7 +801,31 @@
 <ref refid="9149ffba-fe5c-11ef-8b87-b20c18aed960"/>
 </class_>
 <name>
-<val>navn</val>
+<val>Brukernavn</val>
+</name>
+</UML:Property>
+<UML:Property id="50dd8b8c-fe60-11ef-8b87-b20c18aed960">
+<class_>
+<ref refid="9149ffba-fe5c-11ef-8b87-b20c18aed960"/>
+</class_>
+<name>
+<val>HashetPassord</val>
+</name>
+</UML:Property>
+<UML:Property id="52295462-fe60-11ef-8b87-b20c18aed960">
+<class_>
+<ref refid="9149ffba-fe5c-11ef-8b87-b20c18aed960"/>
+</class_>
+<name>
+<val>Salt</val>
+</name>
+</UML:Property>
+<UML:Property id="53d44cf4-fe60-11ef-8b87-b20c18aed960">
+<class_>
+<ref refid="9149ffba-fe5c-11ef-8b87-b20c18aed960"/>
+</class_>
+<name>
+<val>Email</val>
 </name>
 </UML:Property>
 </model>
