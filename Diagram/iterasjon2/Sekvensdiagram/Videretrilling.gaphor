@@ -45,12 +45,12 @@ controlflow {
 <ownedPresentation>
 <reflist>
 <ref refid="b63579c5-f8e6-11ef-96c2-a8db6fd6d725"/>
+<ref refid="b8157509-f8e6-11ef-b0b7-a8db6fd6d725"/>
 <ref refid="b92aba4d-f8e6-11ef-8ea2-a8db6fd6d725"/>
 <ref refid="fca59f51-f8e6-11ef-895b-a8db6fd6d725"/>
-<ref refid="b8157509-f8e6-11ef-b0b7-a8db6fd6d725"/>
-<ref refid="eed05a90-f8e6-11ef-a3d4-a8db6fd6d725"/>
 <ref refid="d69fe2a9-f8e6-11ef-b9c7-a8db6fd6d725"/>
 <ref refid="e35af05c-f8e6-11ef-b0d9-a8db6fd6d725"/>
+<ref refid="eed05a90-f8e6-11ef-a3d4-a8db6fd6d725"/>
 </reflist>
 </ownedPresentation>
 </UML:SequenceDiagram>
@@ -132,7 +132,7 @@ controlflow {
 <ref refid="b636e0a8-f8e6-11ef-8392-a8db6fd6d725"/>
 </interaction>
 <name>
-<val>Terning kopp</val>
+<val>Kopp</val>
 </name>
 <presentation>
 <reflist>
@@ -271,7 +271,7 @@ controlflow {
 <ref refid="e35cc607-f8e6-11ef-ba13-a8db6fd6d725"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 319.0, 363.0)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 319.0, 360.5084182926624)</val>
 </matrix>
 <points>
 <val>[(1.5, 0.0), (245.0, 0.0)]</val>
@@ -288,7 +288,7 @@ controlflow {
 <ref refid="b636e0a8-f8e6-11ef-8392-a8db6fd6d725"/>
 </interaction>
 <name>
-<val>trill(List&lt;Terning&gt; terninger)</val>
+<val>trillTerninger(List&lt;Terning&gt; terninger)</val>
 </name>
 <presentation>
 <reflist>
