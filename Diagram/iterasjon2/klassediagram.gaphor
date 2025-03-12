@@ -67,6 +67,7 @@
 <reflist>
 <ref refid="4e0d8efa-fe5d-11ef-8b87-b20c18aed960"/>
 <ref refid="76da04ee-fe5d-11ef-8b87-b20c18aed960"/>
+<ref refid="c92ea672-ff2b-11ef-ad84-b20c18aed960"/>
 </reflist>
 </ownedAttribute>
 <ownedOperation>
@@ -88,7 +89,7 @@
 </UML:Class>
 <UML:ClassItem id="1589a2a5-f8db-11ef-a302-ac198ef89f5c">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 208.368373096829, 101.42233844841944)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 208.36837309682895, 101.11570359749014)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -97,7 +98,7 @@
 <val>100.0</val>
 </width>
 <height>
-<val>70.0</val>
+<val>85.0</val>
 </height>
 <diagram>
 <ref refid="58d6c536-66f8-11ec-b4c8-0456e5e540ed"/>
@@ -408,7 +409,7 @@
 <val>(1.0, 0.0, 0.0, 1.0, 304.8240712277721, 134.2239042628972)</val>
 </matrix>
 <points>
-<val>[(3.544301869056852, 2.586524459708528), (116.91592877222786, -3.041192680947006)]</val>
+<val>[(3.544301869056852, 9.863051810390573), (116.91592877222786, -3.041192680947006)]</val>
 </points>
 <head-connection>
 <ref refid="1589a2a5-f8db-11ef-a302-ac198ef89f5c"/>
@@ -498,7 +499,7 @@
 <val>(1.0, 0.0, 0.0, 1.0, 206.72583717653688, 131.50515384772132)</val>
 </matrix>
 <points>
-<val>[(1.6425359202920617, 3.834369201396271), (-66.58138530696993, 5.999999999999943)]</val>
+<val>[(1.6425359202920617, 10.795702479188009), (-66.58138530696993, 5.999999999999943)]</val>
 </points>
 <head-connection>
 <ref refid="1589a2a5-f8db-11ef-a302-ac198ef89f5c"/>
@@ -835,6 +836,14 @@
 </class_>
 <name>
 <val>Navn</val>
+</name>
+</UML:Property>
+<UML:Property id="c92ea672-ff2b-11ef-ad84-b20c18aed960">
+<class_>
+<ref refid="15891600-f8db-11ef-be17-ac198ef89f5c"/>
+</class_>
+<name>
+<val>Runde</val>
 </name>
 </UML:Property>
 </model>
