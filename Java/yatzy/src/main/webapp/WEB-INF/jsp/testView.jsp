@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="css/simple.css">
+<link rel="stylesheet" href="simple.css">
 <title>Test</title>
 </head>
 <body>
