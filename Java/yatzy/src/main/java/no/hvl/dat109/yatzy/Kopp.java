@@ -1,21 +1,71 @@
 package no.hvl.dat109.yatzy;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
+/**
+ * Klasse som representerer en kopp til å trille terningene med.
+ */
 public class Kopp {
+	private static final int ANTALL_TERNINGER = 5;
+	private static final int MAX_TERNINGVERDI = 6;
 
-	
+	private List<Integer> terningverdier;
+	private Random random;
+
+	public Kopp() {
+		this.terningverdier = new ArrayList<>();
+		this.random = new Random();
+	}
+
 	/**
-	 * Triller resten av terningene i lista
-	 * @param beholdteTerninger En liste av terningverdier som ikke blir trillet
-	 * @return En liste av terningverdier med trillet terninger for resten av lista
+	 * Henter terningverdier.
+	 * 
+	 * @return en liste av terningverdier.
+	 */
+	public List<Integer> getTerningverdier() {
+		return terningverdier;
+	}
+
+	/**
+	 * Setter terningverdier.
+	 * 
+	 * @param terningverdier
+	 */
+	public void setTerningverdier(List<Integer> terningverdier) {
+		if (terningverdier.size() != ANTALL_TERNINGER) {
+			throw new IllegalArgumentException("Koppen må ha eksakt " + ANTALL_TERNINGER + "terningverdier.");
+		}
+		this.terningverdier = new ArrayList<>(terningverdier);
+	}
+
+	/**
+	 * Beholder de valgte terningene og triller resten av de
+	 * {@value no.hvl.dat109.yatzy.Kopp#ANTALL_TERNINGER} terningene på nytt
+	 * 
+	 * @param beholdteTerninger En liste av terningverdier som skal beholdes
+	 * @return En liste av {@value no.hvl.dat109.yatzy.Kopp#ANTALL_TERNINGER}
+	 *         terningverdier inkludert de beholdte terningene
 	 */
 	public List<Integer> trillResten(List<Integer> beholdteTerninger) {
-		return null;
+		terningverdier = new ArrayList<>(beholdteTerninger);
+
+		for (int i = beholdteTerninger.size(); i < ANTALL_TERNINGER; i++) {
+			terningverdier.add(random.nextInt(MAX_TERNINGVERDI) + 1);
+		}
+
+		return terningverdier;
 	}
 
-	public List<Integer> getTerningverdier() {
-		// TODO Auto-generated method stub
-		return null;
+	/**
+	 * Triller {@value no.hvl.dat109.yatzy.Kopp#ANTALL_TERNINGER} terninger.
+	 * 
+	 * @return En liste av {@value no.hvl.dat109.yatzy.Kopp#ANTALL_TERNINGER}
+	 *         terningverdier.
+	 */
+	public List<Integer> trillResten() {
+		return trillResten(List.of());
 	}
+
 }
