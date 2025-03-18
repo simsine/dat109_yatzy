@@ -10,4 +10,9 @@ public class Poengtabell {
 	public void registrerPoeng(int rundeNr, int resultat) {
 		
 	}
+
+	public int getEnere() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

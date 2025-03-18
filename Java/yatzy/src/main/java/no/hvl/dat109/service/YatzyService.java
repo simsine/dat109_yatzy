@@ -1,5 +1,10 @@
 package no.hvl.dat109.service;
 
+import java.util.List;
+
+import no.hvl.dat109.yatzy.Kopp;
+import no.hvl.dat109.yatzy.Poengtabell;
+
 public class YatzyService {
 	
 	
@@ -16,6 +21,26 @@ public class YatzyService {
 	 */
 	public void setPoengRegistrert(Boolean bool) {
 		
+	}
+
+	public void spillTrekk() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Kopp getKopp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void beholdTerningverdier(List<Integer> valgteTerningverdier) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Poengtabell getPoengtabell() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

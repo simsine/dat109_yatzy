@@ -13,4 +13,9 @@ public class Kopp {
 	public List<Integer> trillResten(List<Integer> beholdteTerninger) {
 		return null;
 	}
+
+	public List<Integer> getTerningverdier() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
