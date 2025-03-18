@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Lobby</title>
+		<title>Spillhistorikk</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>
@@ -16,7 +16,7 @@
 			<h1>Yatzy</h1>
 		</div>
 		<div class="main">
-			<p>Velg spill</p>
+			<p>Se tidligere spill</p>
 		</div>
 	</body>
 </html>

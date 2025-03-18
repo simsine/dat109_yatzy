@@ -2,13 +2,23 @@
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="simple.css">
-<title>Test</title>
-</head>
-<body>
-	<h1>Test</h1>
-</body>
+<!DOCTYPE html>
+<html lang="no">
+	<head>
+		<meta charset="UTF-8">
+		<title>Logginn</title>
+		<link rel="stylesheet" href="simple.css">
+		<script src="script.js"></script>
+	</head>
+	
+	<body>
+		<div class="header">
+			<h1>Yatzy</h1>
+		</div>
+		<div class="main">
+			<div class="logginnbox">
+				<p>Testview</p>			
+			</div>
+		</div>
+	</body>
 </html>
