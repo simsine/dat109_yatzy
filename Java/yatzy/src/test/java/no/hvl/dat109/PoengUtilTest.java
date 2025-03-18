@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
-import util.PoengUtil;
+import no.hvl.dat109.util.PoengUtil;
 /**
  * Test for poengutil klassen
  * @author larsloege

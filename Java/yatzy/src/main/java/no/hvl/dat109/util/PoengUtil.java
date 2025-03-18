@@ -1,4 +1,4 @@
-package util;
+package no.hvl.dat109.util;
 
 import java.util.List;
 
