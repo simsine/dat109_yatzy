@@ -4,7 +4,7 @@ public class YatzyService {
 	
 	
 	/**
-	 * Starter et nytt yatzy spill fra contollerene
+	 * Starter et nytt yatzy spill fra contolleren
 	 */
 	public void startSpill() {
 		//TODO
