@@ -10,5 +10,12 @@ public class YatzyService {
 		//TODO
 	}
 	
+	/**
+	 * Settermetode for om poeng er registrert for spiller
+	 * @param bool om poeng er registrert
+	 */
+	public void setPoengRegistrert(Boolean bool) {
+		
+	}
 	
 }
