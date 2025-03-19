@@ -16,6 +16,13 @@ public class YatzyService {
 	}
 	
 	/**
+	 * Midlertitid så lenge vi ikke har lagring i database
+	 */
+	public Poengtabell gjennomFørFultSpill() {
+		return null;
+	}
+	
+	/**
 	 * Settermetode for om poeng er registrert for spiller
 	 * @param bool om poeng er registrert
 	 */
