@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<div>
-				<h1>Yatzy</h1>
+				<h1>Yatzy simulasjon</h1>
 			</div>
 			<div class="logginnbox">
 				<div>
@@ -26,7 +26,22 @@
 			</div>
 		</div>
 		<div class="main">
-			<p>Velg spill</p>
+			<table>
+				<tr>
+					<th>Type</th>
+					<th>Poeng</th>
+				</tr>
+				<c:forEach var="entry" items="${poengMap}">
+					<tr>
+						<td><c:out value="${entry.key}"/></td>
+	  					<td><c:out value="${entry.value}"/></td>
+					</tr>
+				</c:forEach>
+				<tr>
+					<td>Sum</td>
+					<td><c:out value="${poengSum}"></c:out></td>
+				</tr>
+			</table>
 		</div>
 	</body>
 </html>

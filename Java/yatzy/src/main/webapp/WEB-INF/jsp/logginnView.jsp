@@ -13,7 +13,9 @@
 	
 	<body>
 		<div class="header">
-			<h1>Yatzy</h1>
+			<div>
+				<h1>Yatzy</h1>
+			</div>
 		</div>
 		<div class="main">
 			<div class="logginnbox">
