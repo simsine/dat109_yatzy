@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Spill</title>
+		<title>Yatzy > Spill</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>
@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<div>
-				<h1>YATZY > Spill</h1>
+				<h1>YATZY</h1>
 			</div>
 			<div class="logginnbox">
 				<div>
