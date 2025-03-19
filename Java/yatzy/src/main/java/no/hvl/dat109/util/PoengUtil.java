@@ -196,7 +196,7 @@ public class PoengUtil {
 		return 0;
 	}
 
-	private static boolean erYatzy(List<Integer> liste) {
+	public static boolean erYatzy(List<Integer> liste) {
 		HashMap<Integer, Integer> map = hashMapAvListe(liste);
 		for (int i = 6; i > 0; i--) {
 			if(map.get(i) >= 5) {
