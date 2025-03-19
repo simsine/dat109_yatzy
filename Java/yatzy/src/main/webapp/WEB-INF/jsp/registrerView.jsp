@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Registrering</title>
+		<title>Yatzy > Registrering</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>

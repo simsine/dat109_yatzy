@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Spill</title>
+		<title>Yatzy > Spill</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>
@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<div>
-				<h1>Yatzy</h1>
+				<h1>YATZY</h1>
 			</div>
 			<div class="logginnbox">
 				<div>
@@ -36,6 +36,7 @@
 						<h2>Det er $navn sin tur</h2>
 					</div>
 					<div class="centering">
+						<img src="cursor.png" scale="1">
 						<p>Klikk på terningene du vil beholde</p>
 					</div>
 					<div class="centering">
