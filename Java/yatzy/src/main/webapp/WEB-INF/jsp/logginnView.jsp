@@ -14,11 +14,11 @@
 	<body>
 		<div class="header">
 			<div>
-				<h1>Yatzy</h1>
+				<h1>YATZY</h1>
 			</div>
 		</div>
 		<div class="main">
-			<div class="logginnbox">
+			<div class="logginnSchema">
 				<p>Logg inn</p>			
 			</div>
 		</div>

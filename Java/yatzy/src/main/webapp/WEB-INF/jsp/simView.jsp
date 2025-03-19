@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<div>
-				<h1>Yatzy simulasjon</h1>
+				<h1>YATZY simulasjon</h1>
 			</div>
 			<div class="logginnbox">
 				<div>

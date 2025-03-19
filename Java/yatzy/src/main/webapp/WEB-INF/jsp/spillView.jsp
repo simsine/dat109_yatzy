@@ -29,18 +29,36 @@
 			<h2>Spill $X - $Enere</h2>
 			<div class="mainGame">
 				<div class="gameTable">
-					<p>Insert Spill table</p>
+					<p>$GameTable</p>
 				</div>
 				<div class="gameDiceview">
-					<h2>Det er $navn sin tur</h2>
-					<p> Klikk på terningene du vil beholde</p>
-					<img src="terningEn.png" alt="Terning som viser én">
-					<img src="terningTo.png" alt="Terning som viser to">
-					<img src="terningTre.png" alt="Terning som viser tre">
-					<img src="terningFire.png" alt="Terning som viser fire">
-					<img src="terningFem.png" alt="Terning som viser fem">
-					<img src="terningSeks.png" alt="Terning som viser seks">
-					<button>Trill terning</button>
+					<div class="centering">
+						<h2>Det er $navn sin tur</h2>
+					</div>
+					<div class="centering">
+						<p>Klikk på terningene du vil beholde</p>
+					</div>
+					<div class="centering">
+						<img src="terningEn.png" alt="Terning som viser én">
+						<img src="terningTo.png" alt="Terning som viser to">
+						<img src="terningTre.png" alt="Terning som viser tre">
+					</div>
+					<div>
+						<hr>
+					</div>
+					<div class="centering">
+						<img src="terningFire.png" alt="Terning som viser fire">
+						<img src="terningFem.png" alt="Terning som viser fem">
+					</div>
+					<div class="centering">
+						<p>Beholdt</p>
+					</div>
+					<div class="centering">
+						<p>Du har $X kast igjen</p>
+					</div>
+					<div class="centering">
+						<button>Trill terninger</button>
+					</div>
 				</div>
 			</div>
 		</div>
