@@ -64,7 +64,7 @@ public class YatzyController {
 	                Map.Entry::getValue,
 	                (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 		model.addAttribute("poengMap", sortedMap);
-		model.addAttribute("poengSum", poengTabell.getAllePoeng().values().stream().reduce(0, (acc, x) -> x + acc));
+		model.addAttribute("poengSum", poengTabell.getSum());
 		return "simView";
 	}
 	// POST

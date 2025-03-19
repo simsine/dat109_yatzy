@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
@@ -25,14 +24,6 @@ public class YatzyService {
 	}
 	
 	/**
-	 * Midlertitid så lenge vi ikke har lagring i database
-	 */
-	public Poengtabell startSim() {
-		
-		return null;
-	}
-	
-	/**
 	 * Settermetode for om poeng er registrert for spiller
 	 * @param bool om poeng er registrert
 	 */
@@ -40,8 +31,13 @@ public class YatzyService {
 		
 	}
 
-	public List<Integer> spillTrekk(List<Integer> beholdte) {
-		return kopp.trillResten(beholdte);
+	/**
+	 * Metode for å spille et trekk hvor man har oppgitt valgte terninger
+	 * @param beholdte terninger
+	 * @return beholdte pluss trillede terninger
+	 */
+	public List<Integer> spillTrekk(List<Integer> valgteTerninger) {
+		return kopp.trillResten(valgteTerninger);
 	}
 
 	/**
@@ -51,7 +47,7 @@ public class YatzyService {
 	 * @param type
 	 * @param terninger
 	 */
-	public void registrerPoeng(Poengtabell poengTabell, PoengType type, List<Integer> terninger) {
+	public int registrerPoeng(Poengtabell poengTabell, PoengType type, List<Integer> terninger) {
 		int poeng = 0;
 		boolean erYatzy = PoengUtil.erYatzy(terninger);
 		if (erYatzy && !poengTabell.getErYatzyRegistrert()) {
@@ -99,11 +95,18 @@ public class YatzyService {
 		case HUS:
 			poeng = PoengUtil.hus(terninger);
 			break;
+		case SJANSE:
+			poeng = PoengUtil.sjanse(terninger);
+			break;
+		case YATZY:
+			poeng = PoengUtil.yatzy(terninger);
+			break;
 		default:
 			System.out.println("Shit's fucked");
 			break;
 		}
 		poengTabell.registrerPoeng(type, poeng);
+		return poeng;
 	}
 	
 	public void beholdTerningverdier(List<Integer> valgteTerningverdier) {

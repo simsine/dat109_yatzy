@@ -1,10 +1,6 @@
 package no.hvl.dat109.yatzy;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
 
 public class Poengtabell {	
 	
@@ -39,5 +35,9 @@ public class Poengtabell {
 	
 	public void setErYatzyRegistrert(boolean yatzyRegistrert) {
 		this.erYatzyRegistrert = yatzyRegistrert;
+	}
+	
+	public int getSum() {
+		return getAllePoeng().values().stream().reduce(0, (acc, x) -> x + acc);
 	}
 }
