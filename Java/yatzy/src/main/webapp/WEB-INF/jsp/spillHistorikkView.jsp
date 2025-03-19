@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Spillhistorikk</title>
+		<title>Yatzy > Historikk</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>

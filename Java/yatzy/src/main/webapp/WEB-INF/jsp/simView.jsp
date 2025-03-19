@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Lobby</title>
+		<title>Yatzy > Simulering</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>
@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<div>
-				<h1>YATZY simulasjon</h1>
+				<h1>YATZY simulering</h1>
 			</div>
 			<div class="logginnbox">
 				<div>
