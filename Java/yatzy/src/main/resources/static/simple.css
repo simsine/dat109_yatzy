@@ -94,6 +94,8 @@ body > header {
 
 .header {
 	text-align: center;
+	display: flex;
+	justify-content: space-between;
 }
 
 body > header h1 {
@@ -113,8 +115,27 @@ main {
 
 .logginnbox {
 	display: flex;
-	justify-content: center;
-	text-align: left;
+	flex-direction: column;
+	text-align: right;
+}
+
+.logginnbox p {
+	padding: 0px;
+	margin: 0px;
+}
+
+.mainGame {
+	display: flex;
+}
+
+.gameTable {
+	
+}
+
+.gameDiceview {
+	color: black;
+	background-color: beige;
+	border-radius: 25px;
 }
 
 body > footer {

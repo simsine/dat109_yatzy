@@ -1,12 +1,14 @@
 package no.hvl.dat109.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import no.hvl.dat109.service.YatzyService;
 import no.hvl.dat109.yatzy.Poengtabell;
 
+@Controller
 public class YatzyController {
 
 	@Autowired

@@ -13,7 +13,17 @@
 	
 	<body>
 		<div class="header">
-			<h1>Yatzy</h1>
+			<div>
+				<h1>Yatzy</h1>
+			</div>
+			<div class="logginnbox">
+				<div>
+					<p>Du er innlogget som $Navn</p>
+				</div>
+				<div>
+					<p>Mine spill →</p>
+				</div>
+			</div>
 		</div>
 		<div class="main">
 			<p>Velg spill</p>

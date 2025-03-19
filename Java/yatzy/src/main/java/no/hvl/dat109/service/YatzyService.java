@@ -2,9 +2,12 @@ package no.hvl.dat109.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.Poengtabell;
 
+@Service
 public class YatzyService {
 	
 	
