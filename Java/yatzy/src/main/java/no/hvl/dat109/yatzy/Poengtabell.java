@@ -1,6 +1,10 @@
 package no.hvl.dat109.yatzy;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class Poengtabell {	
 	
@@ -23,6 +27,10 @@ public class Poengtabell {
 
 	public int getPoeng(PoengType type) {
 		return poeng.get(type);
+	}
+	
+	public HashMap<PoengType, Integer> getAllePoeng() {
+		return poeng;
 	}
 	
 	public boolean getErYatzyRegistrert() {

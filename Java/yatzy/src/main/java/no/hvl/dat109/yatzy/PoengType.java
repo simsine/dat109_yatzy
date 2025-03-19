@@ -1,6 +1,6 @@
 package no.hvl.dat109.yatzy;
 
-public enum PoengType {
+public enum PoengType implements Comparable<PoengType>{
 	ENERE,
 	TOERE,
 	TREERE,
@@ -15,5 +15,6 @@ public enum PoengType {
 	STOR_STRAIGHT,
 	HUS,
 	SJANSE,
-	YATZY,
+	YATZY
 }
+

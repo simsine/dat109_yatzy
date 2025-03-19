@@ -73,7 +73,7 @@ public class PoengUtil {
 				return i * 2;
 			}
 		}
-		return null;
+		return 0;
 	}
 
 	private static HashMap<Integer, Integer> hashMapAvListe(List<Integer> liste) {
