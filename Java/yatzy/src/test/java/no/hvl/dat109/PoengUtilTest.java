@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 
 import no.hvl.dat109.util.PoengUtil;
+import no.hvl.dat109.yatzy.Kopp;
 /**
  * Test for poengutil klassen
  * @author larsloege
