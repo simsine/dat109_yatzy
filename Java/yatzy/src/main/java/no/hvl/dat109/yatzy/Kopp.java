@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class Kopp {
-	private static final int ANTALL_TERNINGER = 5;
-	private static final int MAX_TERNINGVERDI = 6;
+	public static final int ANTALL_TERNINGER = 5;
+	public static final int MAX_TERNINGVERDI = 6;
 
 	private List<Integer> terningverdier;
 	private Random random;

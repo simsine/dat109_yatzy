@@ -48,6 +48,10 @@ public class YatzyService {
 	 * @param terninger
 	 */
 	public int registrerPoeng(Poengtabell poengTabell, PoengType type, List<Integer> terninger) {
+		if (terninger.size() < Kopp.ANTALL_TERNINGER) {
+			throw new IllegalArgumentException("Kan ikke registrere mer enn " + Kopp.ANTALL_TERNINGER + "terninger.");			
+		}
+		
 		int poeng = 0;
 		boolean erYatzy = PoengUtil.erYatzy(terninger);
 		if (erYatzy && !poengTabell.getErYatzyRegistrert()) {

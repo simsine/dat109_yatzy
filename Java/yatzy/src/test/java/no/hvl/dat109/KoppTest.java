@@ -49,7 +49,7 @@ public class KoppTest {
 		kopp.trillResten();
 
 		// terningverdier skal alltid være 5 integers fra 1-6
-		assertEquals(5, kopp.getTerningverdier().size());
+		assertEquals(Kopp.ANTALL_TERNINGER, kopp.getTerningverdier().size());
 		assertTrue(kopp.getTerningverdier().stream().allMatch(t -> t >= 1 && t <= 6));
 	}
 
@@ -64,7 +64,7 @@ public class KoppTest {
 		}
 
 		// terningverdier skal alltid være 5 integers fra 1-6
-		assertEquals(5, kopp.getTerningverdier().size());
+		assertEquals(Kopp.ANTALL_TERNINGER, kopp.getTerningverdier().size());
 		assertTrue(kopp.getTerningverdier().stream().allMatch(verdi -> verdi >= 1 && verdi <= 6));
 	}
 
