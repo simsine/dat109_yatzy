@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Klasse som representerer en kopp til å trille terningene med.
  */
+@Service
 public class Kopp {
 	private static final int ANTALL_TERNINGER = 5;
 	private static final int MAX_TERNINGVERDI = 6;

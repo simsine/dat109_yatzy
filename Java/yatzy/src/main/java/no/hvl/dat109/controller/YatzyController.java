@@ -1,12 +1,15 @@
 package no.hvl.dat109.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import no.hvl.dat109.service.YatzyService;
 import no.hvl.dat109.yatzy.Poengtabell;
+import no.hvl.dat109.yatzy.YatzySimSpill;
 
+@Controller
 public class YatzyController {
 
 	@Autowired
@@ -46,10 +49,12 @@ public class YatzyController {
 	
 	//POST
 	
-	@PostMapping("/startspill")
-	public String postStartSpill() {
-		Poengtabell poeng = yatzyService.gjennomFørFultSpill();
+	@PostMapping("/simuler")
+	public String postSimuler() {
+		YatzySimSpill yatzySimSpill = new YatzySimSpill();
+		Poengtabell poengTabell = yatzySimSpill.simulerSpill();
 		
 		return "spillView";
 	}
+	
 }
