@@ -118,7 +118,7 @@ main {
 	flex-direction: column;
 }
 
-.logginnbox {
+.menubox {
 	display: flex;
 	flex-direction: column;
 	text-align: right;

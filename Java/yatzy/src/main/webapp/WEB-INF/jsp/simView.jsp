@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<h1>YATZY simulering</h1>
-			<div class="logginnbox">
+			<div class="menubox">
 				<p>Du er innlogget som $Navn</p>
 				<p>Lobby→</p>
 			</div>
