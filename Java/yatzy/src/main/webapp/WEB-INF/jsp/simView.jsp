@@ -13,9 +13,9 @@
 	
 	<body>
 		<div class="header">
-			<h1>YATZY simulering</h1>
+			<a href="/"><h1 class="unstyled link">YATZY simulering</h1></a>
 			<div class="menubox">
-				<p>Du er innlogget som $Navn</p>
+				<p>Hei, $Navn!</p>
 				<p>Lobby→</p>
 			</div>
 		</div>

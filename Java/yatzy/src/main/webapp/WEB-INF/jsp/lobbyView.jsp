@@ -13,10 +13,12 @@
 	
 	<body>
 		<div class="header">
-			<h1>YATZY</h1>
+			<h1>
+				<a href="/" class="unstyled-link">YATZY</a>
+			</h1>
 			<div class="menubox">
-				<p>Du er innlogget som $Navn</p>
-				<p>Spillhistorikk→</p>
+				<p>Hei, $Navn!</p>
+				<a href="/spillhistorikk" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>
 		<div class="main">

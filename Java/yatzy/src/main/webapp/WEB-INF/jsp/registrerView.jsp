@@ -13,10 +13,14 @@
 	
 	<body>
 		<div class="header">
-			<h1>YATZY</h1>
+			<h1>
+				<a href="/" class="unstyled-link">YATZY</a>
+			</h1>
 		</div>
 		<div class="main">
-			<p>Registrering</p>
+			<div class="schema">
+				<p>Registrering</p>
+			</div>
 		</div>
 	</body>
 </html>
