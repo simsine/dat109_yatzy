@@ -129,15 +129,26 @@ main {
 	margin: 0px;
 }
 
+.lobby {
+	text-align: center;
+}
+
+.lobby h2 {
+	margin-bottom: 2rem;
+}
+
+.lobbyGames {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	justify-content: center;
+	gap: 1rem;
+}
+
 .gameView {
 	display: grid;
 	grid-template-columns: auto 25rem;
 	gap: 10px;
 	padding: 10px;
-}
-
-.mainGame {
-	display: flex;
 }
 
 .gameTable {

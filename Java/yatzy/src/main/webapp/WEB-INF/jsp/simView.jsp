@@ -16,7 +16,7 @@
 			<h1>YATZY simulering</h1>
 			<div class="logginnbox">
 				<p>Du er innlogget som $Navn</p>
-				<p>Mine spill→</p>
+				<p>Lobby→</p>
 			</div>
 		</div>
 		<div class="main">

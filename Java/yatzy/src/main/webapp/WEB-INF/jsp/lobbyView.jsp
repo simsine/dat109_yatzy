@@ -16,11 +16,18 @@
 			<h1>YATZY</h1>
 			<div class="logginnbox">
 				<p>Du er innlogget som $Navn</p>
-				<p>Mine spill→</p>
+				<p>Spillhistorikk→</p>
 			</div>
 		</div>
 		<div class="main">
-			<p>Velg spill</p>
+			<div class="lobby">
+				<h2>Lobby<h2>
+			</div>
+			<div class="lobbyGames">
+				<div class="item1"><p>Velg spill</p></div>
+				<div class="item2"><button>Spill $X</button></div>
+				<div class="item3"><p>Spillere: $Y/6</p></div>
+			</div>
 		</div>
 	</body>
 </html>

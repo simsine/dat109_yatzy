@@ -16,7 +16,7 @@
 			<h1>YATZY</h1>
 			<div class="logginnbox">
 				<p>Du er innlogget som $Navn</p>
-				<p>Mine spill→</p>
+				<p>Lobby→</p>
 			</div>
 		</div>
 		<div class="main">
@@ -32,15 +32,13 @@
 					<div class="gameDiceview">
 							<h2>Det er $navn sin tur</h2>
 							<p><img src="cursor.png" alt="Musepil som klikker" scale="1">Klikk på terningene du vil beholde</p>
-						<div class="dies">
+						<div>
 							<img src="terningEn.png" alt="Terning som viser én">
 							<img src="terningTo.png" alt="Terning som viser to">
 							<img src="terningTre.png" alt="Terning som viser tre">
 						</div>
+						<div><hr></div>
 						<div>
-							<hr>
-						</div>
-						<div class="dies">
 							<img src="terningFire.png" alt="Terning som viser fire">
 							<img src="terningFem.png" alt="Terning som viser fem">
 						</div>
