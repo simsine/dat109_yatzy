@@ -22,7 +22,7 @@ public class Poengtabell {
 	}
 
 	public int getPoeng(PoengType type) {
-		return poeng.get(type);
+		return poeng.getOrDefault(type, 0);
 	}
 
 	public HashMap<PoengType, Integer> getAllePoeng() {
@@ -38,6 +38,13 @@ public class Poengtabell {
 	}
 
 	public int getSum() {
-		return this.poeng.values().stream().reduce(0, (acc, x) -> x + acc);
+		return this.poeng.values().stream().reduce(0, Integer::sum);
+	}
+
+	public boolean harTidligYatzy() {
+		
+		boolean ikkeRegistrertAllePoeng = this.poeng.entrySet().stream().anyMatch(t -> t.getValue() == null);
+		
+		return erYatzyRegistrert && ikkeRegistrertAllePoeng;
 	}
 }

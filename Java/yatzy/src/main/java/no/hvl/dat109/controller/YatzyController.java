@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import no.hvl.dat109.service.YatzyService;
+import no.hvl.dat109.yatzy.PoengType;
 import no.hvl.dat109.yatzy.Poengtabell;
 import no.hvl.dat109.yatzy.YatzySimSpill;
 
@@ -63,6 +64,9 @@ public class YatzyController {
 	                Map.Entry::getKey,
 	                Map.Entry::getValue,
 	                (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+		if (poengTabell.getPoeng(PoengType.YATZY) != 0) {
+			model.addAttribute("fikkYatzy", "DU FIKK YATZY");
+		}
 		model.addAttribute("poengMap", sortedMap);
 		model.addAttribute("poengSum", poengTabell.getSum());
 		return "simView";

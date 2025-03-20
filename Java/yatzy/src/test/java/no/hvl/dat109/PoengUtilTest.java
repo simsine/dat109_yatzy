@@ -75,6 +75,7 @@ public class PoengUtilTest {
 		assertEquals(12+10,PoengUtil.ToPar(List.of(6,5,6,5,5)));
 		assertEquals(0,PoengUtil.ToPar(List.of(4,2,6,5,5)));
 		assertEquals(12,PoengUtil.ToPar(List.of(5,5,6,1,1)));
+		assertEquals(12+10,PoengUtil.ToPar(List.of(5, 6, 6, 5, 4)));
 	}
 	
 	@Test

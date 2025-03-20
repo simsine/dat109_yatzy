@@ -26,6 +26,7 @@
 			</div>
 		</div>
 		<div class="main">
+			<p><c:out value="${fikkYatzy}"/></p>
 			<table>
 				<tr>
 					<th>Type</th>
