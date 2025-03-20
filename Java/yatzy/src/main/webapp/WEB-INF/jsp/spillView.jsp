@@ -46,7 +46,7 @@
 						</div>
 						<p>Beholdt</p>
 						<p>Du har $X kast igjen</p>
-						<button>Trill terninger</button>
+						<button>Trill</button>
 					</div>
 				</div>	
 			</div>

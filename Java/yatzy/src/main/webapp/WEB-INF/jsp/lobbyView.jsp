@@ -27,7 +27,7 @@
 			</div>
 			<div class="lobbyGames">
 				<div class="item1"><p>Velg spill</p></div>
-				<div class="item2"><button>Spill $X</button></div>
+				<div class="item2"><a href="/spill"><button>Spill $X</button></a></div>
 				<div class="item3"><p>Spillere: $Y/6</p></div>
 			</div>
 		</div>
