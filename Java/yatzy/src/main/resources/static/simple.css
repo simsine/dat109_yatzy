@@ -148,10 +148,13 @@ main {
 }
 
 .gameDiceview {
+	display: flex;
+	flex-direction: column;
 	color: black;
 	background-color: beige;
 	border-radius: 25px;
 	padding: 20px;
+	text-align: center;
 }
 
 .centering {

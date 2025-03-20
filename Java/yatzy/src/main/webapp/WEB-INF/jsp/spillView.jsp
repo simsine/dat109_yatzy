@@ -15,8 +15,8 @@
 		<div class="header">
 			<h1>YATZY</h1>
 			<div class="logginnbox">
-					<p>Du er innlogget som $Navn</p>
-					<p>Mine spill→</p>
+				<p>Du er innlogget som $Navn</p>
+				<p>Mine spill→</p>
 			</div>
 		</div>
 		<div class="main">
@@ -29,40 +29,26 @@
 					</div>
 				</div>
 				<div class="item4">
-					<div class="mainGame">
-						<div class="gameDiceview">
-							<div class="centering">
-								<h2>Det er $navn sin tur</h2>
-							</div>
-							<div class="centering">
-								<img src="cursor.png" alt="Musepil som klikker" scale="1">
-								<p>Klikk på terningene du vil beholde</p>
-							</div>
-							<div class="centering">
-								<img src="terningEn.png" alt="Terning som viser én">
-								<img src="terningTo.png" alt="Terning som viser to">
-								<img src="terningTre.png" alt="Terning som viser tre">
-							</div>
-							<div>
-								<hr>
-							</div>
-							<div class="centering">
-								<img src="terningFire.png" alt="Terning som viser fire">
-								<img src="terningFem.png" alt="Terning som viser fem">
-							</div>
-							<div class="centering">
-								<p>Beholdt</p>
-							</div>
-							<div class="centering">
-								<p>Du har $X kast igjen</p>
-							</div>
-							<div class="centering">
-								<button>Trill terninger</button>
-							</div>
+					<div class="gameDiceview">
+							<h2>Det er $navn sin tur</h2>
+							<p><img src="cursor.png" alt="Musepil som klikker" scale="1">Klikk på terningene du vil beholde</p>
+						<div class="dies">
+							<img src="terningEn.png" alt="Terning som viser én">
+							<img src="terningTo.png" alt="Terning som viser to">
+							<img src="terningTre.png" alt="Terning som viser tre">
 						</div>
+						<div>
+							<hr>
+						</div>
+						<div class="dies">
+							<img src="terningFire.png" alt="Terning som viser fire">
+							<img src="terningFem.png" alt="Terning som viser fem">
+						</div>
+						<p>Beholdt</p>
+						<p>Du har $X kast igjen</p>
+						<button>Trill terninger</button>
 					</div>
-				</div>
-				
+				</div>	
 			</div>
 		</div>
 	</body>
