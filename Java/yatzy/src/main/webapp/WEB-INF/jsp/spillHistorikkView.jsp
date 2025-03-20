@@ -21,5 +21,10 @@
 				<a href="lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
+		<div class="main">
+			<div class="spillhistorikk">
+				<h2>Spillhistorikk<h2>
+			</div>
+		</div>
 	</body>
 </html>

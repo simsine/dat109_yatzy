@@ -155,6 +155,14 @@ main {
 	margin-bottom: 2rem;
 }
 
+.spillhistorikk {
+	text-align: center;
+}
+
+.spillhistorikk h2 {
+	margin-bottom: 2rem;
+}
+
 .lobbyGames {
 	display: grid;
 	grid-template-columns: auto auto auto;
