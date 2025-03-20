@@ -13,16 +13,10 @@
 	
 	<body>
 		<div class="header">
-			<div>
-				<h1>YATZY</h1>
-			</div>
+			<h1>YATZY</h1>
 			<div class="logginnbox">
-				<div>
-					<p>Du er innlogget som $Navn</p>
-				</div>
-				<div>
-					<p>Mine spill →</p>
-				</div>
+				<p>Du er innlogget som $Navn</p>
+				<p>Mine spill→</p>
 			</div>
 		</div>
 		<div class="main">

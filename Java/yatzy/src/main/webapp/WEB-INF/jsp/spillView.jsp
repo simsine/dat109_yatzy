@@ -10,19 +10,13 @@
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>
-	
+		
 	<body>
 		<div class="header">
-			<div>
-				<h1>YATZY</h1>
-			</div>
+			<h1>YATZY</h1>
 			<div class="logginnbox">
-				<div>
 					<p>Du er innlogget som $Navn</p>
-				</div>
-				<div>
-					<p>Mine spill →</p>
-				</div>
+					<p>Mine spill→</p>
 			</div>
 		</div>
 		<div class="main">
@@ -41,7 +35,7 @@
 								<h2>Det er $navn sin tur</h2>
 							</div>
 							<div class="centering">
-								<img src="cursor.png" scale="1">
+								<img src="cursor.png" alt="Musepil som klikker" scale="1">
 								<p>Klikk på terningene du vil beholde</p>
 							</div>
 							<div class="centering">
