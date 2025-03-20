@@ -77,7 +77,7 @@ public class PoengUtil {
 	}
 
 	private static HashMap<Integer, Integer> hashMapAvListe(List<Integer> liste) {
-		HashMap<Integer, Integer> map = new HashMap();
+		HashMap<Integer, Integer> map = new HashMap<>();
 		map.put(1, 0);
 		map.put(2, 0);
 		map.put(3, 0);

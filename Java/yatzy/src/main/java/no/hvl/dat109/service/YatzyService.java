@@ -1,10 +1,12 @@
 package no.hvl.dat109.service;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-
-import org.springframework.stereotype.Service;
+import java.util.ListIterator;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
@@ -21,14 +23,6 @@ public class YatzyService {
 	 */
 	public void startSpill() {
 		//TODO
-	}
-	
-	/**
-	 * Settermetode for om poeng er registrert for spiller
-	 * @param bool om poeng er registrert
-	 */
-	public void setPoengRegistrert(Boolean bool) {
-		
 	}
 
 	/**
@@ -56,7 +50,8 @@ public class YatzyService {
 		boolean erYatzy = PoengUtil.erYatzy(terninger);
 		if (erYatzy && !poengTabell.getErYatzyRegistrert()) {
 			poeng = PoengUtil.yatzy(terninger);
-			poengTabell.registrerPoeng(type, poeng);
+			poengTabell.registrerPoeng(PoengType.YATZY, poeng);
+			return poeng;
 		}
 		
 		switch (type) {
@@ -82,7 +77,7 @@ public class YatzyService {
 			poeng = PoengUtil.ettPar(terninger);
 			break;
 		case TO_PAR:
-			poeng = PoengUtil.femmere(terninger);
+			poeng = PoengUtil.ToPar(terninger);
 			break;
 		case TRE_LIKE:
 			poeng = PoengUtil.treLike(terninger);
@@ -112,15 +107,25 @@ public class YatzyService {
 		poengTabell.registrerPoeng(type, poeng);
 		return poeng;
 	}
-	
-	public void beholdTerningverdier(List<Integer> valgteTerningverdier) {
-		// TODO Auto-generated method stub
-		
-	}
 
-	public Poengtabell getPoengtabell() {
-		// TODO Auto-generated method stub
-		return null;
+	public PoengType getNesteType(PoengType typeNaa, Poengtabell poengtabell) {
+		if (typeNaa.equals(PoengType.YATZY)) {
+			return null;
+		}
+		List<PoengType> typeListe = new ArrayList<>(List.of(PoengType.values()));
+		typeListe.sort(Comparator.naturalOrder());
+		ListIterator<PoengType> it = typeListe.listIterator(typeListe.indexOf(typeNaa) + 1);
+		PoengType nesteType = it.next();
+		
+		if (nesteType.equals(PoengType.YATZY) && poengtabell.getErYatzyRegistrert()) {
+			return null;
+		}
+		
+		if (poengtabell.harTidligYatzy()) {
+			return typeNaa;
+		}
+		
+		return nesteType;
 	}
 	
 }
