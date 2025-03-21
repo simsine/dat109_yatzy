@@ -13,16 +13,10 @@
 	
 	<body>
 		<div class="header">
-			<div>
-				<h1>YATZY simulering</h1>
-			</div>
-			<div class="logginnbox">
-				<div>
-					<p>Du er innlogget som $Navn</p>
-				</div>
-				<div>
-					<p>Mine spill →</p>
-				</div>
+			<a href="/"><h1 class="unstyled link">YATZY simulering</h1></a>
+			<div class="menubox">
+				<p>Hei, $Navn!</p>
+				<p>Lobby→</p>
 			</div>
 		</div>
 		<div class="main">

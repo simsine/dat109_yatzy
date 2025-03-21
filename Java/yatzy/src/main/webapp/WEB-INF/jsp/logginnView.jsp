@@ -13,12 +13,12 @@
 	
 	<body>
 		<div class="header">
-			<div>
-				<h1>YATZY</h1>
-			</div>
+			<h1>
+				<a href="/" class="unstyled-link">YATZY</a>
+			</h1>
 		</div>
 		<div class="main">
-			<div class="logginnSchema">
+			<div class="schema">
 				<p>Logg inn</p>			
 			</div>
 		</div>

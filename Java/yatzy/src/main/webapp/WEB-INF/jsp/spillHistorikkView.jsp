@@ -13,16 +13,17 @@
 	
 	<body>
 		<div class="header">
-			<div>
-				<h1>YATZY</h1>
+			<h1>
+				<a href="/" class="unstyled-link">YATZY</a>
+			</h1>
+			<div class="menubox">
+				<p>Hei, $Navn!</p>
+				<a href="lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
-			<div class="logginnbox">
-				<div>
-					<p>Du er innlogget som $Navn</p>
-				</div>
-				<div>
-					<p>Mine spill →</p>
-				</div>
+		</div>
+		<div class="main">
+			<div class="spillhistorikk">
+				<h2>Spillhistorikk<h2>
 			</div>
 		</div>
 	</body>

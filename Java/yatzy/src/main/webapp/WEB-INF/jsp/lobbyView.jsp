@@ -13,20 +13,23 @@
 	
 	<body>
 		<div class="header">
-			<div>
-				<h1>YATZY</h1>
-			</div>
-			<div class="logginnbox">
-				<div>
-					<p>Du er innlogget som $Navn</p>
-				</div>
-				<div>
-					<p>Mine spill →</p>
-				</div>
+			<h1>
+				<a href="/" class="unstyled-link">YATZY</a>
+			</h1>
+			<div class="menubox">
+				<p>Hei, $Navn!</p>
+				<a href="/spillhistorikk" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>
 		<div class="main">
-			<p>Velg spill</p>
+			<div class="lobby">
+				<h2>Lobby<h2>
+			</div>
+			<div class="lobbyGames">
+				<div class="item1"><p>Velg spill</p></div>
+				<div class="item2"><a href="/spill"><button>Spill $X</button></a></div>
+				<div class="item3"><p>Spillere: $Y/6</p></div>
+			</div>
 		</div>
 	</body>
 </html>
