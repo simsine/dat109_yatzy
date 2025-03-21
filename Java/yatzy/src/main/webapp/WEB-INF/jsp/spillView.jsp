@@ -33,7 +33,7 @@
 				<div class="item4">
 					<div class="gameDiceview">
 							<h2>Det er $navn sin tur</h2>
-							<p><img src="cursor.png" alt="Musepil som klikker" scale="1">Klikk på terningene du vil beholde</p>
+							<p><img src="click.png" alt="Musepil som klikker" scale="1">Klikk på terningene du vil beholde</p>
 						<div>
 							<img src="terningEn.png" alt="Terning som viser én">
 							<img src="terningTo.png" alt="Terning som viser to">

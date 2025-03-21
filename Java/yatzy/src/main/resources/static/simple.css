@@ -132,8 +132,11 @@ main {
 }
 
 .schema {
-	display: flex;
-	flex-direction: column;
+	text-align: center;
+}
+
+.schema h2 {
+	padding: 2rem;
 }
 
 .menubox {
@@ -272,7 +275,7 @@ h3 {
 /* Format links & buttons */
 a,
 a:visited {
-  color: var(--accent);
+  color: var(--text);
 }
 
 a:hover {
