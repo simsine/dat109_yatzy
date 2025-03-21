@@ -19,7 +19,37 @@
 		</div>
 		<div class="main">
 			<div class="schema">
-				<p>Logg inn</p>			
+				<h2>Logg inn</h2>
+				<form method="POST" action="/innlogging">
+					<c:if test="${errors.size() > 0}">
+						<p style="color:red;">Feil:</p>
+						<ul style="color:red;">
+							<c:forEach var="e" items="${errors}">
+								<li>${e}</li>
+							</c:forEach>			
+						</ul>			
+					</c:if>
+					<!-- Må fikses -->
+					<fieldset>
+						<label for="epost">Epost</label>
+						<input
+						   type="text" id="epost" name="epost"
+						   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+						   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+						   oninput="this.setCustomValidity('')" 
+						   >
+					<!-- Må fikses -->
+						<label for="passord">Passord</label>
+						<input
+							type="text" id="passord" name="passord"
+							minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
+							oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+							oninput="this.setCustomValidity('')"
+							>
+						<br>
+						<input type="submit" value="Logg inn">
+					</fieldset>
+				</form>
 			</div>
 		</div>
 	</body>

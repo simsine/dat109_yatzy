@@ -132,8 +132,11 @@ main {
 }
 
 .schema {
-	display: flex;
-	flex-direction: column;
+	text-align: center;
+}
+
+.schema h2 {
+	padding: 2rem;
 }
 
 .menubox {
