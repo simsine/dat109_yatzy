@@ -49,6 +49,9 @@ public class YatzyService {
 		int poeng = 0;
 		boolean erYatzy = PoengUtil.erYatzy(terninger);
 		if (erYatzy && !poengTabell.getErYatzyRegistrert()) {
+			if(!poengTabell.allePoengRegistrert()) {
+				poengTabell.setHarTidligYatzy(true);
+			}
 			poeng = PoengUtil.yatzy(terninger);
 			poengTabell.registrerPoeng(PoengType.YATZY, poeng);
 			return poeng;
@@ -120,8 +123,8 @@ public class YatzyService {
 		if (nesteType.equals(PoengType.YATZY) && poengtabell.getErYatzyRegistrert()) {
 			return null;
 		}
-		
-		if (poengtabell.harTidligYatzy()) {
+		if (poengtabell.isHarTidligYatzy()) {
+			poengtabell.setHarTidligYatzy(false);
 			return typeNaa;
 		}
 		

@@ -1,14 +1,19 @@
 package no.hvl.dat109.yatzy;
 
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class Poengtabell {
 
 	private HashMap<PoengType, Integer> poeng;
-	private boolean erYatzyRegistrert;
+	
+	private boolean harTidligYatzy;
 
 	public Poengtabell() {
 		poeng = new HashMap<PoengType, Integer>();
+		setHarTidligYatzy(false);
 	}
 
 	/**
@@ -30,21 +35,39 @@ public class Poengtabell {
 	}
 
 	public boolean getErYatzyRegistrert() {
-		return erYatzyRegistrert;
+		return this.poeng.containsKey(PoengType.YATZY);
 	}
 
-	public void setErYatzyRegistrert(boolean yatzyRegistrert) {
-		this.erYatzyRegistrert = yatzyRegistrert;
-	}
 
 	public int getSum() {
 		return this.poeng.values().stream().reduce(0, Integer::sum);
 	}
-
-	public boolean harTidligYatzy() {
-		
-		boolean ikkeRegistrertAllePoeng = this.poeng.entrySet().stream().anyMatch(t -> t.getValue() == null);
-		
-		return erYatzyRegistrert && ikkeRegistrertAllePoeng;
+	
+	
+	public boolean isHarTidligYatzy() {
+		return harTidligYatzy;
 	}
+	
+	public void setHarTidligYatzy(boolean harTidligYatzy) {
+		this.harTidligYatzy = harTidligYatzy;
+	}
+	
+	public boolean allePoengRegistrert() {
+		return poeng.keySet().containsAll(Set.of(PoengType.values()));
+	}
+
+
+	
+	@Override
+	public String toString() {
+		
+		String ret = "";
+		
+		for (Entry<PoengType, Integer> set : this.poeng.entrySet()) {
+			ret += set.toString();
+		}
+		
+		return ret;
+	}
+
 }

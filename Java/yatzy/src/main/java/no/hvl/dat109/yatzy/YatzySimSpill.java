@@ -31,7 +31,8 @@ public class YatzySimSpill {
 	 * 
 	 * @return fullført poengtabell
 	 */
-	public Poengtabell simulerSpill() {
+	public Poengtabell simulerSpill() {		
+		poengtabell = new Poengtabell();
 		System.out.println("---------------------------------------------------");
 		System.out.println("Utfører simulering av fullstendig spill\n");
 		boolean ferdig = false;
@@ -51,7 +52,7 @@ public class YatzySimSpill {
 			 * List<Integer> beholdte = new ArrayList<>(terningverdier);
 			 * beholdte.removeLast(); beholdte.removeLast();
 			 */
-			List<Integer> beholdte = velgTerningerBareYatzy(terningverdier);
+			List<Integer> beholdte = velgTerninger(terningverdier, type);
 			System.out.println("Spiller valgte følgende terninger å beholde: " + beholdte.toString());
 
 			// POST /trill {beholdte terninger} 2
@@ -64,7 +65,7 @@ public class YatzySimSpill {
 			 * beholdte = new ArrayList<>(terningverdier); beholdte.removeLast();
 			 * beholdte.removeLast();
 			 */
-			beholdte = velgTerningerBareYatzy(terningverdier);
+			beholdte = velgTerninger(terningverdier, type);
 			System.out.println("Spiller valgte følgende terninger å beholde: " + beholdte.toString());
 
 			// POST /trill {beholdte terninger} 3
@@ -79,6 +80,7 @@ public class YatzySimSpill {
 			type = yatzyService.getNesteType(type, poengtabell);
 			if (type == null)
 				ferdig = true;
+		
 		} while (!ferdig);
 
 		System.out.println("\nSimulering er ferdig, sum er: " + poengtabell.getSum());
