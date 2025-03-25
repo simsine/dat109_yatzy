@@ -1,4 +1,4 @@
-package no.hvl.dat109.entiteter;
+package no.hvl.dat109.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

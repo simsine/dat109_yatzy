@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import no.hvl.dat109.entiteter.Poengtabell;
+import no.hvl.dat109.entity.Poengtabell;
 import no.hvl.dat109.service.YatzyService;
 import no.hvl.dat109.yatzy.PoengType;
 import no.hvl.dat109.yatzy.YatzySimSpill;
