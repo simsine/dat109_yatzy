@@ -472,7 +472,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:ClassItem>
 <UML:Class id="1c06716a-0957-11f0-9c45-b20c18aed960">
 <name>
-<val>Spiller</val>
+<val>Spiller(PK)</val>
 </name>
 <ownedAttribute>
 <reflist>
