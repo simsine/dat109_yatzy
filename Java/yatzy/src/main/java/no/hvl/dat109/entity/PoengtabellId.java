@@ -3,6 +3,9 @@ package no.hvl.dat109.entity;
 import java.io.Serializable;
 import java.util.Objects;
 
+import jakarta.persistence.Embeddable;
+
+@Embeddable
 public class PoengtabellId implements Serializable {
 	private String brukernavn;
 	private int spillNr;
