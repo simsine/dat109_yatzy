@@ -27,6 +27,126 @@
 				<div class="item2"><h2>Spill $X - $Enere</h2></div>
 				<div class="item3">
 					<div class="gameTable">
+						<table>
+						        <thead>
+						            <tr>
+						                <th>Kategori</th>
+						                <c:forEach var="player" items="${players}">
+						                    <th>${player.playerName}</th>
+						                </c:forEach>
+						            </tr>
+						        </thead>
+						        <tbody>
+						            <!-- Øvre seksjon -->
+						            <tr>
+						                <td>Enere</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.ones}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Toere</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.toere}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Treere</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.treere}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Firere</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.firere}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Femmere</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.femere}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Seksere</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.seksere}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Bonus</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.bonus}</td>
+						                </c:forEach>
+						            </tr>
+
+						            <!-- Nedre seksjon -->
+						            <tr>
+						                <td>Ett par</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.etPar}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>To par</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.twoPar}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Tre like</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.treLike}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Fire like</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.fireLike}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Liten straight</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.litenStraight}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Stor straight</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.storStraight}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Full house</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.hus}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Sjanse</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.sjansje}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Yatzy</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.yatzy}</td>
+						                </c:forEach>
+						            </tr>
+						            <tr>
+						                <td>Total score</td>
+						                <c:forEach var="player" items="${players}">
+						                    <td>${player.totalScore}</td>
+						                </c:forEach>
+						            </tr>
+						        </tbody>
+						    </table>
+						
+						
+						
 						<p>$GameTable</p>
 					</div>
 				</div>
