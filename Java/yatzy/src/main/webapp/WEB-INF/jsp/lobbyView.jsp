@@ -26,9 +26,8 @@
 				<h2>Lobby<h2>
 			</div>
 			<div class="lobbyGames">
-				<div class="item1"><p>Velg spill</p></div>
-				<div class="item2"><a href="/spill"><button>Spill $X</button></a></div>
-				<div class="item3"><p>Spillere: $Y/6</p></div>
+				<div class="item1"><a href="/spill"><button>Spill $X</button></a></div>
+				<div class="item2"><p>Spillere: $Y/6</p></div>
 			</div>
 		</div>
 	</body>
