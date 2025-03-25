@@ -435,6 +435,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="7fdab412-0957-11f0-9c45-b20c18aed960"/>
 <ref refid="99dae4ea-0957-11f0-9c45-b20c18aed960"/>
 <ref refid="bd610976-0957-11f0-9c45-b20c18aed960"/>
+<ref refid="a20ce9ca-095b-11f0-9c45-b20c18aed960"/>
 </reflist>
 </ownedAttribute>
 <owningPackage>
@@ -451,7 +452,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:Class>
 <UML:ClassItem id="0f340ace-0957-11f0-9c45-b20c18aed960">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 50.21484375, 107.23046875)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 50.21484375, 103.54296875)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -460,7 +461,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>147.0</val>
 </width>
 <height>
-<val>310.0</val>
+<val>325.0</val>
 </height>
 <diagram>
 <ref refid="3132c19a-71b3-11ec-a409-f47b099bf663"/>
@@ -497,7 +498,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:Class>
 <UML:ClassItem id="1c06afb8-0957-11f0-9c45-b20c18aed960">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 569.8046875, 191.0)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 569.8046875, 167.2268496334508)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -682,7 +683,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 197.81784580656307, 311.92189524420917)</val>
 </matrix>
 <points>
-<val>[(-0.6030020565630707, -77.62096030537919), (371.98684169343693, -48.42189524420917)]</val>
+<val>[(-0.6030020565630707, -75.1598893607584), (371.98684169343693, -72.19504561075837)]</val>
 </points>
 <head-connection>
 <ref refid="0f340ace-0957-11f0-9c45-b20c18aed960"/>
@@ -791,6 +792,14 @@ existing classes or even new classes with specific responsibilities.</val>
 </class_>
 <name>
 <val>Salt</val>
+</name>
+</UML:Property>
+<UML:Property id="a20ce9ca-095b-11f0-9c45-b20c18aed960">
+<class_>
+<ref refid="0f33546c-0957-11f0-9c45-b20c18aed960"/>
+</class_>
+<name>
+<val>+ SpillNr (PK)</val>
 </name>
 </UML:Property>
 </model>
