@@ -35,15 +35,14 @@
 						<input
 						   type="text" id="epost" name="epost"
 						   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-						   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+						   oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 						   oninput="this.setCustomValidity('')" 
 						   >
-					<!-- Må fikses -->
 						<label for="passord">Passord</label>
 						<input
 							type="text" id="passord" name="passord"
 							minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
-							oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+							oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 							oninput="this.setCustomValidity('')"
 							>
 						<br>

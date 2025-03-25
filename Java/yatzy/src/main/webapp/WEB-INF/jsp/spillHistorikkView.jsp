@@ -25,6 +25,10 @@
 			<div class="spillhistorikk">
 				<h2>Spillhistorikk<h2>
 			</div>
+			<div class="lobbyGames">
+				<div class="item1"><a href="/gameID"><button>Spill $X</button></a></div>
+				<div class="item2"><p>$25/03/25</p></div>
+			</div>
 		</div>
 	</body>
 </html>

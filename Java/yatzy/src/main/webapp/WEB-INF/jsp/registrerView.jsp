@@ -35,21 +35,35 @@
 								<input
 								   type="text" id="epost" name="epost"
 								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+								   oninvalid="this.setCustomValidity('Epost må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+								   oninput="this.setCustomValidity('')" 
+								   >
+						   <label for="fornavn">Fornavn</label>
+								<input
+								   type="text" id="fornavn" name="fornavn"
+								   minlength="2" maxlength="30" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
 								   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+								   oninput="this.setCustomValidity('')" 
+								   >
+							<label for="etternavn">Etternavn</label>
+								<input
+								   type="text" id="etternavn" name="etternavn"
+								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+								   oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 								   oninput="this.setCustomValidity('')" 
 								   >
 							<label for="passord">Passord</label>
 								<input
 									type="text" id="passord" name="passord"
 									minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
-									oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+									oninvalid="this.setCustomValidity('Passord må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 									oninput="this.setCustomValidity('')"
 									>
 							<label for="epost">Repeter passord</label>
 								<input
 								   type="text" id="epost" name="epost"
 								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-								   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+								   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
 								   oninput="this.setCustomValidity('')" 
 								   >
 							<br>
