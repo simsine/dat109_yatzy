@@ -49,6 +49,7 @@
 						<input type="submit" value="Logg inn">
 					</fieldset>
 				</form>
+				<p>Ikke registrert? Registrer deg <a href="/registrering">her</a>.</p>
 			</div>
 		</div>
 	</body>

@@ -17,7 +17,7 @@
 				<a href="/" class="unstyled-link">YATZY</a>
 			</h1>
 			<div class="menubox">
-				<p>Hei, $Navn!</p>
+				<p>Hei, $fornavn!</p>
 				<a href="lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>

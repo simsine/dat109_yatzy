@@ -15,8 +15,8 @@
 		<div class="header">
 			<a href="/"><h1 class="unstyled link">YATZY simulering</h1></a>
 			<div class="menubox">
-				<p>Hei, $Navn!</p>
-				<p>Lobby→</p>
+				<p>Hei, $fornavn!</p>
+				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>			
 			</div>
 		</div>
 		<div class="main">
