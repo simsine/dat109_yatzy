@@ -20,9 +20,9 @@ public class Poengtabell {
 	private boolean harTidligYatzy;
 	
 	@ElementCollection
-    @MapKeyColumn(name="name")
-    @Column(name="value")
-    @CollectionTable(name="example_attributes", joinColumns=@JoinColumn(name="example_id"))
+    @MapKeyColumn(name="Poeng")
+    @Column(name="Poeng")
+    @CollectionTable(name="PoengType", joinColumns=@JoinColumn(name="example_id"))
 	private HashMap<PoengType, Integer> poeng;
 	
 
