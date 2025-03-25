@@ -11,12 +11,13 @@
   --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
 
   /* Default (light) theme */
-  --bg: #fff;
-  --accent-bg: #f5f7ff;
-  --text: #212121;
+  --bg: #0d0d0d;
+  --light-bg: #f2f2f2;
+  --accent-bg: #d2d2d2;
+  --text: #0d0d0d;
   --text-light: #585858;
   --border: #d8dae1;
-  --accent: #0d47a1;
+  --accent: #f1bb14;
   --code: #d81b60;
   --preformatted: #444;
   --marked: #ffdd33;
@@ -182,8 +183,8 @@ main {
 
 .gameTable {
 	color: black;
-	background-color: beige;
-	border-radius: 25px;
+	background-color: var(--light-bg);
+	border-radius: 20px;
 	padding: 20px;
 }
 
@@ -191,8 +192,8 @@ main {
 	display: flex;
 	flex-direction: column;
 	color: black;
-	background-color: beige;
-	border-radius: 25px;
+	background-color: var(--light-bg);
+	border-radius: 20px;
 	padding: 20px;
 	text-align: center;
 }
@@ -215,30 +216,33 @@ body > footer {
 
 /* Format headers */
 h1 {
-  font-size: 3rem;
+  font-size: 136px;
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: 90px;
   margin-top: 3rem;
   margin: 0px;
 }
 
 h3 {
-  font-size: 1.6rem;
+  font-size: 60px;
   margin-top: 3rem;
 }
 
 h4 {
-  font-size: 1.44rem;
+  font-size: 40px;
 }
 
 h5 {
-  font-size: 1.15rem;
+  font-size: 27px;
 }
 
 h6 {
-  font-size: 0.96rem;
+  font-size: 18px;
+}
+p {
+	font-size: 12px;
 }
 
 /* Prevent long strings from overflowing container */
@@ -289,9 +293,10 @@ input[type="reset"],
 input[type="button"],
 label[type="button"] {
   border: none;
-  border-radius: 25px;
+  border-radius: 12px;
   background-color: var(--accent);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: bold;
   color: var(--bg);
   padding: 0.7rem 0.9rem;
   margin: 0.5rem 0;
@@ -487,7 +492,11 @@ td,
 th {
   border: 1px solid var(--border);
   text-align: left;
-  padding: 0.5rem;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  background-color: var(--accent-bg);
 }
 
 th {
@@ -496,10 +505,14 @@ th {
 }
 
 
-tr:nth-child(even) {
+tr) {
   /* Set every other cell slightly darker. Improves readability. */
-  background-color: var(--accent-bg);
+  background-color: var(--acccent-bg);
 }
+tr:nth-child(7), /* Bonus row */
+       tr:nth-child(17) /* Total score row */ {
+           font-weight: bold;
+       }
 
 table caption {
   font-weight: bold;
