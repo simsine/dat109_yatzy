@@ -1,15 +1,30 @@
-package no.hvl.dat109.yatzy;
+package no.hvl.dat109.entiteter;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapKeyColumn;
+import no.hvl.dat109.yatzy.PoengType;
+@Entity
 public class Poengtabell {
 
+	@Id
+	private SammensattNøkkel nøkkel;
+	private boolean harTidligYatzy;
+	
+	@ElementCollection
+    @MapKeyColumn(name="name")
+    @Column(name="value")
+    @CollectionTable(name="example_attributes", joinColumns=@JoinColumn(name="example_id"))
 	private HashMap<PoengType, Integer> poeng;
 	
-	private boolean harTidligYatzy;
 
 	public Poengtabell() {
 		poeng = new HashMap<PoengType, Integer>();

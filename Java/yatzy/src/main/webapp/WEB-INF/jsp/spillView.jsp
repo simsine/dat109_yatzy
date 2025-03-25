@@ -13,9 +13,9 @@
 		
 	<body>
 		<div class="header">
-			<h1>
+			<h6>
 				<a href="/" class="unstyled-link">YATZY</a>
-			</h1>
+			</h6>
 			<div class="menubox">
 				<p>Hei, $fornavn!</p>
 				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
@@ -24,7 +24,7 @@
 		<div class="main">
 			<div class="gameView">
 				<div class="item1"></div>
-				<div class="item2"><h2>Spill $X - $Enere</h2></div>
+				<div class="item2"><h6>Spill $X - $Enere</h6></div>
 				<div class="item3">
 					<div class="gameTable">
 						<table>
@@ -152,6 +152,8 @@
 				</div>
 				<div class="item4">
 					<div class="gameDiceview">
+
+							<h3>Det er $navn sin tur</h3>
 							<h2>Det er $fornavn sin tur</h2>
 							<p><img src="click.png" alt="Musepil som klikker" scale="1">Klikk på terningene du vil beholde</p>
 						<div>
