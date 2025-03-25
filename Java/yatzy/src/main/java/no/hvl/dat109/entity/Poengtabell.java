@@ -7,16 +7,28 @@ import java.util.Set;
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
+import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapKeyColumn;
 import no.hvl.dat109.yatzy.PoengType;
 @Entity
 public class Poengtabell {
 
-	@Id
-	private SammensattNøkkel nøkkel;
+	@EmbeddedId
+	private PoengtabellId poengtabellId;
+	
+	
+	public PoengtabellId getNøkkel() {
+		return poengtabellId;
+	}
+
+	public void setNøkkel(PoengtabellId nøkkel) {
+		this.poengtabellId = nøkkel;
+	}
+
+
+
 	private boolean harTidligYatzy;
 	
 	@ElementCollection
