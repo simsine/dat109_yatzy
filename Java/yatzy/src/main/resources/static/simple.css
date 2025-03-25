@@ -15,7 +15,7 @@
   --light-bg: #f2f2f2;
   --accent-bg: #d2d2d2;
   --text: #0d0d0d;
-  --text-light: #585858;
+  --text-light: #f2f2f2;
   --border: #0d0d0d;
   --accent: #f1bb14;
   --code: #d81b60;
@@ -196,6 +196,15 @@ main {
 	border-radius: 20px;
 	padding: 20px;
 	text-align: center;
+	height: 100%;
+	justify-content: space-between;
+	
+}
+.gameDiceContainer {
+	flex: 1;
+}
+.trillButton {
+	width: 100%;
 }
 
 .centering {
@@ -227,11 +236,14 @@ h2 {
 
 h3 {
   font-size: 60px;
-  margin-top: 3rem;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  
 }
 
 h4 {
   font-size: 40px;
+  margin: 0;
 }
 
 h5 {
@@ -240,7 +252,12 @@ h5 {
 
 h6 {
   font-size: 18px;
+  margin: 0px;
 }
+.white-text {
+	color: var(--text-light);
+}
+
 p {
 	font-size: 12px;
 }
@@ -279,7 +296,7 @@ h3 {
 /* Format links & buttons */
 a,
 a:visited {
-  color: var(--text);
+  color: var(--text-light);
 }
 
 a:hover {
@@ -506,13 +523,11 @@ th:first-child {
   font-weight: bold;
 }
 
+
 td {
   background-color: var(--accent-bg);
 }
 
-td:first-child {
-  font-weight: bold;
-}
 
 td:not(:first-child) {
   background-color: var(--light-bg);
@@ -523,8 +538,8 @@ tr) {
   /* Set every other cell slightly darker. Improves readability. */
   background-color: var(--acccent-bg);
 }
-tr:nth-child(7), /* Bonus row */
-       tr:nth-child(17) /* Total score row */ {
+tr:nth-child(7) td , /* Bonus row */
+       tr:nth-child(17) td /* Total score row */ {
            font-weight: bold;
        }
 
