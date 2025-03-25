@@ -70,6 +70,7 @@
 							<input type="submit" value="Registrer">
 						</fieldset>
 					</form>
+					<p>Har du allerede en bruker? Logg inn <a href="/innlogging">her</a>.</p>
 			</div>
 		</div>
 	</body>

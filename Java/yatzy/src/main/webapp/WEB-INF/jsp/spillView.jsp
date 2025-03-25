@@ -17,7 +17,7 @@
 				<a href="/" class="unstyled-link">YATZY</a>
 			</h1>
 			<div class="menubox">
-				<p>Hei, $Navn!</p>
+				<p>Hei, $fornavn!</p>
 				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
@@ -152,7 +152,7 @@
 				</div>
 				<div class="item4">
 					<div class="gameDiceview">
-							<h2>Det er $navn sin tur</h2>
+							<h2>Det er $fornavn sin tur</h2>
 							<p><img src="click.png" alt="Musepil som klikker" scale="1">Klikk på terningene du vil beholde</p>
 						<div>
 							<img src="terningEn.png" alt="Terning som viser én">
