@@ -433,9 +433,8 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="7bf468f2-0957-11f0-9c45-b20c18aed960"/>
 <ref refid="7db4fc2e-0957-11f0-9c45-b20c18aed960"/>
 <ref refid="7fdab412-0957-11f0-9c45-b20c18aed960"/>
-<ref refid="99dae4ea-0957-11f0-9c45-b20c18aed960"/>
-<ref refid="bd610976-0957-11f0-9c45-b20c18aed960"/>
 <ref refid="a20ce9ca-095b-11f0-9c45-b20c18aed960"/>
+<ref refid="456dad14-095e-11f0-ae32-b20c18aed960"/>
 </reflist>
 </ownedAttribute>
 <owningPackage>
@@ -452,7 +451,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:Class>
 <UML:ClassItem id="0f340ace-0957-11f0-9c45-b20c18aed960">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 50.21484375, 101.54296875)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 50.21484375, 100.91015625)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -472,7 +471,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:ClassItem>
 <UML:Class id="1c06716a-0957-11f0-9c45-b20c18aed960">
 <name>
-<val>Spiller(PK)</val>
+<val>Spiller</val>
 </name>
 <ownedAttribute>
 <reflist>
@@ -504,7 +503,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>117.0</val>
+<val>121.0</val>
 </width>
 <height>
 <val>145.0</val>
@@ -636,28 +635,12 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>Yatzy</val>
 </name>
 </UML:Property>
-<UML:Property id="99dae4ea-0957-11f0-9c45-b20c18aed960">
-<class_>
-<ref refid="0f33546c-0957-11f0-9c45-b20c18aed960"/>
-</class_>
-<name>
-<val>+ Poengtabell_Id (PK)</val>
-</name>
-</UML:Property>
 <UML:Property id="a5652ac8-0957-11f0-9c45-b20c18aed960">
 <class_>
 <ref refid="1c06716a-0957-11f0-9c45-b20c18aed960"/>
 </class_>
 <name>
-<val>Brukernavn</val>
-</name>
-</UML:Property>
-<UML:Property id="bd610976-0957-11f0-9c45-b20c18aed960">
-<class_>
-<ref refid="0f33546c-0957-11f0-9c45-b20c18aed960"/>
-</class_>
-<name>
-<val>+ Spiller_Id (FK)</val>
+<val>+ Brukernavn(PK)</val>
 </name>
 </UML:Property>
 <UML:AssociationItem id="367fdca6-0958-11f0-9c45-b20c18aed960">
@@ -683,7 +666,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 197.81784580656307, 311.92189524420917)</val>
 </matrix>
 <points>
-<val>[(-0.6030020565630707, -77.1598893607584), (371.98684169343693, -72.19504561075837)]</val>
+<val>[(-0.6030020565630707, -77.7927018607584), (371.98684169343693, -72.19504561075837)]</val>
 </points>
 <head-connection>
 <ref refid="0f340ace-0957-11f0-9c45-b20c18aed960"/>
@@ -800,6 +783,14 @@ existing classes or even new classes with specific responsibilities.</val>
 </class_>
 <name>
 <val>+ Brukernavn(PK)</val>
+</name>
+</UML:Property>
+<UML:Property id="456dad14-095e-11f0-ae32-b20c18aed960">
+<class_>
+<ref refid="0f33546c-0957-11f0-9c45-b20c18aed960"/>
+</class_>
+<name>
+<val>SpillNr(PK)</val>
 </name>
 </UML:Property>
 </model>
