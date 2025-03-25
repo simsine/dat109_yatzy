@@ -8,10 +8,10 @@ import java.util.ListIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import no.hvl.dat109.entity.Poengtabell;
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
-import no.hvl.dat109.yatzy.Poengtabell;
 
 @Service
 public class YatzyService {

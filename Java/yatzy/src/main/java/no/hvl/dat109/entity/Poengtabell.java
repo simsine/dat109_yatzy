@@ -1,15 +1,36 @@
-package no.hvl.dat109.yatzy;
+package no.hvl.dat109.entity;
 
 import java.util.HashMap;
-import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Convert;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import no.hvl.dat109.util.PoengConverter;
+import no.hvl.dat109.yatzy.PoengType;
+
+@Entity
 public class Poengtabell {
 
-	private HashMap<PoengType, Integer> poeng;
-	
+	@EmbeddedId
+	private PoengtabellId poengtabellId;
+
+	public PoengtabellId getNøkkel() {
+		return poengtabellId;
+	}
+
+	public void setNøkkel(PoengtabellId nøkkel) {
+		this.poengtabellId = nøkkel;
+	}
+
 	private boolean harTidligYatzy;
+
+	@Column(columnDefinition = "jsonb")
+	@Convert(converter = PoengConverter.class)
+	private Map<PoengType, Integer> poeng = new HashMap<>();
 
 	public Poengtabell() {
 		poeng = new HashMap<PoengType, Integer>();
@@ -30,7 +51,7 @@ public class Poengtabell {
 		return poeng.getOrDefault(type, 0);
 	}
 
-	public HashMap<PoengType, Integer> getAllePoeng() {
+	public Map<PoengType, Integer> getAllePoeng() {
 		return poeng;
 	}
 
@@ -38,35 +59,31 @@ public class Poengtabell {
 		return this.poeng.containsKey(PoengType.YATZY);
 	}
 
-
 	public int getSum() {
 		return this.poeng.values().stream().reduce(0, Integer::sum);
 	}
-	
-	
+
 	public boolean isHarTidligYatzy() {
 		return harTidligYatzy;
 	}
-	
+
 	public void setHarTidligYatzy(boolean harTidligYatzy) {
 		this.harTidligYatzy = harTidligYatzy;
 	}
-	
+
 	public boolean allePoengRegistrert() {
 		return poeng.keySet().containsAll(Set.of(PoengType.values()));
 	}
 
-
-	
 	@Override
 	public String toString() {
-		
+
 		String ret = "";
-		
+
 		for (Entry<PoengType, Integer> set : this.poeng.entrySet()) {
 			ret += set.toString();
 		}
-		
+
 		return ret;
 	}
 

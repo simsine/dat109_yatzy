@@ -1,8 +1,7 @@
-package no.hvl.dat109.yatzy;
+package no.hvl.dat109.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
 
 
 @Entity

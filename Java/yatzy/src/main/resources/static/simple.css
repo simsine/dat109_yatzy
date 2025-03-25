@@ -423,12 +423,10 @@ article, fieldset {
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-}
-
-fieldset .label {
-	display: flex;
-	align-items: flex-start;
-	text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 article h2:first-child,
@@ -553,6 +551,7 @@ input {
 }
 label {
   display: block;
+  text-align: left;
 }
 textarea:not([cols]) {
   width: 100%;

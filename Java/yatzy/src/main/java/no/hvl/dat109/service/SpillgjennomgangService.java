@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import no.hvl.dat109.entity.Poengtabell;
 import no.hvl.dat109.repo.PoengtabellRepo;
-import no.hvl.dat109.yatzy.Poengtabell;
 
 @Service
 public class SpillgjennomgangService {
