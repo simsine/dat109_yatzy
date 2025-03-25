@@ -479,6 +479,8 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="c5790950-0958-11f0-9c45-b20c18aed960"/>
 <ref refid="ee28249e-0958-11f0-9c45-b20c18aed960"/>
 <ref refid="efe8c4f0-0958-11f0-9c45-b20c18aed960"/>
+<ref refid="66e179de-095a-11f0-9c45-b20c18aed960"/>
+<ref refid="687d739c-095a-11f0-9c45-b20c18aed960"/>
 </reflist>
 </ownedAttribute>
 <owningPackage>
@@ -501,10 +503,10 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(0.0, 0.0)</val>
 </top-left>
 <width>
-<val>100.0</val>
+<val>117.0</val>
 </width>
 <height>
-<val>115.0</val>
+<val>145.0</val>
 </height>
 <diagram>
 <ref refid="3132c19a-71b3-11ec-a409-f47b099bf663"/>
@@ -680,7 +682,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <val>(1.0, 0.0, 0.0, 1.0, 197.81784580656307, 311.92189524420917)</val>
 </matrix>
 <points>
-<val>[(-0.6030020565630707, -77.62096030537919), (371.98684169343693, -63.42189524420917)]</val>
+<val>[(-0.6030020565630707, -77.62096030537919), (371.98684169343693, -48.42189524420917)]</val>
 </points>
 <head-connection>
 <ref refid="0f340ace-0957-11f0-9c45-b20c18aed960"/>
@@ -773,6 +775,22 @@ existing classes or even new classes with specific responsibilities.</val>
 </class_>
 <name>
 <val>Etternavn</val>
+</name>
+</UML:Property>
+<UML:Property id="66e179de-095a-11f0-9c45-b20c18aed960">
+<class_>
+<ref refid="1c06716a-0957-11f0-9c45-b20c18aed960"/>
+</class_>
+<name>
+<val>HashetPassord</val>
+</name>
+</UML:Property>
+<UML:Property id="687d739c-095a-11f0-9c45-b20c18aed960">
+<class_>
+<ref refid="1c06716a-0957-11f0-9c45-b20c18aed960"/>
+</class_>
+<name>
+<val>Salt</val>
 </name>
 </UML:Property>
 </model>
