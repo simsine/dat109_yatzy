@@ -128,6 +128,7 @@ public class SpillService {
 			break;
 		}
 		poengTabell.registrerPoeng(type, poeng);
+		poengtabellRepo.save(poengTabell);
 		return poeng;
 	}
 	

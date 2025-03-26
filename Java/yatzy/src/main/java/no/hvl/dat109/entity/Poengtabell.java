@@ -9,6 +9,8 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import no.hvl.dat109.util.PoengConverter;
 import no.hvl.dat109.yatzy.PoengType;
 
@@ -17,7 +19,10 @@ public class Poengtabell {
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
-
+	
+	@ManyToOne
+	@JoinColumn(name = "spillnr")
+	private Spill spill;
 	public PoengtabellId getNøkkel() {
 		return poengtabellId;
 	}
