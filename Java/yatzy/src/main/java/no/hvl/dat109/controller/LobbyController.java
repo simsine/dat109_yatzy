@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import no.hvl.dat109.entity.Spill;
@@ -17,12 +18,15 @@ public class LobbyController {
 	
 	@GetMapping("/")
 	public String getIndex() {
-		return "lobbyView";
+		return "redirect:/lobby";
 	}
 	
 	@GetMapping("/lobby")
-	public String getLobby() {
-		List<Spill> spill = spillService.hentAlleSpill();
+	public String getLobby(Model model) {
+		List<Spill> spillListe = spillService.hentAlleSpill();
+		
+		System.out.println("Spill liste: ");
+		model.addAttribute("spillListe", spillListe);
 		
 		return "lobbyView";
 	}

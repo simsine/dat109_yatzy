@@ -31,11 +31,11 @@ public class Spill {
 		
 	}
 
-	public Integer getSpillNr() {
+	public Integer getSpillnr() {
 		return spillnr;
 	}
 
-	public void setSpillNr(Integer spillNr) {
+	public void setSpillnr(Integer spillNr) {
 		this.spillnr = spillNr;
 	}
 

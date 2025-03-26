@@ -8,7 +8,6 @@
 		<meta charset="UTF-8">
 		<title>YATZY > Simulering</title>
 		<link rel="stylesheet" href="simple.css">
-		<script src="script.js"></script>
 	</head>
 	
 	<body>

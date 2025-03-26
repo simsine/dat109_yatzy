@@ -39,7 +39,7 @@ public class SpillService {
 		Poengtabell poengtabell = new Poengtabell();
 		System.out.println("Oppretter poengtabell");
 		
-		poengtabell.setNøkkel(new PoengtabellId("XFaze", nyttSpill.getSpillNr()));
+		poengtabell.setNøkkel(new PoengtabellId("XFaze", nyttSpill.getSpillnr()));
 		System.out.println("Setter id");
 
 		poengtabell = poengtabellRepo.save(poengtabell);
@@ -50,7 +50,7 @@ public class SpillService {
 
 		
 		
-		System.out.println("Spill: " + nyttSpill.getSpillNr());
+		System.out.println("Spill: " + nyttSpill.getSpillnr());
 		
 		
 		nyttSpill.setPoengtabeller(Arrays.asList(poengtabell));
@@ -68,7 +68,7 @@ public class SpillService {
 	}
 	
 	public List<Spill> hentAlleSpill() {
-		return null;
+		return spillRepo.findAll();
 	}
 	
 	public boolean erSpillFullt(Spill spill) {

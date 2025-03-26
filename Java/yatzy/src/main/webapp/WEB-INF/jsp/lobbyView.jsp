@@ -8,7 +8,6 @@
 		<meta charset="UTF-8">
 		<title>YATZY > Lobby</title>
 		<link rel="stylesheet" href="simple.css">
-		<script src="script.js"></script>
 	</head>
 	
 	<body>
@@ -26,16 +25,19 @@
 				<h2>Lobby<h2>
 			</div>
 			<div class="newGame">
-				<div class="item1"><a href="/spill"><button>Opprett nytt spill</button></a></div>
+				<form method="post" action="/spill/opprett">
+					<div class="item1">
+						<input type="hidden" value="XFaze" name="brukernavn">
+						<input type="submit" value="Opprett nytt spill">
+					</div>
+				</form>
 			</div>
-			<div class="lobbyGames">
-				<div class="item1"><a href="/spill/1"><button>Spill $1</button></a></div>
-				<div class="item2"><p>Spillere: $Y/6</p></div>
-			</div>
-			<div class="lobbyGames">
-				<div class="item1"><a href="/spill/2"><button>Spill $2</button></a></div>
-				<div class="item2"><p>Spillere: $Y/6</p></div>
-			</div>
+			<c:forEach var="spill" items="${spillListe}">
+				<div class="lobbyGames">
+					<div class="item1"><a href="/spill/${spill.spillnr}"><button>Spill ${spill.spillnr}</button></a></div>
+					<div class="item2"><p>Spillere: $Y/6</p></div>
+				</div>
+			</c:forEach>
 		</div>
 	</body>
 </html>

@@ -27,15 +27,14 @@ public class SpillController {
 	 */
 	@GetMapping("/spill/{id}")
 	public String getSpill(@PathVariable("id") String spillId) {
-
 		return "spillView";
 	}
 	
-	@GetMapping("/spill/opprett/{brukernavn}")
-	public String postOpprettSpill(@PathVariable("brukernavn") String brukernavn) {
+	@PostMapping("/spill/opprett/")
+	public String postOpprettSpill(String brukernavn) {
 		Spill nyttSpill = spillService.opprettNyttSpill(brukernavn);
 		
-		return "redirect:/spill/" + nyttSpill.getSpillNr();
+		return "redirect:/spill/" + nyttSpill.getSpillnr();
 	}
 	
 	@PostMapping("/spill/{id}/blimed")
@@ -56,7 +55,7 @@ public class SpillController {
 		
 //		spillService.leggtilSpiller();
 		
-		return "redirect:/spill/" + spill.getSpillNr();
+		return "redirect:/spill/" + spill.getSpillnr();
 	}
 	
 }
