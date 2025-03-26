@@ -25,7 +25,7 @@ class YatzyServiceTest {
 	private Kopp kopp;
 
 	@InjectMocks
-	private YatzyService yatzyService;
+	private SpillService yatzyService;
 
 	private Poengtabell poengtabell;
 
