@@ -6,6 +6,10 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
 
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.Type;
+import org.hibernate.type.SqlTypes;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.EmbeddedId;
@@ -30,6 +34,7 @@ public class Poengtabell {
 		this.poengtabellId = nøkkel;
 	}
 
+	@JdbcTypeCode(SqlTypes.JSON)
 	@Column(columnDefinition = "jsonb")
 	@Convert(converter = PoengConverter.class)
 	private Map<PoengType, Integer> poeng = new HashMap<>();

@@ -27,12 +27,12 @@ public class SpillController {
 	 */
 	@GetMapping("/spill/{id}")
 	public String getSpill(@PathVariable("id") String spillId) {
-		
+
 		return "spillView";
 	}
 	
-	@PostMapping("/spill/opprett")
-	public String postOpprettSpill(@RequestParam String brukernavn) {
+	@GetMapping("/spill/opprett/{brukernavn}")
+	public String postOpprettSpill(@PathVariable("brukernavn") String brukernavn) {
 		Spill nyttSpill = spillService.opprettNyttSpill(brukernavn);
 		
 		return "redirect:/spill/" + nyttSpill.getSpillNr();

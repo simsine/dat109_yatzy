@@ -32,15 +32,26 @@ public class SpillService {
 	 */
 	public Spill opprettNyttSpill(String brukernavn) {
 		Spill nyttSpill = new Spill();
+		nyttSpill = spillRepo.save(nyttSpill);
 		
-		spillRepo.save(nyttSpill);
+		System.out.println("Lagrer nytt spill");
 		
-		System.out.println("Spill: " + nyttSpill.toString());
 		Poengtabell poengtabell = new Poengtabell();
+		System.out.println("Oppretter poengtabell");
 		
-		poengtabellRepo.save(poengtabell);
+		poengtabell.setNøkkel(new PoengtabellId("XFaze", nyttSpill.getSpillNr()));
+		System.out.println("Setter id");
+
+		poengtabell = poengtabellRepo.save(poengtabell);
 		
-		poengtabell.setNøkkel(new PoengtabellId(brukernavn, nyttSpill.getSpillNr()));
+		
+		System.out.println("Lagrer poengtabell");
+		
+
+		
+		
+		System.out.println("Spill: " + nyttSpill.getSpillNr());
+		
 		
 		nyttSpill.setPoengtabeller(Arrays.asList(poengtabell));
 		
