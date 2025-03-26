@@ -30,7 +30,7 @@ public class SpillController {
 		return "spillView";
 	}
 	
-	@PostMapping("/spill/opprett/")
+	@PostMapping("/spill/opprett")
 	public String postOpprettSpill(String brukernavn) {
 		Spill nyttSpill = spillService.opprettNyttSpill(brukernavn);
 		

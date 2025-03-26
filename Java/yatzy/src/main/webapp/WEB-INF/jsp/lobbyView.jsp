@@ -7,7 +7,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>YATZY > Lobby</title>
-		<link rel="stylesheet" href="simple.css">
+		<link rel="stylesheet" href="/simple.css">
 	</head>
 	
 	<body>
