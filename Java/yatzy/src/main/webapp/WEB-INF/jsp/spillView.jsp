@@ -14,7 +14,7 @@
 <body>
     <div class="header">
         <h3 class="white-text">
-            <a href="/">YATZY</a>
+            <a href="/" class="unstyled-link">YATZY<img src="YatzyLogo2.png"></a>
         </h3>
         <div class="menubox">
             <p class="white-text">Hei, ${fornavn}!</p>

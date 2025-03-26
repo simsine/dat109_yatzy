@@ -13,7 +13,7 @@
 	
 	<body>
 		<div class="header">
-			<a href="/"><h1 class="unstyled link">YATZY simulering</h1></a>
+			<a href="/" class="unstyled-link">YATZY sim<img src="YatzyLogo2.png"></a>
 			<div class="menubox">
 				<p>Hei, $fornavn!</p>
 				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>			
