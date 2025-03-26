@@ -34,19 +34,28 @@ public class SpillController {
 	public String postOpprettSpill() {
 		Spill nyttSpill = spillService.opprettNyttSpill();
 		
-		return "redirect:/spill/" + nyttSpill.getId();
+		return "redirect:/spill/" + nyttSpill.getSpillNr();
 	}
 	
 	@PostMapping("/spill/{id}/blimed")
-	public String postBliMedISpill(@PathVariable("id") String spillId, Model model) {
-		Optional<Spill> spill = spillService.hentSpillEtterId(spillId);
+	public String postBliMedISpill(@PathVariable("id") Integer spillId, Model model) {
+		Optional<Spill> spillOption = spillService.hentSpillEtterNr(spillId);
 		
-		if (spill.)
-		
-		if (spillService.erSpillFullt()) {
-			model.addAttribute("feilmelding", "Spill er allerede fullt");
+		if (spillOption.isEmpty()) {
+			model.addAttribute("feilmelding", "Fant ingen spill med den id'en");
+			return "/lobby";
 		}
 		
+		Spill spill = spillOption.get();
+		
+		if (spillService.erSpillFullt(spill)) {
+			model.addAttribute("feilmelding", "Spill er allerede fullt");
+			return "/lobby";
+		}
+		
+		spillService.leggtilSpiller();
+		
+		return "redirect:/spill/" + spill.getSpillNr();
 	}
 	
 }

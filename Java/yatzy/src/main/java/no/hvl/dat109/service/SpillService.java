@@ -1,6 +1,7 @@
 package no.hvl.dat109.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,8 @@ public class SpillService {
 	@Autowired Kopp kopp;
 	
 	@Autowired PoengtabellRepo poengtabellRepo;
+	@Autowired SpillService spillService;
+	
 	
 	/**
 	 * Opprettter ett nytt tomt spill
@@ -25,8 +28,25 @@ public class SpillService {
 	 * @return
 	 */
 	public Spill opprettNyttSpill() {
+		Spill spill = new Spill();
 		return null;
+	}
+	
+	/**
+	 * Henter ett eksisterende spill
+	 * @return Optional spill
+	 */
+	public Optional<Spill> hentSpillEtterNr(Integer nr ) {
 		// TODO
+		return null;
+	}
+	
+	public List<Spill> hentAlleSpill() {
+		return null;
+	}
+	
+	public boolean erSpillFullt(Spill spill) {
+		return false;
 	}
 	
 	/**

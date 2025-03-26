@@ -13,10 +13,12 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import no.hvl.dat109.util.PoengConverter;
 import no.hvl.dat109.yatzy.PoengType;
 
 @Entity
+@Table(schema = "yatzy")
 public class Poengtabell {
 
 	@EmbeddedId

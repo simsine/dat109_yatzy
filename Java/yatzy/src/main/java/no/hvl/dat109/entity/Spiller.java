@@ -2,9 +2,11 @@ package no.hvl.dat109.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 
 @Entity
+@Table(schema = "yatzy")
 public class Spiller {
 	@Id
 	private String brukernavn;

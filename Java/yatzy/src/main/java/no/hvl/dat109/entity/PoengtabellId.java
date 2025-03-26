@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Embeddable;
+import jakarta.persistence.Table;
 
 @Embeddable
+@Table(schema = "yatzy")
 public class PoengtabellId implements Serializable {
 	private String brukernavn;
 	private int spillNr;
