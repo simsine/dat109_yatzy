@@ -25,8 +25,15 @@
 			<div class="lobby">
 				<h2>Lobby<h2>
 			</div>
+			<div class="newGame">
+				<div class="item1"><a href="/spill"><button>Opprett nytt spill</button></a></div>
+			</div>
 			<div class="lobbyGames">
-				<div class="item1"><a href="/spill"><button>Spill $X</button></a></div>
+				<div class="item1"><a href="/spill/1"><button>Spill $1</button></a></div>
+				<div class="item2"><p>Spillere: $Y/6</p></div>
+			</div>
+			<div class="lobbyGames">
+				<div class="item1"><a href="/spill/2"><button>Spill $2</button></a></div>
 				<div class="item2"><p>Spillere: $Y/6</p></div>
 			</div>
 		</div>
