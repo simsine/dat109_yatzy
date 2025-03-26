@@ -8,13 +8,15 @@
 		<meta charset="UTF-8">
 		<title>YATZY > Simulering</title>
 		<link rel="stylesheet" href="/simple.css">
+		<title>Yatzy > Simulering</title>
+		<link rel="stylesheet" href="simple.css">
 	</head>
 	
 	<body>
 		<div class="header">
 			<a href="/" class="unstyled-link">YATZY sim<img src="YatzyLogo.png"></a>
 			<div class="menubox">
-				<p>Hei, $fornavn!</p>
+				<p>Hei, ${fornavn}</p>
 				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>			
 			</div>
 		</div>

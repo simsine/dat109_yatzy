@@ -8,6 +8,8 @@
 		<meta charset="UTF-8">
 		<title>YATZY > Historikk</title>
 		<link rel="stylesheet" href="/simple.css">
+		<title>Yatzy > Historikk</title>
+		<link rel="stylesheet" href="simple.css">
 	</head>
 	
 	<body>
@@ -16,7 +18,7 @@
 				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png"></a>
 			</h1>
 			<div class="menubox">
-				<p>Hei, $fornavn!</p>
+				<p>Hei, ${fornavn}</p>
 				<a href="lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>

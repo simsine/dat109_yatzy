@@ -16,7 +16,7 @@
 				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png"></a>
 			</h1>
 			<div class="menubox">
-				<p>Hei, $fornavn!</p>
+				<p>Hei, ${fornavn}</p>
 				<a href="/spillhistorikk" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>
