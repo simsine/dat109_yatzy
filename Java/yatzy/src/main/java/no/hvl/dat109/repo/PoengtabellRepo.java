@@ -10,6 +10,7 @@ import no.hvl.dat109.entity.Poengtabell;
 @Repository
 public interface PoengtabellRepo extends JpaRepository<Poengtabell, Integer> {
 	List<Poengtabell> findByBrukernavn(String brukernavn);
-
 	List<Poengtabell> findBySpillnr(int spillNr);
+	
+	Poengtabell findByBrukernavnAndSpillnr(String brukernavn, int spillNr);
 }
