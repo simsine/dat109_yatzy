@@ -1,8 +1,10 @@
 package no.hvl.dat109.entity;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -19,10 +21,11 @@ public class Poengtabell {
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "spillnr")
 	private Spill spill;
+
 	public PoengtabellId getNøkkel() {
 		return poengtabellId;
 	}
@@ -103,14 +106,20 @@ public class Poengtabell {
 	 * @return PoengType
 	 */
 	public PoengType finnForsteIkkeRegistrerteType() {
-		Entry<PoengType, Integer> type = this.getAllePoeng().entrySet().stream().sorted()
-				.filter(t -> t.getValue().equals(-1)).findFirst().orElse(null);
+
+		Map<PoengType, Integer> sortedMap = this.getAllePoeng().entrySet().stream().sorted(Map.Entry.comparingByKey())
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue,
+						LinkedHashMap::new));
+
+		Entry<PoengType, Integer> type = sortedMap.entrySet().stream().filter(t -> t.getValue().equals(-1)).findFirst()
+				.orElse(null);
+
 		if (type == null)
 			return null;
 		PoengType poengType = type.getKey();
 		if (poengType.equals(PoengType.YATZY) && this.getErYatzyRegistrert()) {
 			return null;
-		}	
+		}
 		return type.getKey();
 	}
 

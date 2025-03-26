@@ -1,15 +1,12 @@
 package no.hvl.dat109.service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import no.hvl.dat109.entity.Poengtabell;
+import no.hvl.dat109.entity.Spill;
 import no.hvl.dat109.repo.PoengtabellRepo;
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
@@ -28,6 +25,7 @@ public class SpillService {
 	 * @return
 	 */
 	public Spill opprettNyttSpill() {
+		return null;
 		// TODO
 	}
 	
