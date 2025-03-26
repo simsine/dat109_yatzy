@@ -18,7 +18,7 @@ import no.hvl.dat109.service.SpillService;
 public class YatzySimSpill {
 
 	@Autowired
-	SpillService yatzyService;
+	SpillService spillService;
 
 	Poengtabell poengtabell;
 
@@ -43,7 +43,7 @@ public class YatzySimSpill {
 
 			// POST /trill {tom liste} 1
 			List<Integer> terningverdier = new ArrayList<Integer>();
-			terningverdier = yatzyService.spillTrekk(terningverdier);
+			terningverdier = spillService.spillTrekk(terningverdier);
 			System.out.println("Spiller kastet følgende terninger: " + terningverdier.toString());
 			// return terningverdier
 
@@ -56,7 +56,7 @@ public class YatzySimSpill {
 			System.out.println("Spiller valgte følgende terninger å beholde: " + beholdte.toString());
 
 			// POST /trill {beholdte terninger} 2
-			terningverdier = yatzyService.spillTrekk(beholdte);
+			terningverdier = spillService.spillTrekk(beholdte);
 			System.out.println("Spiller kastet følgende terninger: " + terningverdier.toString());
 			// return terningverdier
 
@@ -69,15 +69,15 @@ public class YatzySimSpill {
 			System.out.println("Spiller valgte følgende terninger å beholde: " + beholdte.toString());
 
 			// POST /trill {beholdte terninger} 3
-			terningverdier = yatzyService.spillTrekk(beholdte);
+			terningverdier = spillService.spillTrekk(beholdte);
 			System.out.println("Spiller kastet følgende terninger: " + terningverdier.toString());
 
-			int poeng = yatzyService.registrerPoeng(poengtabell, type, terningverdier);
+			int poeng = spillService.registrerPoeng(poengtabell, type, terningverdier);
 			System.out.println("Spiller fikk " + (poeng == 50 ? PoengType.YATZY.toString() : type.toString()) + " resultat: " + poeng);
 			// return poengtabell
 
 			// GET /nesterunde
-			type = yatzyService.getNesteType(type, poengtabell);
+			type = spillService.getNesteType(type, poengtabell);
 			if (type == null)
 				ferdig = true;
 		

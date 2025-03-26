@@ -14,9 +14,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import no.hvl.dat109.entity.Poengtabell;
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
-import no.hvl.dat109.yatzy.Poengtabell;
 
 @ExtendWith(MockitoExtension.class)
 class YatzyServiceTest {

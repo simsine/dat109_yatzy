@@ -11,14 +11,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import no.hvl.dat109.service.SpillService;
 import no.hvl.dat109.yatzy.PoengType;
-import no.hvl.dat109.yatzy.Poengtabell;
 import no.hvl.dat109.yatzy.YatzySimSpill;
 
 @Controller
 public class SimulerController {
 
 	@Autowired
-	SpillService yatzyService;
+	SpillService spillService;
 	@Autowired
 	YatzySimSpill yatzySimSpill;
 
