@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import no.hvl.dat109.entity.Poengtabell;
+import no.hvl.dat109.repo.PoengtabellRepo;
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
@@ -17,7 +18,7 @@ import no.hvl.dat109.yatzy.PoengType;
 public class SpillService {
 	
 	@Autowired Kopp kopp;
-	
+	@Autowired PoengtabellRepo poengtabellRepo;
 	/**
 	 * Opprettter ett nytt tomt spill
 	 * 
@@ -117,6 +118,7 @@ public class SpillService {
 			break;
 		}
 		poengTabell.registrerPoeng(type, poeng);
+		poengtabellRepo.save(poengTabell);
 		return poeng;
 	}
 
