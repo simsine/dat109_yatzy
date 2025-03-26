@@ -9,7 +9,7 @@
 		<title>YATZY > Simulering</title>
 		<link rel="stylesheet" href="/simple.css">
 		<title>Yatzy > Simulering</title>
-		<link rel="stylesheet" href="simple.css">
+		<link rel="stylesheet" href="/simple.css">
 	</head>
 	
 	<body>
