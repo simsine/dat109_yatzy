@@ -24,7 +24,7 @@
     <div class="main">
         <div class="gameView">
             <div class="item1">
-                <h6 class="white-text">Spill $Nummer - $Enere</h6>
+                <h6 class="white-text">Spill ${spillnr} - $Enere</h6>
             </div>
             <div class="item2"></div>
 

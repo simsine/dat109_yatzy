@@ -170,7 +170,6 @@ main p {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 2rem;
-	padding: 2rem;
 }
 
 .gameView {
@@ -544,14 +543,14 @@ td:not(:first-child) {
   font-weight: normal;
 }
 
-tr) {
+tr {
   /* Set every other cell slightly darker. Improves readability. */
   background-color: var(--acccent-bg);
 }
 tr:nth-child(7) td , /* Bonus row */
-       tr:nth-child(17) td /* Total score row */ {
-           font-weight: bold;
-       }
+tr:nth-child(17) td /* Total score row */ {
+	font-weight: bold;
+}
 
 table caption {
   font-weight: bold;
