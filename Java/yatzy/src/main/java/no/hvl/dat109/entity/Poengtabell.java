@@ -11,6 +11,7 @@ import jakarta.persistence.Convert;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import no.hvl.dat109.util.PoengConverter;
 import no.hvl.dat109.yatzy.PoengType;
 
@@ -33,6 +34,15 @@ public class Poengtabell {
 	@Convert(converter = PoengConverter.class)
 	private Map<PoengType, Integer> poeng = new HashMap<>();
 
+	public Map<PoengType, Integer> getPoeng() {
+		return poeng;
+	}
+
+	public void setPoeng(Map<PoengType, Integer> poeng) {
+		this.poeng = poeng;
+	}
+
+	@Transient
 	private boolean harTidligYatzy;
 
 	public Poengtabell() {
