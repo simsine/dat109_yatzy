@@ -9,50 +9,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import no.hvl.dat109.service.YatzyService;
+import no.hvl.dat109.service.SpillService;
 import no.hvl.dat109.yatzy.PoengType;
 import no.hvl.dat109.yatzy.Poengtabell;
 import no.hvl.dat109.yatzy.YatzySimSpill;
 
 @Controller
-public class YatzyController {
+public class SimulerController {
 
 	@Autowired
-	YatzyService yatzyService;
+	SpillService yatzyService;
 	@Autowired
 	YatzySimSpill yatzySimSpill;
-
-	// GET
-
-	@GetMapping("/")
-	public String getIndex() {
-		return "lobbyView";
-	}
-
-	@GetMapping("/lobby")
-	public String getLobby() {
-		return "lobbyView";
-	}
-
-	@GetMapping("/innlogging")
-	public String getInnlogging() {
-		return "logginnView";
-	}
-
-	@GetMapping("/registrering")
-	public String getRegistrering() {
-		return "registrerView";
-	}
-
-	@GetMapping("/spill")
-	public String getSpill() {
-		return "spillView";
-	}
-
-	@GetMapping("/spillhistorikk")
-	public String getSpillhistorikk() {
-		return "spillHistorikkView";
-	}
 
 	@GetMapping("/simuler")
 	public String getSimuler(Model model) {
@@ -71,6 +39,4 @@ public class YatzyController {
 		model.addAttribute("poengSum", poengTabell.getSum());
 		return "simView";
 	}
-	// POST
-
 }

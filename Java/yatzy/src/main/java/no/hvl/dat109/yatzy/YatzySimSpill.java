@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import no.hvl.dat109.service.YatzyService;
+import no.hvl.dat109.service.SpillService;
 
 /**
  * Simulerer et fullstendig yatzyspill
@@ -18,7 +18,7 @@ import no.hvl.dat109.service.YatzyService;
 public class YatzySimSpill {
 
 	@Autowired
-	YatzyService yatzyService;
+	SpillService yatzyService;
 
 	Poengtabell poengtabell;
 

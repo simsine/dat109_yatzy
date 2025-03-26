@@ -14,9 +14,18 @@ import no.hvl.dat109.yatzy.PoengType;
 import no.hvl.dat109.yatzy.Poengtabell;
 
 @Service
-public class YatzyService {
+public class SpillService {
 	
 	@Autowired Kopp kopp;
+	
+	/**
+	 * Opprettter ett nytt tomt spill
+	 * 
+	 * @return
+	 */
+	public Spill opprettNyttSpill() {
+		// TODO
+	}
 	
 	/**
 	 * Starter et nytt yatzy spill fra contolleren
