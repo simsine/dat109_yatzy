@@ -10,14 +10,14 @@ import jakarta.persistence.Table;
 @Table(schema = "yatzy")
 public class PoengtabellId implements Serializable {
 	private String brukernavn;
-	private int spillNr;
+	private int spillnr;
 
 	public PoengtabellId() {
 	}
 
 	public PoengtabellId(String brukernavn, int spillNr) {
 		this.brukernavn = brukernavn;
-		this.spillNr = spillNr;
+		this.spillnr = spillNr;
 	}
 
 	public String getBrukernavn() {
@@ -29,16 +29,16 @@ public class PoengtabellId implements Serializable {
 	}
 
 	public int getSpillNr() {
-		return spillNr;
+		return spillnr;
 	}
 
 	public void setSpillNr(int spillNr) {
-		this.spillNr = spillNr;
+		this.spillnr = spillNr;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(brukernavn, spillNr);
+		return Objects.hash(brukernavn, spillnr);
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class PoengtabellId implements Serializable {
 		if (o == null || getClass() != o.getClass())
 			return false;
 		PoengtabellId that = (PoengtabellId) o;
-		return spillNr == that.spillNr && Objects.equals(brukernavn, that.brukernavn);
+		return spillnr == that.spillnr && Objects.equals(brukernavn, that.brukernavn);
 	}
 
 }

@@ -5,14 +5,11 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.stream.Collectors;
-import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import no.hvl.dat109.util.PoengConverter;
 import no.hvl.dat109.yatzy.PoengType;
@@ -23,10 +20,6 @@ public class Poengtabell {
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
-
-	@ManyToOne
-	@JoinColumn(name = "spillnr")
-	private Spill spill;
 
 	public PoengtabellId getNøkkel() {
 		return poengtabellId;

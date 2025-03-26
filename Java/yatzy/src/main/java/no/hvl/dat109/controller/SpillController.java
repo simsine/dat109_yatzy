@@ -32,7 +32,7 @@ public class SpillController {
 	
 	@PostMapping("/spill/opprett")
 	public String postOpprettSpill() {
-		Spill nyttSpill = spillService.opprettNyttSpill();
+		Spill nyttSpill = spillService.opprettNyttSpill("bjarne");
 		
 		return "redirect:/spill/" + nyttSpill.getSpillNr();
 	}
@@ -53,7 +53,7 @@ public class SpillController {
 			return "/lobby";
 		}
 		
-		spillService.leggtilSpiller();
+//		spillService.leggtilSpiller();
 		
 		return "redirect:/spill/" + spill.getSpillNr();
 	}

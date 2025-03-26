@@ -1,5 +1,6 @@
 package no.hvl.dat109.service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
@@ -7,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import no.hvl.dat109.entity.Poengtabell;
+import no.hvl.dat109.entity.PoengtabellId;
 import no.hvl.dat109.entity.Spill;
 import no.hvl.dat109.repo.PoengtabellRepo;
+import no.hvl.dat109.repo.SpillRepo;
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
@@ -19,7 +22,8 @@ public class SpillService {
 	@Autowired Kopp kopp;
 	
 	@Autowired PoengtabellRepo poengtabellRepo;
-	@Autowired SpillService spillService;
+	
+	@Autowired SpillRepo spillRepo;
 	
 	
 	/**
@@ -27,9 +31,18 @@ public class SpillService {
 	 * 
 	 * @return
 	 */
-	public Spill opprettNyttSpill() {
-		Spill spill = new Spill();
-		return null;
+	public Spill opprettNyttSpill(String brukernavn) {
+		Spill nyttSpill = new Spill();
+		
+		Poengtabell poengtabell = new Poengtabell();
+		
+		poengtabell.setNøkkel(new PoengtabellId(brukernavn, nyttSpill.getSpillNr()));
+		
+		nyttSpill.setPoengtabeller(Arrays.asList(poengtabell));
+		
+		spillRepo.save(nyttSpill);
+		
+		return nyttSpill;
 	}
 	
 	/**

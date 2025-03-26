@@ -6,11 +6,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import no.hvl.dat109.entity.Poengtabell;
+import no.hvl.dat109.entity.PoengtabellId;
 
 @Repository
-public interface PoengtabellRepo extends JpaRepository<Poengtabell, Integer> {
-	List<Poengtabell> findByBrukernavn(String brukernavn);
-	List<Poengtabell> findBySpillnr(int spillNr);
-	
-	Poengtabell findByBrukernavnAndSpillnr(String brukernavn, int spillNr);
+public interface PoengtabellRepo extends JpaRepository<Poengtabell, PoengtabellId> {
+
 }

@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
@@ -16,12 +18,13 @@ public class Spill {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer spillNr;
 	
-	@OneToMany(mappedBy = "spill")
-	private List<Poengtabell> poengtabeller;
+	@OneToMany
+	@JoinColumn(name = "spillnr")
+	private List<Poengtabell> poengTabeller;
 
 	public Spill(List<Poengtabell> poengtabeller) {
 		super();
-		this.poengtabeller = poengtabeller;
+		this.poengTabeller = poengtabeller;
 	}
 	
 	public Spill() {
@@ -37,11 +40,11 @@ public class Spill {
 	}
 
 	public List<Poengtabell> getPoengtabeller() {
-		return poengtabeller;
+		return poengTabeller;
 	}
 
 	public void setPoengtabeller(List<Poengtabell> poengtabeller) {
-		this.poengtabeller = poengtabeller;
+		this.poengTabeller = poengtabeller;
 	}
 	
 	
