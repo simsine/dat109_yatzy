@@ -566,12 +566,13 @@ input {
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   color: var(--text);
-  background-color: var(--bg);
+  background-color: var(--light-bg);
   border: 1px solid var(--border);
   border-radius: 5px;
   box-shadow: none;
   max-width: 100%;
   display: inline-block;
+  caret-color: var(--bg);
 }
 
 label {
