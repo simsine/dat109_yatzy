@@ -6,7 +6,7 @@
 <html lang="no">
 <head>
     <meta charset="UTF-8">
-    <title>Yatzy > Spill</title>
+    <title>YATZY > Spill</title>
     <link rel="stylesheet" href="simple.css">
     <script src="script.js"></script>
 </head>
@@ -14,21 +14,21 @@
 <body>
     <div class="header">
         <h3 class="white-text">
-            <a href="/">YATZY</a>
+            <a href="/" class="unstyled-link">YATZY<img src="YatzyLogo2.png"></a>
         </h3>
         <div class="menubox">
             <p class="white-text">Hei, ${fornavn}!</p>
             <a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
         </div>
     </div>
-    
+
     <div class="main">
         <div class="gameView">
             <div class="item1">
                 <h6 class="white-text">Spill $Nummer - $Enere</h6>
             </div>
             <div class="item2"></div>
-            
+
             <div class="gameBrettConatiner">
                 <div class="gameTable">
                     <table>
@@ -65,14 +65,14 @@
                     <p>${GameTable}</p>
                 </div>
             </div>
-            
+
             <div class="gameDiceContainer">
                 <div class="gameDiceview">
                     <div class="gameDiceHeader">
                         <h4>Det er $navn sin tur</h4>
                         <p><img src="click.png" alt="Musepil som klikker" width="14px" color="#f1bb14">  Klikk på terningene du vil beholde</p>
                     </div>
-                    
+
                     <div class="terningContainer">
                         <div>
                             <img src="terningEn.png" alt="Terning som viser én">
@@ -86,7 +86,7 @@
                         </div>
                         <p><b>Beholdt</b></p>
                     </div>
-                
+
 	                <div class="trillButtonContainer">
 	                    <p>Du har ${X} kast igjen</p>
 	                    <button class="trillButton">Trill</button>

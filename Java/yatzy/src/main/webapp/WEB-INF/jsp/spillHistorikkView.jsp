@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>Yatzy > Historikk</title>
+		<title>YATZY > Historikk</title>
 		<link rel="stylesheet" href="simple.css">
 		<script src="script.js"></script>
 	</head>
@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/" class="unstyled-link">YATZY</a>
+				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo2.png"></a>
 			</h1>
 			<div class="menubox">
 				<p>Hei, $fornavn!</p>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="main">
 			<div class="spillhistorikk">
-				<h2>Spillhistorikk<h2>
+				<h2>Historikk<h2>
 			</div>
 			<div class="lobbyGames">
 				<div class="item1"><a href="/gameID"><button>Spill $X</button></a></div>
