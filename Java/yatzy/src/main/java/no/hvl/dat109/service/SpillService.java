@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import no.hvl.dat109.entity.Poengtabell;
+import no.hvl.dat109.repo.PoengtabellRepo;
 import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
@@ -17,6 +19,8 @@ import no.hvl.dat109.yatzy.PoengType;
 public class SpillService {
 	
 	@Autowired Kopp kopp;
+	
+	@Autowired PoengtabellRepo poengtabellRepo;
 	
 	/**
 	 * Opprettter ett nytt tomt spill
@@ -50,7 +54,14 @@ public class SpillService {
 	 * @param type
 	 * @param terninger
 	 */
-	public int registrerPoeng(Poengtabell poengTabell, PoengType type, List<Integer> terninger) {
+	public int registrerPoeng(String brukernavn, int spillNr, List<Integer> terninger) {
+		
+		Poengtabell poengTabell = poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillNr);
+		
+		PoengType type = poengTabell.finnForsteIkkeRegistrerteType();
+		
+		
+		
 		if (terninger.size() < Kopp.ANTALL_TERNINGER) {
 			throw new IllegalArgumentException("Kan ikke registrere mer enn " + Kopp.ANTALL_TERNINGER + "terninger.");			
 		}
@@ -119,25 +130,11 @@ public class SpillService {
 		poengTabell.registrerPoeng(type, poeng);
 		return poeng;
 	}
-
-	public PoengType getNesteType(PoengType typeNaa, Poengtabell poengtabell) {
-		if (typeNaa.equals(PoengType.YATZY)) {
-			return null;
-		}
-		List<PoengType> typeListe = new ArrayList<>(List.of(PoengType.values()));
-		typeListe.sort(Comparator.naturalOrder());
-		ListIterator<PoengType> it = typeListe.listIterator(typeListe.indexOf(typeNaa) + 1);
-		PoengType nesteType = it.next();
+	
+	public PoengType finnPoengType(String brukernavn, int spillNr) {
+		Poengtabell poengTabell = poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillNr);
 		
-		if (nesteType.equals(PoengType.YATZY) && poengtabell.getErYatzyRegistrert()) {
-			return null;
-		}
-		if (poengtabell.isHarTidligYatzy()) {
-			poengtabell.setHarTidligYatzy(false);
-			return typeNaa;
-		}
-		
-		return nesteType;
+		return poengTabell.finnForsteIkkeRegistrerteType();
 	}
 	
 }

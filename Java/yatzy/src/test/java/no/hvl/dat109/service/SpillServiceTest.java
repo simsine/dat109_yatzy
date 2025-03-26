@@ -19,7 +19,7 @@ import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
 
 @ExtendWith(MockitoExtension.class)
-class YatzyServiceTest {
+class SpillServiceTest {
 
 	@Mock
 	private Kopp kopp;

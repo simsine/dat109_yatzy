@@ -26,14 +26,16 @@ public class Poengtabell {
 		this.poengtabellId = nøkkel;
 	}
 
-	private boolean harTidligYatzy;
-
 	@Column(columnDefinition = "jsonb")
 	@Convert(converter = PoengConverter.class)
 	private Map<PoengType, Integer> poeng = new HashMap<>();
 
+	private boolean harTidligYatzy;
+
 	public Poengtabell() {
 		poeng = new HashMap<PoengType, Integer>();
+		for (PoengType pt : PoengType.values())
+			poeng.put(pt, -1);
 		setHarTidligYatzy(false);
 	}
 
@@ -56,11 +58,11 @@ public class Poengtabell {
 	}
 
 	public boolean getErYatzyRegistrert() {
-		return this.poeng.containsKey(PoengType.YATZY);
+		return this.poeng.get(PoengType.YATZY) != -1;
 	}
 
 	public int getSum() {
-		return this.poeng.values().stream().reduce(0, Integer::sum);
+		return this.poeng.values().stream().filter(t -> t != -1).reduce(0, Integer::sum);
 	}
 
 	public boolean isHarTidligYatzy() {
@@ -72,7 +74,7 @@ public class Poengtabell {
 	}
 
 	public boolean allePoengRegistrert() {
-		return poeng.keySet().containsAll(Set.of(PoengType.values()));
+		return !poeng.entrySet().stream().anyMatch(t -> t.getValue() == -1);
 	}
 
 	@Override
@@ -85,6 +87,26 @@ public class Poengtabell {
 		}
 
 		return ret;
+	}
+
+	/**
+	 * Finner forste ikke registrerte poengtypen til spiller basert på poengtabellen
+	 * Returnerer null hvis alle er registrert
+	 * 
+	 * Hvis typen er yatzy, men yatzy allerede er registrert returneres null
+	 * 
+	 * @return PoengType
+	 */
+	public PoengType finnForsteIkkeRegistrerteType() {
+		Entry<PoengType, Integer> type = this.getAllePoeng().entrySet().stream().sorted()
+				.filter(t -> t.getValue().equals(-1)).findFirst().orElse(null);
+		if (type == null)
+			return null;
+		PoengType poengType = type.getKey();
+		if (poengType.equals(PoengType.YATZY) && this.getErYatzyRegistrert()) {
+			return null;
+		}	
+		return type.getKey();
 	}
 
 }
