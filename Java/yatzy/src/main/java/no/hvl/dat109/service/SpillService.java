@@ -25,7 +25,6 @@ public class SpillService {
 	
 	@Autowired SpillRepo spillRepo;
 	
-	
 	/**
 	 * Opprettter ett nytt tomt spill
 	 * 
@@ -34,13 +33,16 @@ public class SpillService {
 	public Spill opprettNyttSpill(String brukernavn) {
 		Spill nyttSpill = new Spill();
 		
+		spillRepo.save(nyttSpill);
+		
+		System.out.println("Spill: " + nyttSpill.toString());
 		Poengtabell poengtabell = new Poengtabell();
+		
+		poengtabellRepo.save(poengtabell);
 		
 		poengtabell.setNøkkel(new PoengtabellId(brukernavn, nyttSpill.getSpillNr()));
 		
 		nyttSpill.setPoengtabeller(Arrays.asList(poengtabell));
-		
-		spillRepo.save(nyttSpill);
 		
 		return nyttSpill;
 	}

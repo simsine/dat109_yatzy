@@ -16,7 +16,7 @@ import jakarta.persistence.Table;
 public class Spill {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer spillNr;
+	private Integer spillnr;
 	
 	@OneToMany
 	@JoinColumn(name = "spillnr")
@@ -32,11 +32,11 @@ public class Spill {
 	}
 
 	public Integer getSpillNr() {
-		return spillNr;
+		return spillnr;
 	}
 
-	public void setSpillNr(int spillNr) {
-		this.spillNr = spillNr;
+	public void setSpillNr(Integer spillNr) {
+		this.spillnr = spillNr;
 	}
 
 	public List<Poengtabell> getPoengtabeller() {
@@ -46,6 +46,5 @@ public class Spill {
 	public void setPoengtabeller(List<Poengtabell> poengtabeller) {
 		this.poengTabeller = poengtabeller;
 	}
-	
 	
 }
