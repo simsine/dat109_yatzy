@@ -74,14 +74,14 @@
 
                     <div class="terningContainer">
                         <div>
-                            <img src="terningEn.png" alt="Terning som viser én">
-                            <img src="terningTo.png" alt="Terning som viser to">
-                            <img src="terningTre.png" alt="Terning som viser tre">
+                            <img src="/terningEn.png" alt="Terning som viser én">
+                            <img src="/terningTo.png" alt="Terning som viser to">
+                            <img src="/terningTre.png" alt="Terning som viser tre">
                         </div>
                         <div><hr></div>
                         <div>
-                            <img src="terningFire.png" alt="Terning som viser fire">
-                            <img src="terningFem.png" alt="Terning som viser fem">
+                            <img src="/terningFire.png" alt="Terning som viser fire">
+                            <img src="/terningFem.png" alt="Terning som viser fem">
                         </div>
                         <p><b>Beholdt</b></p>
                     </div>
