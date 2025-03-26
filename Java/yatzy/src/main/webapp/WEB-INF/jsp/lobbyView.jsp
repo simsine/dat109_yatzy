@@ -35,7 +35,7 @@
 			<c:forEach var="spill" items="${spillListe}">
 				<div class="lobbyGames">
 					<div class="item1"><a href="/spill/${spill.spillnr}"><button>Spill ${spill.spillnr}</button></a></div>
-					<div class="item2"><p>Spillere: $Y/6</p></div>
+					<div class="item2"><p>$Y/6 spillere</p></div>
 				</div>
 			</c:forEach>
 		</div>

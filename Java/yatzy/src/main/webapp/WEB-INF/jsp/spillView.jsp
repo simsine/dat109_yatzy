@@ -16,7 +16,7 @@
             <a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png"></a>
         </h1>
         <div class="menubox">
-            <p class="white-text">Hei, ${fornavn}</p>
+            <p>Hei, ${fornavn}</p>
             <a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
         </div>
     </div>
@@ -24,9 +24,10 @@
     <div class="main">
         <div class="gameView">
             <div class="item1">
-                <h6 class="white-text">Spill ${spillnr} - $Enere</h6>
             </div>
-            <div class="item2"></div>
+            <div class="item2">
+				<h2>Spill ${spillnr} - $Enere</h2>
+			</div>
 
             <div class="gameBrettContainer">
                 <div class="gameTable">
