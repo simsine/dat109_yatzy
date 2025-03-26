@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>YATZY > Pålogging</title>
+		<title>Yatzy > Pålogging</title>
 		<link rel="stylesheet" href="simple.css">
 	</head>
 	
@@ -28,7 +28,7 @@
 							</c:forEach>			
 						</ul>			
 					</c:if>
-					<!-- Må fikses -->
+					<!-- Regex må fikses -->
 					<fieldset>
 						<div>
 						<label for="epost">Epost</label>
@@ -42,7 +42,7 @@
 						<div>
 							<label for="passord">Passord</label>
 							<input
-								type="text" id="passord" name="passord"
+								type="password" id="passord" name="passord"
 								minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
 								oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 								oninput="this.setCustomValidity('')"

@@ -6,7 +6,7 @@
 <html lang="no">
 	<head>
 		<meta charset="UTF-8">
-		<title>YATZY > Registrering</title>
+		<title>Yatzy > Registrering</title>
 		<link rel="stylesheet" href="simple.css">
 	</head>
 	
@@ -18,7 +18,7 @@
 		</div>
 		<div class="main">
 			<div class="schema">
-				<h2>Registrer bruker</h2>
+				<h2>Opprett bruker</h2>
 					<form method="POST" action="/registrering">
 						<c:if test="${errors.size() > 0}">
 							<p style="color:red;">Feil:</p>
@@ -28,7 +28,7 @@
 								</c:forEach>			
 							</ul>			
 						</c:if>
-						<!-- Må fikses -->
+						<!-- Regex må fikses -->
 						<fieldset>
 							<div>
 								<label for="epost">Epost</label>
@@ -60,7 +60,7 @@
 							<div>
 								<label for="passord">Passord</label>
 									<input
-										type="text" id="passord" name="passord"
+										type="password" id="passord" name="passord"
 										minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
 										oninvalid="this.setCustomValidity('Passord må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 										oninput="this.setCustomValidity('')"
@@ -69,7 +69,7 @@
 							<div>
 								<label for="epost">Repeter passord</label>
 									<input
-									   type="text" id="epost" name="epost"
+									   type="password" id="epost" name="epost"
 									   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
 									   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
 									   oninput="this.setCustomValidity('')" 
