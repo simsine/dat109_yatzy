@@ -319,6 +319,12 @@ label[type="button"] {
   margin: 0.5rem 0;
 }
 
+input[type="submit"]:hover{
+	filter: brightness(0.7);
+	cursor: pointer;
+	box-shadow: 0px 0px 0px 2px black;
+}
+
 button[disabled],
 [role="button"][aria-disabled="true"],
 input[type="submit"][disabled],
