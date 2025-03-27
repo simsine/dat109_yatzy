@@ -25,6 +25,9 @@ CREATE TABLE poengtabell (
     poeng JSONB,
     PRIMARY KEY (brukernavn, spillnr),
     FOREIGN KEY (brukernavn) REFERENCES spiller(brukernavn)
+
+    -- trenger vi ikke en foreign key til spillnr for å knytte spill (spillnr SERIAL) til poengtabellen (spillnr)? 
+    FOREIGN KEY (spillnr) REFERENCES spill(spillnr)
 );
 
 INSERT INTO spiller(brukernavn, email, fornavn, etternavn, hashetpassord, salt) VALUES 
