@@ -26,12 +26,12 @@ public class Poengtabell {
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
 
-	public PoengtabellId getNøkkel() {
+	public PoengtabellId getPoengtabellId() {
 		return poengtabellId;
 	}
 
-	public void setNøkkel(PoengtabellId nøkkel) {
-		this.poengtabellId = nøkkel;
+	public void setPoengtabellId(PoengtabellId poengtabellId) {
+		this.poengtabellId = poengtabellId;
 	}
 
 	@JdbcTypeCode(SqlTypes.JSON)

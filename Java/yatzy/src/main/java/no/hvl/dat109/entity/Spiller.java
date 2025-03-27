@@ -10,10 +10,10 @@ import jakarta.persistence.Table;
 public class Spiller {
 	@Id
 	private String brukernavn;
-	private String eMail;
+	private String email;
 	private String fornavn;
 	private String etternavn;
-	private String hashPassord;
+	private String hashetpassord;
 	private String salt;
 	
 	public Spiller() {
@@ -23,19 +23,19 @@ public class Spiller {
 	public Spiller(String brukernavn, String eMail, String fornavn, String etternavn, String hashPassord, String salt) {
 		super();
 		this.brukernavn = brukernavn;
-		this.eMail = eMail;
+		this.email = eMail;
 		this.fornavn = fornavn;
 		this.etternavn = etternavn;
-		this.hashPassord = hashPassord;
+		this.hashetpassord = hashPassord;
 		this.salt = salt;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFornavn() {
@@ -54,12 +54,12 @@ public class Spiller {
 		this.etternavn = etternavn;
 	}
 
-	public String getHashPassord() {
-		return hashPassord;
+	public String getHashetpassord() {
+		return hashetpassord;
 	}
 
-	public void setHashPassord(String hashPassord) {
-		this.hashPassord = hashPassord;
+	public void setHashetpassord(String hashetpassord) {
+		this.hashetpassord = hashetpassord;
 	}
 
 	public String getSalt() {

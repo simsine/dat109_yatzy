@@ -35,12 +35,10 @@
                         <thead>
                             <tr>
                                 <th>Kategori</th>
-                                <c:forEach var="player" items="${poengTabell}">
-                                    <th>${player.brukernavn}</th>
+                                <c:forEach var="poeng" items="${poengtabell}">
+                                    <th>${poeng.poengtabellId.brukernavn}</th>
                                 </c:forEach>
                                 <th>test 1</th>
-                                <th>test 2</th>
-                                <th>test 3</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -50,11 +48,10 @@
                                 'Liten straight', 'Stor straight', 'Full house', 
                                 'Sjanse', 'Yatzy', 'Total score'
                             ]}" />
-
-                            <c:forEach var="kategori" items="${categories}">
+							
+                            <c:forEach var="poengtype" items="${poengtyper}">
                                 <tr>
-                                    <td>${kategori}</td>
-                                    <td>-</td>
+                                    <td>${poengtype}</td>
                                     <td>-</td>
                                     <td>-</td>
                                 </tr>

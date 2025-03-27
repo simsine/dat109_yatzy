@@ -2,10 +2,6 @@ DROP SCHEMA IF EXISTS yatzy CASCADE;
 CREATE SCHEMA yatzy;
 SET search_path TO yatzy;
 
-CREATE TABLE spill (
-    spillnr SERIAL PRIMARY KEY
-);
-
 CREATE TABLE spiller (
     brukernavn varchar(255) PRIMARY KEY,
     email VARCHAR(255),
@@ -13,6 +9,14 @@ CREATE TABLE spiller (
     etternavn VARCHAR(255),
     hashetpassord VARCHAR(255),
     salt VARCHAR(255)
+);
+
+CREATE TABLE spill (
+    spillnr SERIAL PRIMARY KEY,
+    tidopprettet TIMESTAMP,
+    tidavsluttet TIMESTAMP,
+    oppretterbrukernavn VARCHAR(255),
+    FOREIGN KEY (oppretterbrukernavn) REFERENCES spiller(brukernavn)
 );
 
 CREATE TABLE poengtabell (
