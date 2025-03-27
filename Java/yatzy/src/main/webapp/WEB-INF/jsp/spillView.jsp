@@ -35,27 +35,34 @@
                         <thead>
                             <tr>
                                 <th>Kategori</th>
-                                <c:forEach var="poeng" items="${poengtabell}">
-                                    <th>${poeng.poengtabellId.brukernavn}</th>
+                                <c:forEach var="poengtabell" items="${poengtabeller}">
+                                    <th>${poengtabell.poengtabellId.brukernavn}</th>
                                 </c:forEach>
-                                <th>test 1</th>
                             </tr>
                         </thead>
                         <tbody>
+                        <!-- 
                             <c:set var="categories" value="${[
                                 'Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 
                                 'Bonus', 'Ett par', 'To par', 'Tre like', 'Fire like', 
                                 'Liten straight', 'Stor straight', 'Full house', 
                                 'Sjanse', 'Yatzy', 'Total score'
                             ]}" />
-							
+							 -->
                             <c:forEach var="poengtype" items="${poengtyper}">
                                 <tr>
                                     <td>${poengtype}</td>
-                                    <td>-</td>
-                                    <td>-</td>
+                                    <c:forEach var="poengtabell" items="${poengtabeller}">
+	                                    <td>${poengtabell.poeng[poengtype] == -1 ? '-' : poengtabell.poeng[poengtype]}</td>
+                                    </c:forEach>
                                 </tr>
                             </c:forEach>
+		                    <tr>
+		                    	<td>Sum</td>
+		                    	<c:forEach var="poengtabell" items="${poengtabeller}">
+	                                    <td>${poengtabell.sum}</td>
+                                    </c:forEach>
+		                    </tr>
                         </tbody>
                     </table>
 
@@ -71,6 +78,7 @@
                     </div>
 
                     <div class="terningContainer">
+                    	<p><c:out value="${terninger}"/></p>
                         <div>
                             <img src="/terningEn.png" alt="Terning som viser én">
                             <img src="/terningTo.png" alt="Terning som viser to">
@@ -86,7 +94,14 @@
 
 	                <div class="trillButtonContainer">
 	                    <p>Du har ${X} kast igjen</p>
-	                    <button class="trillButton">Trill</button>
+	                    <form action="/spill/${spillnr}/trill" method="post">
+	                    	<c:forEach items="${terninger}" var="terning">
+	                    		<label><c:out value="${terning}"/></label>
+	                    		<input type="checkbox" value="terning" name="terninger1">
+                    		</c:forEach>
+	                    	
+	                    	<input type="submit" value="Trill" class="trillButton"/>
+	                    </form>
 	                </div>
                 </div>
             </div>

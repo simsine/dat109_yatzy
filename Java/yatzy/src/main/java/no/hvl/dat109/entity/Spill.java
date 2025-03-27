@@ -30,6 +30,7 @@ public class Spill {
 	@ManyToOne
 	@JoinColumn(name = "oppretterbrukernavn")
 	private Spiller oppretter;
+	
 
 	public Spill(List<Poengtabell> poengtabeller) {
 		super();

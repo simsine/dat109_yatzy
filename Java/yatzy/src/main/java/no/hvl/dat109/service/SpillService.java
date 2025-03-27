@@ -72,8 +72,7 @@ public class SpillService {
 	 * @return Optional spill
 	 */
 	public Optional<Spill> hentSpillEtterNr(Integer nr) {
-		// TODO
-		return null;
+		return spillRepo.findById(nr);
 	}
 
 	public List<Spill> hentAlleSpill() {
@@ -81,7 +80,7 @@ public class SpillService {
 	}
 
 	public boolean erSpillFullt(Spill spill) {
-		return false;
+		return spill.getPoengtabeller().size() == 6;
 	}
 
 	/**
@@ -99,6 +98,11 @@ public class SpillService {
 	 */
 	public List<Integer> spillTrekk(List<Integer> valgteTerninger) {
 		return kopp.trillResten(valgteTerninger);
+	}
+	
+
+	public List<Integer>  spillTrekk() {
+		return kopp.trillResten();
 	}
 
 	/**
@@ -191,8 +195,22 @@ public class SpillService {
 	}
 
 
-	public Poengtabell hentPoengtabellEtterNrOgBrukernavn(Integer spillnr, String brukernavn) {
+	public Poengtabell hentPoengtabellEtterSpillnrOgBrukernavn(Integer spillnr, String brukernavn) {
 		return poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillnr);
 	}
+
+	public void leggtilSpiller(String brukernavn, Integer spillId) {
+		Spill spill = spillRepo.findById(spillId).get();
+		Poengtabell poengtabell = new Poengtabell();
+		poengtabell.setPoengtabellId(new PoengtabellId(brukernavn, spill.getSpillnr()));
+		poengtabell = poengtabellRepo.save(poengtabell);
+		spill.getPoengtabeller().add(poengtabell);
+		spillRepo.save(spill);
+	}
+
+	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
+		return poengtabellRepo.findBySpillnr(spillnr);
+	}
+
 
 }
