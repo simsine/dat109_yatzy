@@ -27,8 +27,8 @@
 				<h2>Historikk<h2>
 			</div>
 			<div class="lobbyGames">
-				<div class="item1"><a href="/gameID"><button>Spill $X</button></a></div>
-				<div class="item2"><p>$25/03/25</p></div>
+				<div class="item1"><a href="/gameID"><button>Spill ${spillnr}</button></a></div>
+				<div class="item2"><p>$dato}</p></div>
 			</div>
 		</div>
 	</body>

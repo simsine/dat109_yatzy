@@ -19,67 +19,67 @@
 		<div class="main">
 			<div class="schema">
 				<h2>Opprett bruker</h2>
-					<form method="POST" action="/registrering">
-						<c:if test="${errors.size() > 0}">
-							<p style="color:red;">Feil:</p>
-							<ul style="color:red;">
-								<c:forEach var="e" items="${errors}">
-									<li>${e}</li>
-								</c:forEach>			
-							</ul>			
-						</c:if>
-						<!-- Regex må fikses -->
-						<fieldset>
-							<div>
-								<label for="epost">Epost</label>
-									<input
-									   type="text" id="epost" name="epost"
-									   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-									   oninvalid="this.setCustomValidity('Epost må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
-									   oninput="this.setCustomValidity('')" 
-									   >
-						   </div>
-						   <div>
-						   <label for="fornavn">Fornavn</label>
+				<form method="POST" action="/registrering">
+					<c:if test="${errors.size() > 0}">
+						<p style="color:red;">Feil:</p>
+						<ul style="color:red;">
+							<c:forEach var="e" items="${errors}">
+								<li>${e}</li>
+							</c:forEach>			
+						</ul>			
+					</c:if>
+					<!-- Regex må fikses -->
+					<fieldset>
+						<div>
+							<label for="epost">Epost</label>
 								<input
-								   type="text" id="fornavn" name="fornavn"
-								   minlength="2" maxlength="30" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-								   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+								   type="text" id="epost" name="epost"
+								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+								   oninvalid="this.setCustomValidity('Epost må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 								   oninput="this.setCustomValidity('')" 
 								   >
-						    </div>
-							<div>
-								<label for="etternavn">Etternavn</label>
-									<input
-									   type="text" id="etternavn" name="etternavn"
-									   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-									   oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
-									   oninput="this.setCustomValidity('')" 
-									   >
-							</div>
-							<div>
-								<label for="passord">Passord</label>
-									<input
-										type="password" id="passord" name="passord"
-										minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
-										oninvalid="this.setCustomValidity('Passord må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
-										oninput="this.setCustomValidity('')"
-										>
-							</div>
-							<div>
-								<label for="epost">Repeter passord</label>
-									<input
-									   type="password" id="epost" name="epost"
-									   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-									   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
-									   oninput="this.setCustomValidity('')" 
-									   >
-							</div>
-							<br>
-							<input type="submit" value="Registrer">
-						</fieldset>
-					</form>
-					<p>Har du allerede bruker? <a href="/innlogging">Logg inn</a></p>
+					   </div>
+					   <div>
+					   <label for="fornavn">Fornavn</label>
+							<input
+							   type="text" id="fornavn" name="fornavn"
+							   minlength="2" maxlength="30" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+							   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+							   oninput="this.setCustomValidity('')" 
+							   >
+					    </div>
+						<div>
+							<label for="etternavn">Etternavn</label>
+								<input
+								   type="text" id="etternavn" name="etternavn"
+								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+								   oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+								   oninput="this.setCustomValidity('')" 
+								   >
+						</div>
+						<div>
+							<label for="passord">Passord</label>
+								<input
+									type="password" id="passord" name="passord"
+									minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
+									oninvalid="this.setCustomValidity('Passord må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+									oninput="this.setCustomValidity('')"
+									>
+						</div>
+						<div>
+							<label for="epost">Repeter passord</label>
+								<input
+								   type="password" id="epost" name="epost"
+								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+								   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
+								   oninput="this.setCustomValidity('')" 
+								   >
+						</div>
+						<br>
+						<input type="submit" value="Registrer">
+					</fieldset>
+				</form>
+				<p>Har du allerede bruker? <a href="/innlogging">Logg inn</a></p>
 			</div>
 		</div>
 	</body>
