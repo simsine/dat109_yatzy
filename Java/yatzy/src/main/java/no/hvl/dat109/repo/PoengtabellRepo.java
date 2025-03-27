@@ -19,5 +19,8 @@ public interface PoengtabellRepo extends JpaRepository<Poengtabell, PoengtabellI
 	@Query("SELECT p FROM Poengtabell p WHERE p.id.brukernavn = :brukernavn AND p.id.spillnr = :spillnr")
 	Poengtabell findByBrukernavnAndSpillnr(@Param("brukernavn") String brukernavn, @Param("spillnr") int spillnr);
 
+	@Query("SELECT p FROM Poengtabell p WHERE p.id.spillnr = :spillnr")
+	List<Poengtabell> findBySpillnr(int spillnr);
+
 
 }
