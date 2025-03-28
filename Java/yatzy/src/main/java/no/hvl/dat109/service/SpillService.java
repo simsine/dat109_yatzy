@@ -19,6 +19,9 @@ import no.hvl.dat109.util.PoengUtil;
 import no.hvl.dat109.yatzy.Kopp;
 import no.hvl.dat109.yatzy.PoengType;
 
+/**
+ * 
+ */
 @Service
 public class SpillService {
 
@@ -99,26 +102,35 @@ public class SpillService {
 	public List<Integer> spillTrekk(List<Integer> valgteTerninger) {
 		return kopp.trillResten(valgteTerninger);
 	}
-	
 
-	public List<Integer>  spillTrekk() {
+	public List<Integer> spillTrekkString(List<String> valgteTerninger) {
+		if (valgteTerninger == null)
+			return spillTrekk();
+		List<Integer> omgjortliste = valgteTerninger.stream().map(Integer::parseInt).toList();
+		return kopp.trillResten(omgjortliste);
+	}
+
+	public List<Integer> spillTrekk() {
 		return kopp.trillResten();
 	}
 
 	/**
-	 * Metode for å registrere poeng for endelig kast
-	 * 
-	 * @param poengTabell - midlertidig til vi får database
-	 * @param type
-	 * @param terninger
+	 * @param brukernavn
+	 * @param spillNr
+	 * @param terningerString
+	 * @return false om ferdig fylt poeng
 	 */
-	public int registrerPoeng(String brukernavn, int spillNr, List<Integer> terninger) {
+	public boolean registrerPoeng(String brukernavn, Integer spillNr, List<String> terningerString) {
+
+		List<Integer> terninger = terningerString.stream().map(Integer::parseInt).toList();
 
 		Poengtabell poengTabell = poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillNr);
 
 		PoengType type = poengTabell.finnForsteIkkeRegistrerteType();
+		if (type == null)
+			return false;
 
-		if (terninger.size() < Kopp.ANTALL_TERNINGER) {
+		if (terninger.size() > Kopp.ANTALL_TERNINGER) {
 			throw new IllegalArgumentException("Kan ikke registrere mer enn " + Kopp.ANTALL_TERNINGER + "terninger.");
 		}
 
@@ -130,7 +142,7 @@ public class SpillService {
 			}
 			poeng = PoengUtil.yatzy(terninger);
 			poengTabell.registrerPoeng(PoengType.YATZY, poeng);
-			return poeng;
+			return true;
 		}
 
 		switch (type) {
@@ -185,7 +197,7 @@ public class SpillService {
 		}
 		poengTabell.registrerPoeng(type, poeng);
 		poengtabellRepo.save(poengTabell);
-		return poeng;
+		return true;
 	}
 
 	public PoengType finnPoengType(String brukernavn, int spillNr) {
@@ -193,7 +205,6 @@ public class SpillService {
 
 		return poengTabell.finnForsteIkkeRegistrerteType();
 	}
-
 
 	public Poengtabell hentPoengtabellEtterSpillnrOgBrukernavn(Integer spillnr, String brukernavn) {
 		return poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillnr);
@@ -211,6 +222,5 @@ public class SpillService {
 	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
 		return poengtabellRepo.findBySpillnr(spillnr);
 	}
-
 
 }

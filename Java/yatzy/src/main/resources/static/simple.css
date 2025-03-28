@@ -37,6 +37,24 @@
   box-sizing: border-box;
 }
 
+/* Hide default checkbox */
+.image-checkbox input {
+    display: none; 
+}
+
+.image-checkbox img {
+    height: auto;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.image-checkbox input:checked + img {
+    border-color: blue;  /* Highlight selected */
+    filter: brightness(0.8);
+}
+
 /* Reset default appearance */
 textarea,
 select,
@@ -200,6 +218,7 @@ main p {
 
 .gameDiceContainer {
 	flex: 1;
+	display: inline-block;
 }
 
 .trillButton {
