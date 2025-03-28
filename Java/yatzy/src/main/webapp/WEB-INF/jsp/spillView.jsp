@@ -24,11 +24,11 @@
     <div class="main">
         <div class="gameView">
             <div class="item1">
+				<h2>Spill ${spillnr}</h2>
             </div>
             <div class="item2">
-				<h2>Spill ${spillnr} - $Enere</h2>
+				<h2>Runde: $Enere</h2>
 			</div>
-
             <div class="gameBrettContainer">
                 <div class="gameTable">
                     <table>
@@ -73,8 +73,8 @@
             <div class="gameDiceContainer">
                 <div class="gameDiceview">
                     <div class="gameDiceHeader">
-                        <h4>Det er ${fornavn} sin tur</h4>
-                        <p><img src="click.png" alt="Musepil som klikker" width="14px" color="#f1bb14">  Klikk på terningene du vil beholde</p>
+                        <h3>Det er ${fornavn} sin tur</h3>
+                        <p><img src="/click.png" alt="Musepil som klikker" width="14px" color="#f1bb14">  Klikk på terningene du vil beholde</p>
                     </div>
 
                     <div class="terningContainer">
