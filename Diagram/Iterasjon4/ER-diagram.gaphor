@@ -603,7 +603,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="ee1c510a-0962-11f0-ae32-b20c18aed960"/>
 </class_>
 <name>
-<val>+ spillNr(PK) integer</val>
+<val>+ spillNr(PK,FK) integer</val>
 </name>
 </UML:Property>
 <UML:Property id="0a44b066-0963-11f0-ae32-b20c18aed960">
