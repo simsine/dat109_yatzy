@@ -13,7 +13,7 @@
 <body>
 	<div class="header">
 		<h1>
-			<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png"></a>
+			<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
 		</h1>
 		<div class="menubox">
 			<p>Hei, ${fornavn}</p>
@@ -75,8 +75,7 @@
 					<div class="gameDiceHeader">
 						<h3>Det er ${fornavn} sin tur</h3>
 						<p>
-							<img src="/click.png" alt="Musepil som klikker" width="14px"
-								color="#f1bb14"> Klikk på terningene du vil beholde
+							<img src="/click.png" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
 						</p>
 					</div>
 
@@ -90,18 +89,16 @@
 							</c:forEach>
 							<input type="hidden" name="alleterninger" value="${terninger}" />
 						</div>
-
+						
 						<div class="trillButtonContainer">
 							<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
-							
 							<c:if test="${antallkastigjen > 0}">
 								<input type="submit" formaction="/spill/${spillnr}/trill"
 									   value="Trill" class="trillButton" />
 							</c:if>
 							<input type="submit" formaction="/spill/${spillnr}/registrer" 
 								   value="Registrer poeng" class="registrerButton" />
-
-						</div>
+						</div>	
 					</form>
 
 				</div>

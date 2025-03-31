@@ -15,7 +15,7 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png"></a>
+				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${fornavn}</p>
