@@ -438,11 +438,11 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="ba4112ca-0ed6-11f0-8062-b20c18aed960"/>
 <ref refid="27742b60-0ed8-11f0-8062-b20c18aed960"/>
 <ref refid="3e039fe6-0ed8-11f0-8062-b20c18aed960"/>
+<ref refid="292be9ae-0ed6-11f0-8062-b20c18aed960"/>
+<ref refid="9beaf840-0ed6-11f0-8062-b20c18aed960"/>
 <ref refid="0a2c7f36-0ed7-11f0-8062-b20c18aed960"/>
 <ref refid="850ccc24-0ed7-11f0-8062-b20c18aed960"/>
 <ref refid="d44b24e8-0ed7-11f0-8062-b20c18aed960"/>
-<ref refid="292be9ae-0ed6-11f0-8062-b20c18aed960"/>
-<ref refid="9beaf840-0ed6-11f0-8062-b20c18aed960"/>
 <ref refid="f0d9ebb8-0ed6-11f0-8062-b20c18aed960"/>
 <ref refid="9d90eb7c-0ed7-11f0-8062-b20c18aed960"/>
 <ref refid="f005367e-0ed7-11f0-8062-b20c18aed960"/>
@@ -1108,7 +1108,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="ac483dc0-0ed5-11f0-8062-b20c18aed960"/>
 </interaction>
 <name>
-<val>SpillerRepo</val>
+<val>SpillerService</val>
 </name>
 <presentation>
 <reflist>
@@ -1118,7 +1118,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:Lifeline>
 <UML:LifelineItem id="3e039fe6-0ed8-11f0-8062-b20c18aed960">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 719.784794331948, 110.0)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 719.7847943319481, 110.0)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
