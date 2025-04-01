@@ -96,7 +96,7 @@
 								<input type="submit" formaction="/spill/${spillnr}/trill"
 									   value="Trill" class="trillButton" />
 							</c:if>
-							<c:if test="(${antallkastigjen < 1}) || (alleterninger[0] eq alleterninger[1] eq alleterninger[2] eq alleterninger[3] eq alleterninger[4])">
+							<c:if test="(${antallkastigjen < 1}) || (alleterninger[0] == alleterninger[1] == alleterninger[2] == alleterninger[3] == alleterninger[4])">
 								<input type="submit" formaction="/spill/${spillnr}/registrer" 
 									   value="Avslutt runde" class="registrerButton" />
 						   </c:if>
