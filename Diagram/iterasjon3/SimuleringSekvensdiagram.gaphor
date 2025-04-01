@@ -565,7 +565,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="4bf9865d-04a3-11f0-877d-58cdc9105c56"/>
 </interaction>
 <name>
-<val>YatzyService</val>
+<val>SpillService</val>
 </name>
 <presentation>
 <reflist>
@@ -575,7 +575,7 @@ existing classes or even new classes with specific responsibilities.</val>
 </UML:Lifeline>
 <UML:LifelineItem id="590f3d02-04a3-11f0-b487-58cdc9105c56">
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 326.5, 136.0)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 326.50000000000017, 136.0)</val>
 </matrix>
 <top-left>
 <val>(0.0, 0.0)</val>
@@ -610,7 +610,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="6aff675b-04a3-11f0-9468-58cdc9105c56"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, 178.0, 232.0)</val>
+<val>(1.0, 0.0, 0.0, 1.0, 178.00000000000014, 231.21549799663995)</val>
 </matrix>
 <points>
 <val>[(1.0, 0.0), (198.5, 0.0)]</val>
@@ -1113,7 +1113,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="3901158f-04a5-11f0-bcb1-58cdc9105c56"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -34.33551111147574, 209.74523298691062)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -34.33551111147558, 216.83109199857878)</val>
 </matrix>
 <points>
 <val>[(1.0, 0.0), (213.33551111147574, 0.0)]</val>
@@ -1310,7 +1310,7 @@ existing classes or even new classes with specific responsibilities.</val>
 <ref refid="8dc50b73-04a5-11f0-ad51-58cdc9105c56"/>
 </subject>
 <matrix>
-<val>(1.0, 0.0, 0.0, 1.0, -159.73809932933378, 204.3479689045727)</val>
+<val>(1.0, 0.0, 0.0, 1.0, -159.73809932933378, 203.2613276161348)</val>
 </matrix>
 <points>
 <val>[(1.0144221600855872, 0.0), (126.40258821785804, 0.0)]</val>
