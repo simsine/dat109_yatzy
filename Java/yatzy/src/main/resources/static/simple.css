@@ -596,7 +596,7 @@ input {
   font-family: inherit;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
-  color: var(--text);
+  color: black;
   background-color: var(--light-bg);
   border: 1px solid var(--border);
   border-radius: 5px;

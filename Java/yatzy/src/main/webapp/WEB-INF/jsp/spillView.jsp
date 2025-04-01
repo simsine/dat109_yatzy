@@ -94,13 +94,13 @@
 							<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
 							<c:if test="${antallkastigjen > 0}">
 								<input type="submit" formaction="/spill/${spillnr}/trill"
-										value="Trill" class="trillButton" />
+									   value="Trill" class="trillButton" />
 							</c:if>
-							<c:if test="${antallkastigjen < 1}">
+							<c:if test="(${antallkastigjen < 1}) || (alleterninger[0] eq alleterninger[1] eq alleterninger[2] eq alleterninger[3] eq alleterninger[4])">
 								<input type="submit" formaction="/spill/${spillnr}/registrer" 
-										value="Avslutt runde" class="registrerButton" />
-							</c:if>
-						</div>
+									   value="Avslutt runde" class="registrerButton" />
+						   </c:if>
+						</div>	
 					</form>
 				</div>
 			</div>
