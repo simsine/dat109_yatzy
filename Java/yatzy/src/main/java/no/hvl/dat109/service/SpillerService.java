@@ -32,4 +32,8 @@ public class SpillerService {
 	public void loggUtSpiller(HttpSession httpSession) {
 		LoginUtil.loggUtBruker(httpSession);
 	}
+	
+	public boolean erSpillerInnlogget(HttpSession httpSession) {
+		return LoginUtil.erBrukerInnlogget(httpSession);
+	}
 }
