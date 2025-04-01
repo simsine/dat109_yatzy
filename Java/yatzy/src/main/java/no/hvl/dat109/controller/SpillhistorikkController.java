@@ -1,13 +1,29 @@
 package no.hvl.dat109.controller;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import no.hvl.dat109.entity.Poengtabell;
+import no.hvl.dat109.service.SpillgjennomgangService;
 
 @Controller
 public class SpillhistorikkController {
 
-	@GetMapping("/spillhistorikk")
-	public String getSpillhistorikk() {
+
+	@Autowired
+	private SpillgjennomgangService spillgjennomgangService;
+	
+	@GetMapping("/spillhistorikk/{brukernavn}")
+	public String getSpillhistorikk(@PathVariable("brukernavn") String brukernavn, Model model) {
+		List<Poengtabell> tidligereSpill = spillgjennomgangService.hentAlleTidligereSpillForSpiller(brukernavn);
+		model.addAttribute("tidligereSpill", tidligereSpill);
+		model.addAttribute("brukernavn", brukernavn);
+		
 		return "spillHistorikkView";
 	}
 	

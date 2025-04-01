@@ -15,9 +15,9 @@ public class PoengtabellId implements Serializable {
 	public PoengtabellId() {
 	}
 
-	public PoengtabellId(String brukernavn, int spillNr) {
+	public PoengtabellId(String brukernavn, int spillnr) {
 		this.brukernavn = brukernavn;
-		this.spillnr = spillNr;
+		this.spillnr = spillnr;
 	}
 
 	public String getBrukernavn() {
@@ -28,12 +28,12 @@ public class PoengtabellId implements Serializable {
 		this.brukernavn = brukernavn;
 	}
 
-	public int getSpillNr() {
+	public int getSpillnr() {
 		return spillnr;
 	}
 
-	public void setSpillNr(int spillNr) {
-		this.spillnr = spillNr;
+	public void setSpillnr(int spillnr) {
+		this.spillnr = spillnr;
 	}
 
 	@Override

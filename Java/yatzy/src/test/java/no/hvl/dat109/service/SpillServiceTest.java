@@ -136,6 +136,6 @@ class SpillServiceTest {
 
 		assertNotNull(result);
 		assertEquals("tester", result.getPoengtabellId().getBrukernavn());
-		assertEquals(10, result.getPoengtabellId().getSpillNr());
+		assertEquals(10, result.getPoengtabellId().getSpillnr());
 	}
 }

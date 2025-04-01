@@ -19,6 +19,7 @@ public class SimulerController {
 
 	@Autowired
 	SpillService spillService;
+	
 	@Autowired
 	YatzySimSpill yatzySimSpill;
 

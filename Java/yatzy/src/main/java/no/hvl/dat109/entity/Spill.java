@@ -45,8 +45,8 @@ public class Spill {
 		return spillnr;
 	}
 
-	public void setSpillnr(Integer spillNr) {
-		this.spillnr = spillNr;
+	public void setSpillnr(Integer spillnr) {
+		this.spillnr = spillnr;
 	}
 
 	public List<Poengtabell> getPoengtabeller() {

@@ -1,9 +1,8 @@
 package no.hvl.dat109;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import no.hvl.dat109.util.PoengUtil;

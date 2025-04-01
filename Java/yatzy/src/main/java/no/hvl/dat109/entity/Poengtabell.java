@@ -14,6 +14,9 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import no.hvl.dat109.util.PoengConverter;
@@ -22,6 +25,11 @@ import no.hvl.dat109.yatzy.PoengType;
 @Entity
 @Table(schema = "yatzy")
 public class Poengtabell {
+
+
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name="spillnr", referencedColumnName="spillnr", insertable=false, updatable=false)
+	private Spill spill;
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
@@ -93,6 +101,10 @@ public class Poengtabell {
 
 	public boolean allePoengRegistrert() {
 		return !poeng.entrySet().stream().anyMatch(t -> t.getValue() == -1);
+	}
+
+	public Spill getSpill() {
+		return spill;
 	}
 
 	@Override
