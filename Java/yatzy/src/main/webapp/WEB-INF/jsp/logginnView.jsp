@@ -28,13 +28,12 @@
 							</c:forEach>			
 						</ul>			
 					</c:if>
-					<!-- Regex må fikses -->
 					<fieldset>
 						<div>
 						<label for="epost">Epost</label>
 							<input
 							   type="text" id="epost" name="epost"
-							   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+							   minlength="2" maxlength="20" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" required
 							   oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 							   oninput="this.setCustomValidity('')" 
 							   >
@@ -43,7 +42,7 @@
 							<label for="passord">Passord</label>
 							<input
 								type="password" id="passord" name="passord"
-								minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
+								minlength="2" maxlength="20" pattern="^(?=.*\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\W_])(?!.*\s).{8,}$" required
 								oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 								oninput="this.setCustomValidity('')"
 								>
