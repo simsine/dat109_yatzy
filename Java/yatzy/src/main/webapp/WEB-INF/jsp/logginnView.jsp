@@ -30,7 +30,7 @@
 					</c:if>
 					<fieldset>
 						<div>
-						<label for="brukernavn">Epost</label>
+						<label for="brukernavn">Brukernavn</label>
 							<input
 							   type="text" id="brukernavn" name="brukernavn"
 							   minlength="3" maxlength="20" pattern="^[a-zA-Z0-9_-]{3,20}$" required

@@ -21,6 +21,10 @@ public class SpillerService {
 		return spillerRepo.findById(brukernavn);
 	}
 	
+	public Spiller hentInnloggetSpiller(HttpSession httpSession) {
+		return (Spiller) httpSession.getAttribute("spiller");
+	}
+	
 	public void logginnSpiller(HttpServletRequest httpServletRequest, Spiller spiller) {
 		LoginUtil.loggInnBruker(httpServletRequest, spiller);
 	}

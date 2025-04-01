@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
 import no.hvl.dat109.entity.Spill;
+import no.hvl.dat109.entity.Spiller;
 import no.hvl.dat109.service.SpillService;
+import no.hvl.dat109.service.SpillerService;
 import no.hvl.dat109.yatzy.PoengType;
 
 @Controller
@@ -24,6 +26,8 @@ public class SpillController {
 
 	@Autowired
 	SpillService spillService;
+	@Autowired
+	SpillerService spillerService;
 
 	/**
 	 * Henter view for et startet spill
@@ -32,7 +36,16 @@ public class SpillController {
 	 * @return
 	 */
 	@GetMapping("/spill/{id}")
-	public String getSpill(@PathVariable("id") String spillId, Model model, HttpSession session) {
+	public String getSpill(
+		@PathVariable("id") String spillId, 
+		Model model, 
+		HttpSession session
+	) {
+		// Omdiriger om ikke innlogget
+		if (!spillerService.erSpillerInnlogget(session)) {
+			return "redirect:/innlogging";
+		}
+		
 		model.addAttribute("poengtyper", PoengType.values());
 		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(Integer.parseInt(spillId)));
 		model.addAttribute("spillnr", spillId);
@@ -47,22 +60,30 @@ public class SpillController {
 		
 		model.addAttribute("antallkastigjen", 3 - antallkast);
 		
-		
-		//test
-		session.setAttribute("brukernavn", "XFaze");
-		
 		return "spillView";
 	}
 
 	@PostMapping("/spill/opprett")
-	public String postOpprettSpill(String brukernavn) {
-		Spill nyttSpill = spillService.opprettNyttSpill(brukernavn);
+	public String postOpprettSpill(HttpSession httpSession) {
+		// Omdiriger om ikke innlogget
+		if (!spillerService.erSpillerInnlogget(httpSession)) {
+			return "redirect:/innlogging";
+		}
+		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
+		
+		Spill nyttSpill = spillService.opprettNyttSpill(spiller.getBrukernavn());
 
 		return "redirect:/spill/" + nyttSpill.getSpillnr();
 	}
 
 	@PostMapping("/spill/{id}/blimed")
-	public String postBliMedISpill(@PathVariable("id") Integer spillId, String brukernavn, Model model, HttpSession session) {
+	public String postBliMedISpill(@PathVariable("id") Integer spillId, Model model, HttpSession httpSession) {
+		// Omdiriger om ikke innlogget
+		if (!spillerService.erSpillerInnlogget(httpSession)) {
+			return "redirect:/innlogging";
+		}
+		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
+		
 		Optional<Spill> spillOption = spillService.hentSpillEtterNr(spillId);
 
 		if (spillOption.isEmpty()) {
@@ -77,47 +98,65 @@ public class SpillController {
 			return "/lobby";
 		}
 
-		spillService.leggtilSpiller(brukernavn, spillId);
-		session.setAttribute("antallkast" + spillId, 0);
+		spillService.leggtilSpiller(spiller.getBrukernavn(), spillId);
+		httpSession.setAttribute("antallkast" + spillId, 0);
 
 		return "redirect:/spill/" + spill.getSpillnr();
 	}
 
 	@PostMapping("/spill/{id}/trill")
-	public String trill(@PathVariable("id") Integer spillId, String brukernavn, HttpSession session,
-			@RequestParam(required = false) List<String> valgteterninger) {
+	public String trill(
+		@PathVariable("id") Integer spillId,
+		HttpSession httpSession,
+		@RequestParam(required = false) List<String> valgteterninger
+	) {
+		// Omdiriger om ikke innlogget
+		if (!spillerService.erSpillerInnlogget(httpSession)) {
+			return "redirect:/innlogging";
+		}
 
-		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger");
+		@SuppressWarnings("unchecked")
+		List<Integer> terninger = (List<Integer>) httpSession.getAttribute("terninger");
 		
 		terninger = spillService.spillTrekkString(valgteterninger);
 
-		session.setAttribute("terninger", terninger);
-		Object antallkast = session.getAttribute("antallkast" + spillId);
+		httpSession.setAttribute("terninger", terninger);
+		Object antallkast = httpSession.getAttribute("antallkast" + spillId);
 		if (antallkast == null)
-			session.setAttribute("antallkast" + spillId, 1);
+			httpSession.setAttribute("antallkast" + spillId, 1);
 		else
-			session.setAttribute("antallkast" + spillId, (Integer) antallkast + 1);
+			httpSession.setAttribute("antallkast" + spillId, (Integer) antallkast + 1);
 
 		return "redirect:/spill/" + spillId;
 	}
 	
 	@PostMapping("/spill/{id}/registrer")
-	public String registrer(@PathVariable("id") Integer spillId, String brukernavn, HttpSession session,
-			@RequestParam(required = false) List<String> valgteterninger, @RequestParam String alleterninger) {
+	public String registrer(
+		@PathVariable("id") Integer spillId, 
+		HttpSession httpSession,
+		@RequestParam(required = false) List<String> valgteterninger, 
+		@RequestParam String alleterninger
+	) {
+		// Omdiriger om ikke innlogget
+		if (!spillerService.erSpillerInnlogget(httpSession)) {
+			return "redirect:/innlogging";
+		}
+		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
+		
 		List<String> terninger = Arrays.stream(alleterninger.replaceAll("[\\[\\] ]", "").split(","))
                 .collect(Collectors.toList());
 		
 		boolean ferdig = false; 
 		
 		if (valgteterninger == null)
-			ferdig = !spillService.registrerPoeng((String) session.getAttribute("brukernavn"), spillId, terninger);
+			ferdig = !spillService.registrerPoeng((String) httpSession.getAttribute("brukernavn"), spillId, terninger);
 		else
-			ferdig = !spillService.registrerPoeng((String) session.getAttribute("brukernavn"), spillId, valgteterninger);
+			ferdig = !spillService.registrerPoeng((String) httpSession.getAttribute("brukernavn"), spillId, valgteterninger);
 		
 		if (ferdig)
 			return "redirect:/spill/" + spillId;
-		session.setAttribute("antallkast" + spillId, 0);
+		httpSession.setAttribute("antallkast" + spillId, 0);
 		
-		return trill(spillId, brukernavn, session, new ArrayList<String>());
+		return trill(spillId, spiller.getBrukernavn(), httpSession, new ArrayList<String>());
 	}
 }

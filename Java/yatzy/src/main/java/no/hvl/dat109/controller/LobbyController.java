@@ -23,6 +23,7 @@ public class LobbyController {
 	
 	@GetMapping("/")
 	public String getIndex(HttpSession httpSession) {
+		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
 			return "redirect:/innlogging";
 		}
@@ -32,6 +33,7 @@ public class LobbyController {
 	
 	@GetMapping("/lobby")
 	public String getLobby(Model model, HttpSession httpSession) {
+		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
 			return "redirect:/innlogging";
 		}

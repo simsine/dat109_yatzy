@@ -69,7 +69,7 @@ public class InnloggingController {
 		return "redirect:/lobby";
 	}
 	
-	@PostMapping("/utlogging") 
+	@GetMapping("/utlogging")
 	public String postUtlogging(HttpSession httpSession) {
 		spillerService.loggUtSpiller(httpSession);
 		return "redirect:/innlogging";
