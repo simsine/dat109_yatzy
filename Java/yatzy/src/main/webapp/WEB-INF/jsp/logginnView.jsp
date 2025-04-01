@@ -30,10 +30,10 @@
 					</c:if>
 					<fieldset>
 						<div>
-						<label for="epost">Epost</label>
+						<label for="brukernavn">Epost</label>
 							<input
-							   type="text" id="epost" name="epost"
-							   minlength="2" maxlength="20" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" required
+							   type="text" id="brukernavn" name="brukernavn"
+							   minlength="3" maxlength="20" pattern="^[a-zA-Z0-9_-]{3,20}$" required
 							   oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 							   oninput="this.setCustomValidity('')" 
 							   >
