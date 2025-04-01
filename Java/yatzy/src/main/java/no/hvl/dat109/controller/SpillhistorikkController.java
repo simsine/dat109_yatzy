@@ -26,5 +26,4 @@ public class SpillhistorikkController {
 		
 		return "spillHistorikkView";
 	}
-	
 }

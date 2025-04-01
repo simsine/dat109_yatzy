@@ -17,12 +17,7 @@
 			</h1>
 			
 			<div class="menubox">
-<<<<<<< Updated upstream
-				<p>Hei, ${spiller.fornavn}</p>
-				<a href="lobby" class="unstyled-link"><p>Lobby→</p></a>
-=======
-				<a href="lobby" class="unstyled-link"><p> Lobby → </p></a>
->>>>>>> Stashed changes
+				<a href="${pageContext.request.contextPath}/lobby" class="unstyled-link"> <p> Lobby → </p></a>
 			</div>
 		</div>
 
