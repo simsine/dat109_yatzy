@@ -33,9 +33,9 @@
 						<div>
 							<label for="epost">Epost</label>
 								<input
-								   type="text" id="epost" name="epost"
-								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
-								   oninvalid="this.setCustomValidity('Epost må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+								   type="email" id="epost" name="epost"
+								   minlength="2" maxlength="20" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" required
+								   oninvalid="this.setCustomValidity('Epost må være gyldig')"
 								   oninput="this.setCustomValidity('')" 
 								   >
 					   </div>
@@ -61,16 +61,16 @@
 							<label for="passord">Passord</label>
 								<input
 									type="password" id="passord" name="passord"
-									minlength="2" maxlength="20" pattern="^[a-zæøåA-ZÆØÅ \-]{2,20}$" required
-									oninvalid="this.setCustomValidity('Passord må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
+									minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\W_])(?!.*\s).{8,}$" required
+									oninvalid="this.setCustomValidity('Passord må inneholde minst ett tall, minst én liten bokstav, minst én stor bokstav og minst ett spesialtegn. Mellomrom ikke tillatt.')"
 									oninput="this.setCustomValidity('')"
 									>
 						</div>
 						<div>
-							<label for="epost">Repeter passord</label>
+							<label for="passord_re">Repeter passord</label>
 								<input
-								   type="password" id="epost" name="passord_re"
-								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
+								   type="password" id="passord_re" name="passord_re"
+								   minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\W_])(?!.*\s).{8,}$" required
 								   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
 								   oninput="this.setCustomValidity('')" 
 								   >
