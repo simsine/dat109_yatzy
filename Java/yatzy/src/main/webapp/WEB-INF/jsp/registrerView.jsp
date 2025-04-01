@@ -33,7 +33,7 @@
 						<div>
 							<label for="epost">Epost</label>
 								<input
-								   type="email" id="epost" name="epost"
+								   type="email" id="epost" name="email" value="${registreringForm.email}"
 								   minlength="2" maxlength="20" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" required
 								   oninvalid="this.setCustomValidity('Epost må være gyldig')"
 								   oninput="this.setCustomValidity('')" 
@@ -42,7 +42,7 @@
 					   <div>
 	   						<label for="brukernavn">Brukernavn</label>
 	   							<input
-	   							   type="text" id="brukernavn" name="brukernavn"
+	   							   type="text" id="brukernavn" name="brukernavn" value="${registreringForm.brukernavn}"
 	   							   minlength="2" maxlength="20" pattern="^[a-zA-Z0-9_-]{3,20}$" required
 	   							   oninvalid="this.setCustomValidity('Brukernavn må være engelske bokstaver, tall og understrek(_), og unikt')"
 	   							   oninput="this.setCustomValidity('')" 
@@ -51,7 +51,7 @@
 					   <div>
 						   <label for="fornavn">Fornavn</label>
 								<input
-								   type="text" id="fornavn" name="fornavn"
+								   type="text" id="fornavn" name="fornavn" value="${registreringForm.fornam}"
 								   minlength="2" maxlength="30" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
 								   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 								   oninput="this.setCustomValidity('')" 
@@ -60,7 +60,7 @@
 						<div>
 							<label for="etternavn">Etternavn</label>
 								<input
-								   type="text" id="etternavn" name="etternavn"
+								   type="text" id="etternavn" name="etternavn" value="${registreringForm.etternavn}"
 								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
 								   oninvalid="this.setCustomValidity('Etternavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 								   oninput="this.setCustomValidity('')" 
@@ -70,8 +70,8 @@
 							<label for="passord">Passord</label>
 								<input
 									type="password" id="passord" name="passord"
-									minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\W_])(?!.*\s).{8,}$" required
-									oninvalid="this.setCustomValidity('Passord må inneholde minst ett tall, minst én liten bokstav, minst én stor bokstav og minst ett spesialtegn. Mellomrom ikke tillatt.')"
+									minlength="8" maxlength="20" required
+									oninvalid="this.setCustomValidity('')"
 									oninput="this.setCustomValidity('')"
 									>
 						</div>
@@ -79,8 +79,8 @@
 							<label for="passord_re">Repeter passord</label>
 								<input
 								   type="password" id="passord_re" name="passord_re"
-								   minlength="8" maxlength="20" pattern="^(?=.*\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\W_])(?!.*\s).{8,}$" required
-								   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
+								   minlength="8" maxlength="20" required
+								   oninvalid="this.setCustomValidity('')"
 								   oninput="this.setCustomValidity('')" 
 								   >
 						</div>

@@ -50,6 +50,7 @@ public class RegistreringController {
 					.toList();
 			model.addAttribute("errors", errors);
 			httpServletResponse.setStatus(400);
+		    redirectAttributes.addFlashAttribute("registreringForm", registreringForm);
 			return "registrerView";
 		}
 

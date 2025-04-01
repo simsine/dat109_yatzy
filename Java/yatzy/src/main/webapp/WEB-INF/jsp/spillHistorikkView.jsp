@@ -18,7 +18,7 @@
 				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
-				<p>Hei, ${fornavn}</p>
+				<p>Hei, ${spiller.fornavn}</p>
 				<a href="lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
