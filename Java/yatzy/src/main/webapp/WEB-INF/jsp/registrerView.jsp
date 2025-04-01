@@ -51,7 +51,7 @@
 					   <div>
 						   <label for="fornavn">Fornavn</label>
 								<input
-								   type="text" id="fornavn" name="fornavn" value="${registreringForm.fornam}"
+								   type="text" id="fornavn" name="fornavn" value="${registreringForm.fornavn}"
 								   minlength="2" maxlength="30" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
 								   oninvalid="this.setCustomValidity('Fornavn må være 2-20 bokstaver, ha stor forbokstav, og kan inneholde mellomrom og bindestrek')"
 								   oninput="this.setCustomValidity('')" 

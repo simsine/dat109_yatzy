@@ -72,7 +72,7 @@ public class YatzySimSpill {
 			// POST /trill {beholdte terninger} 3
 			terningverdier = spillService.spillTrekk(beholdte);
 			System.out.println("Spiller kastet følgende terninger: " + terningverdier.toString());
-
+		/* 
 			int poeng = spillService.registrerPoeng(poengtabell, type, terningverdier);
 			System.out.println("Spiller fikk " + (poeng == 50 ? PoengType.YATZY.toString() : type.toString()) + " resultat: " + poeng);
 			// return poengtabell
@@ -81,7 +81,7 @@ public class YatzySimSpill {
 			type = spillService.getNesteType(type, poengtabell);
 			if (type == null)
 				ferdig = true;
-		
+		*/
 		} while (!ferdig);
 
 		System.out.println("\nSimulering er ferdig, sum er: " + poengtabell.getSum());
