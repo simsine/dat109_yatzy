@@ -141,7 +141,6 @@ public class SpillController {
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
 			return "redirect:/innlogging";
 		}
-		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 		
 		List<String> terninger = Arrays.stream(alleterninger.replaceAll("[\\[\\] ]", "").split(","))
                 .collect(Collectors.toList());
@@ -157,6 +156,6 @@ public class SpillController {
 			return "redirect:/spill/" + spillId;
 		httpSession.setAttribute("antallkast" + spillId, 0);
 		
-		return trill(spillId, spiller.getBrukernavn(), httpSession, new ArrayList<String>());
+		return trill(spillId, httpSession, new ArrayList<String>());
 	}
 }

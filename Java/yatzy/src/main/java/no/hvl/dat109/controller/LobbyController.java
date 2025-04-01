@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.servlet.http.HttpSession;
-import jakarta.websocket.Session;
 import no.hvl.dat109.entity.Spill;
 import no.hvl.dat109.service.SpillService;
 import no.hvl.dat109.service.SpillerService;
