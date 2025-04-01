@@ -1,4 +1,4 @@
-package no.hvl.dat109.service;
+package no.hvl.dat109.util;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -6,6 +6,7 @@ import java.security.spec.InvalidKeySpecException;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+import javax.xml.bind.DatatypeConverter;
 /*
  * DatatypeConverter er ikke lenger med i Java etter Java 9.
  * 
@@ -16,9 +17,9 @@ import javax.crypto.spec.PBEKeySpec;
  * I Spring web-applikasjoner trenger vi ikke denne jar-filen,
  * siden den allerede er en del av Spring MVC.
  */
-import javax.xml.bind.DatatypeConverter;
 
-public class PassordService {
+
+public class PassordUtil {
 
 	/**
 	 * @return et tilfeldig generert 16 bytes salt ved å bruke SHA1PRNG

@@ -1,7 +1,8 @@
-package no.hvl.dat109.service;
+package no.hvl.dat109.util;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import no.hvl.dat109.entity.Spiller;
 
 public class LoginUtil {
 	public static void loggUtBruker(HttpSession session) {
@@ -10,13 +11,12 @@ public class LoginUtil {
 		}
 	}
 	
-	public static void loggInnBruker(HttpServletRequest request, Bruker bruker) {
+	public static void loggInnBruker(HttpServletRequest request, Spiller spiller) {
 		loggUtBruker(request.getSession());
 		HttpSession sesjon = request.getSession();
-		sesjon.setAttribute("bruker", bruker);
-		sesjon.setMaxInactiveInterval(30); //sekunder		
+		sesjon.setAttribute("spiller", spiller);
 	}
 	public static boolean erBrukerInnlogget(HttpSession session) {
-		return session != null && session.getAttribute("bruker") != null;
+		return session != null && session.getAttribute("spiller") != null;
 	}
 }

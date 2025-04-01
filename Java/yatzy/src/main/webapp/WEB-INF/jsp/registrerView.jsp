@@ -69,7 +69,7 @@
 						<div>
 							<label for="epost">Repeter passord</label>
 								<input
-								   type="password" id="epost" name="epost"
+								   type="password" id="epost" name="passord_re"
 								   minlength="2" maxlength="20" pattern="^[A-ZÆØÅ][a-zæøåA-ZÆØÅ \-]{1,19}$" required
 								   oninvalid="this.setCustomValidity('Repetert passord må matche passord')"
 								   oninput="this.setCustomValidity('')" 

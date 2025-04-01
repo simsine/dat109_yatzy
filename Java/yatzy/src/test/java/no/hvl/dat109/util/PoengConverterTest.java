@@ -1,6 +1,7 @@
 package no.hvl.dat109.util;
 
 import no.hvl.dat109.yatzy.PoengType;
+import no.hvl.dat109.util.PoengConverter;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
