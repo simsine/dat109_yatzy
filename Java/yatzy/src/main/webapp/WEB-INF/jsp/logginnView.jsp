@@ -42,7 +42,7 @@
 							<label for="passord">Passord</label>
 							<input
 								type="password" id="passord" name="passord"
-								minlength="2" maxlength="20" pattern="^(?=.*\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\W_])(?!.*\s).{8,}$" required
+								minlength="8" maxlength="255" required
 								oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 								oninput="this.setCustomValidity('')"
 								>
