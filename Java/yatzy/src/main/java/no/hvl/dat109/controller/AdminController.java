@@ -17,10 +17,10 @@ public class AdminController {
 	public String admin(Model model, HttpSession session){		
 		
 		if(spillerService.erSpillerInnlogget(session)) {
-			return "redirect:logginnVeiw";
+			return "redirect:/innlogging";
 		}
 		
-		return spillerService.erAdmin(session) ? "adminVeiw" : "redirect:lobby";
+		return spillerService.erAdmin(session) ? "adminVeiw" : "redirect:/lobby";
 		
 	}
 }
