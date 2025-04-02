@@ -17,7 +17,7 @@
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
-				<a href="${pageContext.request.contextPath}/spillhistorikk/${spiller.brukernavn}" classes="unstyled-link"> 
+				<a href="/spillhistorikk/${spiller.brukernavn}" classes="unstyled-link"> 
 				<p>Spillhistorikk→</p></a>
 			</div>
 		</div>

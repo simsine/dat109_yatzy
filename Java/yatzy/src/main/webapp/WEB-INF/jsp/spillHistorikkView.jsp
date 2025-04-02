@@ -17,7 +17,7 @@
 			</h1>
 			
 			<div class="menubox">
-				<a href="${pageContext.request.contextPath}/lobby" class="unstyled-link"> <p> Lobby → </p></a>
+				<a href="/lobby" class="unstyled-link"> <p> Lobby → </p></a>
 			</div>
 		</div>
 
@@ -34,7 +34,7 @@
 				<c:forEach var="pt" items="${tidligereSpill}">
 					<div class="lobbyGames">
 						<div class="item1">
-							<a href="${pageContext.request.contextPath}/spill/${pt.poengtabellId.spillnr}">
+							<a href="/spill/${pt.poengtabellId.spillnr}">
 								<button> Spill ${pt.poengtabellId.spillnr}</button>
 							</a>
 						</div>
