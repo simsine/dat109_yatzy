@@ -12,15 +12,15 @@ import no.hvl.dat109.service.SpillerService;
 public class AdminController {
 	@Autowired
 	SpillerService spillerService;
-	
+
 	@GetMapping("/admin")
-	public String admin(Model model, HttpSession session){		
-		
-		if(spillerService.erSpillerInnlogget(session)) {
+	public String admin(Model model, HttpSession session) {
+
+		if (spillerService.erSpillerInnlogget(session)) {
 			return "redirect:/innlogging";
 		}
-		
-		return spillerService.erAdmin(session) ? "adminVeiw" : "redirect:/lobby";
-		
+
+		return spillerService.erAdmin(session) ? "adminView" : "redirect:/lobby";
+
 	}
 }
