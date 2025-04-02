@@ -28,6 +28,11 @@ CREATE TABLE poengtabell (
     FOREIGN KEY (spillnr) REFERENCES spill(spillnr)
 );
 
+CREATE TABLE admin(
+	brukernavn varchar(255) primary key,
+	FOREIGN KEY (brukernavn) REFERENCES spiller(brukernavn)	
+);
+
 INSERT INTO spiller(brukernavn, email, fornavn, etternavn, hashetpassord, salt) VALUES 
 ('XFaze', 'jada@gugel.no', 'Simeon', 'Strømsfjes', 'hei', 'NaCL'),
 ('Jogustauhan', 'nehei@jahu.net', 'Auguhan', 'Staavik', 'ikke', 'SaLT'),
