@@ -24,22 +24,11 @@ CREATE TABLE poengtabell (
     spillnr INTEGER,
     poeng JSONB,
     PRIMARY KEY (brukernavn, spillnr),
-    FOREIGN KEY (brukernavn) REFERENCES spiller(brukernavn)
+    FOREIGN KEY (brukernavn) REFERENCES spiller(brukernavn),
     FOREIGN KEY (spillnr) REFERENCES spill(spillnr)
 );
 
 CREATE TABLE admin(
 	brukernavn varchar(255) primary key,
 	FOREIGN KEY (brukernavn) REFERENCES spiller(brukernavn)	
-);
-
-INSERT INTO spiller(brukernavn, email, fornavn, etternavn, hashetpassord, salt) VALUES 
-('XFaze', 'jada@gugel.no', 'Simeon', 'Strømsfjes', 'hei', 'NaCL'),
-('Jogustauhan', 'nehei@jahu.net', 'Auguhan', 'Staavik', 'ikke', 'SaLT'),
-('MisterMan', 'heman@muskel.com', 'Herdahl', 'Manberg', 'oiasjd', 'HCl'),
-('Lajus', 'l@sse.no', 'Labbe', 'Uggus', 'neitakk', 'OIAJSDOIJASDIOJ1234!'),
-('Ploge','lars@gmail.com','Lars','Ploge','Sigma','banan');
-
-INSERT INTO admin(brukernavn) VALUES(
-	('Ploge')
 );
