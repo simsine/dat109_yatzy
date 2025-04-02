@@ -37,4 +37,9 @@ INSERT INTO spiller(brukernavn, email, fornavn, etternavn, hashetpassord, salt) 
 ('XFaze', 'jada@gugel.no', 'Simeon', 'Strømsfjes', 'hei', 'NaCL'),
 ('Jogustauhan', 'nehei@jahu.net', 'Auguhan', 'Staavik', 'ikke', 'SaLT'),
 ('MisterMan', 'heman@muskel.com', 'Herdahl', 'Manberg', 'oiasjd', 'HCl'),
-('Lajus', 'l@sse.no', 'Labbe', 'Uggus', 'neitakk', 'OIAJSDOIJASDIOJ1234!');
+('Lajus', 'l@sse.no', 'Labbe', 'Uggus', 'neitakk', 'OIAJSDOIJASDIOJ1234!'),
+('Ploge','lars@gmail.com','Lars','Ploge','Sigma','banan');
+
+INSERT INTO admin(brukernavn) VALUES(
+	('Ploge')
+);
