@@ -16,7 +16,7 @@ public class AdminController {
 	@GetMapping("/admin")
 	public String admin(Model model, HttpSession session) {
 
-		if (spillerService.erSpillerInnlogget(session)) {
+		if (!spillerService.erSpillerInnlogget(session)) {
 			return "redirect:/innlogging";
 		}
 

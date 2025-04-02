@@ -6,19 +6,14 @@ import jakarta.validation.constraints.Size;
 
 public class InnloggingForm {
 
-    @NotEmpty(message = "Brukernavn kan ikke være tomt")
+	@NotEmpty(message = "Brukernavn kan ikke være tomt")
 	@Size(min = 3, max = 20, message = "Brukernavn må være mellom 2-20 bokstaver")
-	@Pattern(regexp = "^[a-zA-Z0-9_-]{3,20}$",
-			message = "Brukernavn må være engelske bokstaver, tall og _ understrek")
-    private String brukernavn;
-	
-    @NotEmpty(message = "Passord kan ikke være tomt")
+	@Pattern(regexp = "^[a-zA-Z0-9_-]{3,20}$", message = "Brukernavn må være engelske bokstaver, tall og _ understrek")
+	private String brukernavn;
+
+	@NotEmpty(message = "Passord kan ikke være tomt")
 	@Size(min = 8, message = "Passord må være minst 8 tegn")
-	@Pattern(regexp = "^(?=.*\\d)(?=.*[a-zæøå])(?=.*[A-ZÆØÅ])(?=.*[\\W_])(?!.*\\s).{8,}$",
-			message = "Passord må inneholde minst ett tall, " +
-					  "minst én liten bokstav, minst én stor bokstav og minst ett spesialtegn. " +
-					  "Mellomrom ikke tillatt.")
-    private String passord;
+	private String passord;
 
 	public InnloggingForm(
 			@NotEmpty(message = "Brukernavn kan ikke være tomt") @Size(min = 3, max = 20, message = "Brukernavn må være mellom 2-20 bokstaver") @Pattern(regexp = "^[a-zA-Z0-9_-]{3,20}$", message = "Brukernavn må være engelske bokstaver, tall og _ understrek") String brukernavn,
@@ -48,6 +43,5 @@ public class InnloggingForm {
 	public String toString() {
 		return "InnloggingForm [brukernavn=" + brukernavn + ", passord=" + passord + "]";
 	}
-
 
 }
