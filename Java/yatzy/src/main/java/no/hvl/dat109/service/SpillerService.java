@@ -1,5 +1,6 @@
 package no.hvl.dat109.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import no.hvl.dat109.entity.Spiller;
+import no.hvl.dat109.repo.AdminRepo;
 import no.hvl.dat109.repo.SpillerRepo;
 import no.hvl.dat109.util.LoginUtil;
 import no.hvl.dat109.util.PassordUtil;
@@ -16,6 +18,9 @@ import no.hvl.dat109.util.PassordUtil;
 public class SpillerService {
 	@Autowired
 	SpillerRepo spillerRepo;
+	
+	@Autowired
+	AdminRepo adminRepo;
 	
 	public Optional<Spiller> hentSpillerEtterBrukernavn(String brukernavn) {
 		return spillerRepo.findById(brukernavn);
@@ -39,5 +44,14 @@ public class SpillerService {
 	
 	public boolean erSpillerInnlogget(HttpSession httpSession) {
 		return LoginUtil.erBrukerInnlogget(httpSession);
+	}
+
+	/**
+	 * For å sjekke om spiller er admin og la de ha tilgang til admin siden
+	 */
+	public boolean erAdmin(HttpSession session) {
+		String admin = hentInnloggetSpiller(session).getBrukernavn();
+		List<String> admins = adminRepo.findAll().stream().map(a -> a.getBrukernavn()).toList();
+		return admins.contains(admin);
 	}
 }
