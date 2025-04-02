@@ -17,6 +17,14 @@
 		</h1>
 		<div class="menubox">
 			<p>Hei, ${spiller.fornavn}</p>
+		
+			<form method="post" action="/innlogging">
+				<div class="item1">
+					<input type="hidden" value="loggut" name="brukernavn">
+					<input type="submit" value="Logg ut">
+				</div>
+			</form>
+							
 			<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
 		</div>
 	</div>
@@ -78,7 +86,7 @@
 							<img src="/click.png" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
 						</p>
 					</div>
-
+					
 					<form method="post">
 						<div class="terningContainer">
 							<c:forEach items="${terninger}" var="terning">

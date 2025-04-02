@@ -17,7 +17,16 @@
 			</h1>
 			
 			<div class="menubox">
-				<a href="/lobby" class="unstyled-link"> <p> Lobby → </p></a>
+				<p>Hei, ${spiller.brukernavn}</p>
+								
+				<form method="post" action="/innlogging">
+					<div class="item1">
+						<input type="hidden" value="loggut" name="brukernavn">
+						<input type="submit" value="Logg ut">
+					</div>
+				</form>
+				
+				<a href="/lobby" class="unstyled-link"><p> Lobby → </p></a>
 			</div>
 		</div>
 
@@ -26,26 +35,29 @@
 				<h2>Historikk for ${brukernavn} </h2>
 			</div>
 
-			<c:if test="${empty tidligereSpill}">
-				<p> Ingen tidligere spill</p>
-			</c:if>
-
-			<c:if test="${not empty tidligereSpill}">
-				<c:forEach var="pt" items="${tidligereSpill}">
-					<div class="lobbyGames">
-						<div class="item1">
-							<a href="/spill/${pt.poengtabellId.spillnr}">
-								<button> Spill ${pt.poengtabellId.spillnr}</button>
-							</a>
-						</div>
+			<div class="historyGames">
+					
+				<c:if test="${empty tidligereSpill}">
+					<p> Ingen tidligere spill</p>
+				</c:if>
 	
-						<div class="item2">
-							<p>${pt.spill.tidopprettet}</p>
+				<c:if test="${not empty tidligereSpill}">
+					<c:forEach var="pt" items="${tidligereSpill}">
+						<div class="lobbyGames">
+							<div class="item1">
+								<a href="/spill/${pt.poengtabellId.spillnr}">
+									<button> Spill ${pt.poengtabellId.spillnr}</button>
+								</a>
+							</div>
+		
+							<div class="item2">
+								<p>${pt.spill.tidopprettet}</p>
+							</div>
+					
 						</div>
-				
-					</div>
-				</c:forEach>
-			</c:if>
+					</c:forEach>
+				</c:if>
+			</div>
 		</div>
 	</body>
 </html>

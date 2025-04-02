@@ -17,8 +17,15 @@
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
-				<a href="/spillhistorikk/${spiller.brukernavn}" classes="unstyled-link"> 
-				<p>Spillhistorikk→</p></a>
+				
+				<form method="post" action="/innlogging">
+					<div class="item1">
+						<input type="hidden" value="loggut" name="brukernavn">
+						<input type="submit" value="Logg ut">
+					</div>
+				</form>
+				
+				<a href="/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>
 		<div class="main">
