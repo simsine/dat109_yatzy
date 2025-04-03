@@ -130,10 +130,11 @@ public class SpillService {
 
 		Poengtabell poengTabell = poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillNr);
 
-		PoengType type = poengTabell.finnForsteIkkeRegistrerteType();
-		if (type == null)
+		Optional<PoengType> optionPoengType = poengTabell.finnForsteIkkeRegistrerteType();
+		if (optionPoengType.isEmpty())
 			return false;
-
+		PoengType poengType = optionPoengType.get();
+		
 		if (terninger.size() > Kopp.ANTALL_TERNINGER) {
 			throw new IllegalArgumentException("Kan ikke registrere mer enn " + Kopp.ANTALL_TERNINGER + "terninger.");
 		}
@@ -149,7 +150,7 @@ public class SpillService {
 			return true;
 		}
 
-		switch (type) {
+		switch (poengType) {
 		case ENERE:
 			poeng = PoengUtil.enere(terninger);
 			break;
@@ -199,12 +200,12 @@ public class SpillService {
 			System.out.println("Shit's fucked");
 			break;
 		}
-		poengTabell.registrerPoeng(type, poeng);
+		poengTabell.registrerPoeng(poengType, poeng);
 		poengtabellRepo.save(poengTabell);
 		return true;
 	}
 
-	public PoengType finnPoengType(String brukernavn, int spillNr) {
+	public Optional<PoengType> finnPoengType(String brukernavn, int spillNr) {
 		Poengtabell poengTabell = poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillNr);
 
 		return poengTabell.finnForsteIkkeRegistrerteType();

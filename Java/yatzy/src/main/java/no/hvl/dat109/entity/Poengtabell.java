@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.hibernate.annotations.JdbcTypeCode;
@@ -130,22 +131,24 @@ public class Poengtabell {
 	 * 
 	 * @return PoengType
 	 */
-	public PoengType finnForsteIkkeRegistrerteType() {
+	public Optional<PoengType> finnForsteIkkeRegistrerteType() {
 
-		Map<PoengType, Integer> sortedMap = this.getAllePoeng().entrySet().stream().sorted(Map.Entry.comparingByKey())
-				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue,
-						LinkedHashMap::new));
+		Map<PoengType, Integer> sortedMap = this.getAllePoeng().entrySet().stream()
+				.sorted(Map.Entry.comparingByKey())
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
 
-		Entry<PoengType, Integer> type = sortedMap.entrySet().stream().filter(t -> t.getValue().equals(-1)).findFirst()
-				.orElse(null);
+		Optional<Entry<PoengType, Integer>> type = sortedMap.entrySet().stream().filter(t -> t.getValue().equals(-1)).findFirst();
 
-		if (type == null)
-			return null;
-		PoengType poengType = type.getKey();
+		if (type.isEmpty())
+			return Optional.empty();
+		
+		PoengType poengType = type.get().getKey();
+		
 		if (poengType.equals(PoengType.YATZY) && this.getErYatzyRegistrert()) {
-			return null;
+			return Optional.empty();
 		}
-		return type.getKey();
+		
+		return Optional.of(poengType);
 	}
 
 }

@@ -51,7 +51,8 @@ public class SpillController {
 		model.addAttribute("poengtyper", PoengType.values());
 		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(spillNr));
 		model.addAttribute("spillnr", spillNr);
-		model.addAttribute("runde", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).toString());
+		model.addAttribute("rundenaa", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).map(Enum::toString).orElse(""));
+		
 		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillNr);
 		if (terninger == null)
 			terninger = spillService.spillTrekk();

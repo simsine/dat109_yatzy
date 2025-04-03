@@ -35,7 +35,7 @@
 				<h2>Spill ${spillnr}</h2>
 			</div>
 			<div class="item2">
-				<h2>Runde: ${runde}</h2>
+				<h2>Runde: ${rundenaa}</h2>
 			</div>
 			<div class="gameBrettContainer">
 				<div class="gameTable">
