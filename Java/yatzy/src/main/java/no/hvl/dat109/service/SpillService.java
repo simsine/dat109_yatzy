@@ -90,6 +90,13 @@ public class SpillService {
 		return spill.getAntallSpillere();
 	}
 
+	public void slettSpill(Integer nr) {
+		if (hentSpillEtterNr(nr).isPresent()) {
+			poengtabellRepo.deleteBySpillnr(nr);
+			spillRepo.deleteById(nr);
+		}
+	}
+
 	/**
 	 * Starter et nytt yatzy spill fra contolleren
 	 */
