@@ -49,7 +49,7 @@ public class SpillController {
 		Spiller spiller = spillerService.hentInnloggetSpiller(session);
 		
 		model.addAttribute("poengtyper", PoengType.values());
-		model.addAttribute("typenaa", spillService.finnPoengType(spillerService.hentInnloggetSpiller(session).getBrukernavn(), Integer.parseInt(spillId)));
+		model.addAttribute("typenaa", spillService.finnPoengType(spillerService.hentInnloggetSpiller(session).getBrukernavn(), spillNr));
 		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(spillNr));
 		model.addAttribute("spillnr", spillNr);
 		model.addAttribute("runde", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).toString());
