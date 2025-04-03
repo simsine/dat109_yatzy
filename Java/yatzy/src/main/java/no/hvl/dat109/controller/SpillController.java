@@ -49,10 +49,10 @@ public class SpillController {
 		model.addAttribute("poengtyper", PoengType.values());
 		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(Integer.parseInt(spillId)));
 		model.addAttribute("spillnr", spillId);
-		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger");
+		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillId);
 		if (terninger == null)
 			terninger = spillService.spillTrekk();
-		model.addAttribute("terninger", terninger);
+		model.addAttribute("terninger" + spillId, terninger);
 		
 		Integer antallkast = 0;
 		if (session.getAttribute("antallkast" + spillId) != null)
@@ -123,7 +123,7 @@ public class SpillController {
 		}
 
 		@SuppressWarnings("unchecked")
-		List<Integer> terninger = (List<Integer>) httpSession.getAttribute("terninger");
+		List<Integer> terninger = (List<Integer>) httpSession.getAttribute("terninger" + spillId);
 		
 		terninger = spillService.spillTrekkString(valgteterninger);
 
