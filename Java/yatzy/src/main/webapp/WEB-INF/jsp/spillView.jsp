@@ -59,7 +59,7 @@
 							 -->
 							<c:forEach var="poengtype" items="${poengtyper}">
 								<tr>
-									<td>${poengtype}</td>
+									<td style="background-color:${typenaa eq poengtype ? 'grey' : 'white'}">${poengtype}</td>
 									<c:forEach var="poengtabell" items="${poengtabeller}">
 										<td>${poengtabell.poeng[poengtype] == -1 ? '-' : poengtabell.poeng[poengtype]}</td>
 									</c:forEach>

@@ -48,6 +48,7 @@ public class SpillController {
 		
 		model.addAttribute("poengtyper", PoengType.values());
 		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(Integer.parseInt(spillId)));
+		model.addAttribute("typenaa", spillService.finnPoengType(spillerService.hentInnloggetSpiller(session).getBrukernavn(), Integer.parseInt(spillId)));
 		model.addAttribute("spillnr", spillId);
 		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillId);
 		if (terninger == null)
