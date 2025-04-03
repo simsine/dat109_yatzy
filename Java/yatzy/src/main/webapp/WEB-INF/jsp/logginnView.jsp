@@ -54,5 +54,10 @@
 				<p>Ny spiller? <a href="/registrering">Opprett bruker</a></p>
 			</div>
 		</div>
+		
+		<footer> 
+			<h2>Credits</h2>
+			<p><a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Candy Design - Flaticon</a><p>
+		</footer>
 	</body>
 </html>

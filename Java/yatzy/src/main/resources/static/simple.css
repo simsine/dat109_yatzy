@@ -31,7 +31,6 @@
 	src: url('/MoiraiOne-Regular.ttf') format("truetype");
 }
 
-
 /* Reset box-sizing */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -81,6 +80,7 @@ body {
   margin: 0;
   font-family: var(--sans-font);
 }
+
 body > * {
   grid-column: 2;
 }
@@ -255,12 +255,20 @@ main p {
 }
 
 body > footer {
-  margin-top: 4rem;
-  padding: 2rem 1rem 1.5rem 1rem;
-  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 10rem;
+  align-items: baseline;
+  height: 2rem;
+  color: var(--text);
   font-size: 0.9rem;
   text-align: center;
   border-top: 1px solid var(--border);
+}
+
+body > footer h2 {
+	font-size: 1.5rem;
 }
 
 /* Format headers */
@@ -376,28 +384,6 @@ select[disabled] {
   border-width: 2px;
 }
 
-input[type="submit2"] {
-  border: none;
-  background-color: var(--bg);
-  font-size: 1.2rem;
-  color: var(--text);
-  padding: 0;
-  margin: 0;
-  text-align: right;
-}
-
-input[type="submit2"]:hover{
-	filter: brightness(0.7);
-	cursor: pointer;
-}
-
-input[type="submit2"][disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-  border-color: var(--bg);
-  border-width: 2px;
-}
-
 input:disabled,
 textarea:disabled,
 select:disabled {
@@ -413,7 +399,6 @@ input[type="range"] {
 abbr {
   cursor: help;
 }
-
 
 button:hover {
     filter: brightness(0.7);

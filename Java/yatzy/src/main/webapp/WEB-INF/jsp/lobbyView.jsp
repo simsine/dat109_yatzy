@@ -18,6 +18,8 @@
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				
+				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+				
 				<a href=/utlogging><button>Logg ut</button></a>
 				
 				<a href="/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
@@ -45,5 +47,10 @@
 				</div>
 			</c:forEach>
 		</div>
+		
+		<footer> 
+			<h2>Credits</h2>
+			<p><a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Candy Design - Flaticon</a><p>
+		</footer>
 	</body>
 </html>

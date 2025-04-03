@@ -13,12 +13,14 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
+				<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
 			</h1>
 			
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
-								
+				
+				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+							
 				<a href=/utlogging><p>Logg ut<p></a>
 				
 				<a href="/lobby" class="unstyled-link"><p> Lobby → </p></a>
@@ -27,7 +29,7 @@
 
 		<div class="main">
 			<div class="spillhistorikk">
-				<h2>Historikk for ${brukernavn} </h2>
+				<h2>Historikk for ${brukernavn}</h2>
 			</div>
 
 			<div class="historyGames">
@@ -38,7 +40,7 @@
 	
 				<c:if test="${not empty tidligereSpill}">
 					<c:forEach var="pt" items="${tidligereSpill}">
-						<div class="lobbyGames">
+						
 							<div class="item1">
 								<a href="/spill/${pt.poengtabellId.spillnr}">
 									<button> Spill ${pt.poengtabellId.spillnr}</button>
@@ -48,11 +50,16 @@
 							<div class="item2">
 								<p>${pt.spill.tidopprettet}</p>
 							</div>
-					
-						</div>
+
 					</c:forEach>
 				</c:if>
+				
 			</div>
 		</div>
+		
+		<footer> 
+			<h2>Credits</h2>
+			<p><a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Candy Design - Flaticon</a><p>
+		</footer>
 	</body>
 </html>

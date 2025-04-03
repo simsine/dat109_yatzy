@@ -10,106 +10,114 @@
 <link rel="stylesheet" href="/simple.css">
 </head>
 
-<body>
-	<div class="header">
-		<h1>
-			<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
-		</h1>
-		<div class="menubox">
-			<p>Hei, ${spiller.fornavn}</p>
-		
-			<a href=/utlogging><p>Logg ut<p></a>
-							
-			<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
+	<body>
+		<div class="header">
+			<h1>
+				<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
+			</h1>
+			<div class="menubox">
+				<p>Hei, ${spiller.fornavn}</p>
+				
+				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+			
+				<a href=/utlogging><p>Logg ut<p></a>
+								
+				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
+			</div>
 		</div>
-	</div>
-
-	<div class="main">
-		<div class="gameView">
-			<div class="item1">
-				<h2>Spill ${spillnr}</h2>
-			</div>
-			<div class="item2">
-				<h2>Runde: ${rundenaa}</h2>
-			</div>
-			<div class="gameBrettContainer">
-				<div class="gameTable">
-					<table>
-						<thead>
-							<tr>
-								<th>Kategori</th>
-								<c:forEach var="poengtabell" items="${poengtabeller}">
-									<th>${poengtabell.poengtabellId.brukernavn}</th>
-								</c:forEach>
-							</tr>
-						</thead>
-						<tbody>
-							<!-- 
-                            <c:set var="categories" value="${[
-                                'Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 
-                                'Bonus', 'Ett par', 'To par', 'Tre like', 'Fire like', 
-                                'Liten straight', 'Stor straight', 'Full house', 
-                                'Sjanse', 'Yatzy', 'Total score'
-                            ]}" />
-							 -->
-							<c:forEach var="poengtype" items="${poengtyper}">
+	
+		<div class="main">
+			<div class="gameView">
+				<div class="item1">
+					<h2>Spill ${spillnr}</h2>
+				</div>
+				<div class="item2">
+					<h2>Runde: ${rundenaa}</h2>
+				</div>
+				<div class="gameBrettContainer">
+					<div class="gameTable">
+						<table>
+							<thead>
 								<tr>
-									<td style="background-color:${typenaa eq poengtype ? 'grey' : 'white'}">${poengtype}</td>
+									<th>Kategori</th>
 									<c:forEach var="poengtabell" items="${poengtabeller}">
-										<td>${poengtabell.poeng[poengtype] == -1 ? '-' : poengtabell.poeng[poengtype]}</td>
+										<th>${poengtabell.poengtabellId.brukernavn}</th>
 									</c:forEach>
 								</tr>
-							</c:forEach>
-							<tr>
-								<td>Sum</td>
-								<c:forEach var="poengtabell" items="${poengtabeller}">
-									<td>${poengtabell.sum}</td>
+							</thead>
+							<tbody>
+								<!-- 
+	                            <c:set var="categories" value="${[
+	                                'Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 
+	                                'Bonus', 'Ett par', 'To par', 'Tre like', 'Fire like', 
+	                                'Liten straight', 'Stor straight', 'Full house', 
+	                                'Sjanse', 'Yatzy', 'Total score'
+	                            ]}" />
+								 -->
+								<c:forEach var="poengtype" items="${poengtyper}">
+									<tr>
+										<td style="background-color:${typenaa eq poengtype ? 'grey' : 'white'}">${poengtype}</td>
+										<c:forEach var="poengtabell" items="${poengtabeller}">
+											<td>${poengtabell.poeng[poengtype] == -1 ? '-' : poengtabell.poeng[poengtype]}</td>
+										</c:forEach>
+									</tr>
 								</c:forEach>
-							</tr>
-						</tbody>
-					</table>
-
-					<p>${GameTable}</p>
-				</div>
-			</div>
-
-			<div class="gameDiceContainer">
-				<div class="gameDiceview">
-					<div class="gameDiceHeader">
-						<h3>Det er ${spiller.brukernavn} sin tur</h3>
-						<p>
-							<img src="/click.png" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
-						</p>
+								<tr>
+									<td>Sum</td>
+									<c:forEach var="poengtabell" items="${poengtabeller}">
+										<td>${poengtabell.sum}</td>
+									</c:forEach>
+								</tr>
+							</tbody>
+						</table>
+	
+						<p>${GameTable}</p>
 					</div>
-					
-					<form method="post">
-						<div class="terningContainer">
-							<c:forEach items="${terninger}" var="terning">
-								<label class="image-checkbox"> 
-									<input type="checkbox" name="valgteterninger" value="${terning}"> 
-									<img src="/terning${terning}.png">
-								</label>
-							</c:forEach>
-							<input type="hidden" name="alleterninger" value="${terninger}" />
+				</div>
+	
+				<div class="gameDiceContainer">
+					<div class="gameDiceview">
+						<div class="gameDiceHeader">
+							<h3>Det er ${spiller.brukernavn} sin tur</h3>
+							<p>
+								<img src="/click.png" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
+							</p>
 						</div>
 						
-						<div class="trillButtonContainer">
-							<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
-							<c:if test="${antallkastigjen > 0}">
-								<input type="submit" formaction="/spill/${spillnr}/trill"
-									   value="Trill" class="trillButton" />
-							</c:if>
-							<c:if test="${(antallkastigjen < 1) or (alleterninger[0] == alleterninger[1] 
-						        and alleterninger[1] == alleterninger[2] 
-						        and alleterninger[2] == alleterninger[3] 
-						        and alleterninger[3] == alleterninger[4])}">
-						    	<input type="submit" formaction="/spill/${spillnr}/registrer" value="Avslutt runde" class="registrerButton" />
-							</c:if>
-						</div>	
-					</form>
+						<form method="post">
+							<div class="terningContainer">
+								<c:forEach items="${terninger}" var="terning">
+									<label class="image-checkbox"> 
+										<input type="checkbox" name="valgteterninger" value="${terning}"> 
+										<img src="/terning${terning}.png">
+									</label>
+								</c:forEach>
+								<input type="hidden" name="alleterninger" value="${terninger}" />
+							</div>
+							
+							<div class="trillButtonContainer">
+								<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
+								<c:if test="${antallkastigjen > 0}">
+									<input type="submit" formaction="/spill/${spillnr}/trill"
+										   value="Trill" class="trillButton" />
+								</c:if>
+								<c:if test="${(antallkastigjen < 1) or (alleterninger[0] == alleterninger[1] 
+							        and alleterninger[1] == alleterninger[2] 
+							        and alleterninger[2] == alleterninger[3] 
+							        and alleterninger[3] == alleterninger[4])}">
+							    	<input type="submit" formaction="/spill/${spillnr}/registrer" value="Avslutt runde" class="registrerButton" />
+								</c:if>
+							</div>	
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</body>
+		
+		<footer> 
+			<h2>Credits</h2>
+			<p><a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Candy Design - Flaticon</a><p>
+		</footer>
+		
+	</body>
 </html>
