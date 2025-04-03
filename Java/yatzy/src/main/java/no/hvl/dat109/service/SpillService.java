@@ -85,7 +85,7 @@ public class SpillService {
 	public boolean erSpillFullt(Spill spill) {
 		return antallSpillereISpill(spill) >= 6;
 	}
-	
+
 	public int antallSpillereISpill(Spill spill) {
 		return spill.getAntallSpillere();
 	}
@@ -125,6 +125,12 @@ public class SpillService {
 	 * @return false om ferdig fylt poeng
 	 */
 	public boolean registrerPoeng(String brukernavn, Integer spillNr, List<String> terningerString) {
+
+		// Forhindrer whitelabel error hvis spiller avslutter runde før den har fått
+		// terninger i runde 1
+		if (terningerString.contains("")) {
+			return false;
+		}
 
 		List<Integer> terninger = terningerString.stream().map(Integer::parseInt).toList();
 
@@ -215,7 +221,7 @@ public class SpillService {
 	}
 
 	public void leggtilSpiller(String brukernavn, Integer spillId) {
-		
+
 		Spill spill = spillRepo.findById(spillId).get();
 		Poengtabell poengtabell = new Poengtabell();
 		poengtabell.setPoengtabellId(new PoengtabellId(brukernavn, spill.getSpillnr()));
@@ -227,10 +233,9 @@ public class SpillService {
 	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
 		return poengtabellRepo.findBySpillnr(spillnr);
 	}
-	
+
 	public boolean finnesPoengtabell(Integer spillId, String brukernavn) {
 		return poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillId) != null;
 	}
-
 
 }
