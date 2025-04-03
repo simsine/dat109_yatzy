@@ -211,6 +211,7 @@ public class SpillService {
 	}
 
 	public void leggtilSpiller(String brukernavn, Integer spillId) {
+		
 		Spill spill = spillRepo.findById(spillId).get();
 		Poengtabell poengtabell = new Poengtabell();
 		poengtabell.setPoengtabellId(new PoengtabellId(brukernavn, spill.getSpillnr()));
@@ -222,5 +223,10 @@ public class SpillService {
 	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
 		return poengtabellRepo.findBySpillnr(spillnr);
 	}
+	
+	public boolean finnesPoengtabell(Integer spillId, String brukernavn) {
+		return poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillId) != null;
+	}
+
 
 }

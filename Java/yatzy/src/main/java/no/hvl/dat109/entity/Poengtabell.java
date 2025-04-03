@@ -17,6 +17,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import no.hvl.dat109.util.PoengConverter;
@@ -33,6 +34,8 @@ public class Poengtabell {
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
+	
+	
 
 	public PoengtabellId getPoengtabellId() {
 		return poengtabellId;

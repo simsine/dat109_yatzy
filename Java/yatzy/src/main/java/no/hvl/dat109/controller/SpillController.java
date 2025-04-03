@@ -93,12 +93,19 @@ public class SpillController {
 
 		Spill spill = spillOption.get();
 
+		if (spillService.finnesPoengtabell(spillId, spiller.getBrukernavn())) {
+			System.out.println("finnes fra for av");
+			return "redirect:/spill/" + spill.getSpillnr();			
+		}
+			
 		if (spillService.erSpillFullt(spill)) {
 			model.addAttribute("feilmelding", "Spill er allerede fullt");
 			return "/lobby";
 		}
+		
 
 		spillService.leggtilSpiller(spiller.getBrukernavn(), spillId);
+		System.out.println("finnes ikke fra for av opretter ny poengtabell");
 		httpSession.setAttribute("antallkast" + spillId, 0);
 
 		return "redirect:/spill/" + spill.getSpillnr();
