@@ -49,10 +49,9 @@ public class SpillController {
 		Spiller spiller = spillerService.hentInnloggetSpiller(session);
 		
 		model.addAttribute("poengtyper", PoengType.values());
-		model.addAttribute("typenaa", spillService.finnPoengType(spillerService.hentInnloggetSpiller(session).getBrukernavn(), spillNr));
 		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(spillNr));
 		model.addAttribute("spillnr", spillNr);
-		model.addAttribute("rundenaa", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).map(Enum::toString).orElse(""));
+		model.addAttribute("typenaa", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).orElse(null));
 		
 		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillNr);
 		if (terninger == null)
