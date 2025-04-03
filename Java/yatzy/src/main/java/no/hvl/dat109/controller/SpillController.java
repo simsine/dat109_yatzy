@@ -147,10 +147,12 @@ public class SpillController {
 		
 		boolean ferdig = false; 
 		
+		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
+		
 		if (valgteterninger == null)
-			ferdig = !spillService.registrerPoeng((String) httpSession.getAttribute("brukernavn"), spillId, terninger);
+			ferdig = !spillService.registrerPoeng(spiller.getBrukernavn(), spillId, terninger);
 		else
-			ferdig = !spillService.registrerPoeng((String) httpSession.getAttribute("brukernavn"), spillId, valgteterninger);
+			ferdig = !spillService.registrerPoeng(spiller.getBrukernavn(), spillId, valgteterninger);
 		
 		if (ferdig)
 			return "redirect:/spill/" + spillId;

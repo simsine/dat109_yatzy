@@ -104,10 +104,12 @@
 								<input type="submit" formaction="/spill/${spillnr}/trill"
 									   value="Trill" class="trillButton" />
 							</c:if>
-							<c:if test="(${antallkastigjen < 1}) || (alleterninger[0] == alleterninger[1] == alleterninger[2] == alleterninger[3] == alleterninger[4])">
-								<input type="submit" formaction="/spill/${spillnr}/registrer" 
-									   value="Avslutt runde" class="registrerButton" />
-						   </c:if>
+							<c:if test="${(antallkastigjen < 1) or (alleterninger[0] == alleterninger[1] 
+						        and alleterninger[1] == alleterninger[2] 
+						        and alleterninger[2] == alleterninger[3] 
+						        and alleterninger[3] == alleterninger[4])}">
+						    	<input type="submit" formaction="/spill/${spillnr}/registrer" value="Avslutt runde" class="registrerButton" />
+							</c:if>
 						</div>	
 					</form>
 				</div>

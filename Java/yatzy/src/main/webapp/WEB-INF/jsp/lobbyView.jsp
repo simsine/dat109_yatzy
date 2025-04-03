@@ -35,7 +35,6 @@
 			<div class="newGame">
 				<form method="post" action="/spill/opprett">
 					<div class="item1">
-						<input type="hidden" value="XFaze" name="brukernavn">
 						<input type="submit" value="Opprett nytt spill">
 					</div>
 				</form>
