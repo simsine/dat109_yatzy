@@ -18,11 +18,8 @@
 			
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
-				
-				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
-							
-				<a href=/utlogging><p>Logg ut<p></a>
-				
+				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>		
+				<a href=/utlogging><button>Logg ut</button></a>
 				<a href="/lobby" class="unstyled-link"><p> Lobby → </p></a>
 			</div>
 		</div>
@@ -31,29 +28,29 @@
 			<div class="spillhistorikk">
 				<h2>Historikk for ${brukernavn}</h2>
 			</div>
-
+			
 			<div class="historyGames">
-					
+		
 				<c:if test="${empty tidligereSpill}">
 					<p> Ingen tidligere spill</p>
 				</c:if>
-	
+
 				<c:if test="${not empty tidligereSpill}">
 					<c:forEach var="pt" items="${tidligereSpill}">
-						
+
 							<div class="item1">
 								<a href="/spill/${pt.poengtabellId.spillnr}">
 									<button> Spill ${pt.poengtabellId.spillnr}</button>
 								</a>
 							</div>
-		
+
 							<div class="item2">
 								<p>${pt.spill.tidopprettet}</p>
 							</div>
 
 					</c:forEach>
 				</c:if>
-				
+
 			</div>
 		</div>
 		
