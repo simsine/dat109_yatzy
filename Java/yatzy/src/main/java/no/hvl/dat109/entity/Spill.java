@@ -52,6 +52,10 @@ public class Spill {
 	public List<Poengtabell> getPoengtabeller() {
 		return poengTabeller;
 	}
+	
+	public int getAntallSpillere() {
+		return poengTabeller.size();
+	}
 
 	public void setPoengtabeller(List<Poengtabell> poengtabeller) {
 		this.poengTabeller = poengtabeller;

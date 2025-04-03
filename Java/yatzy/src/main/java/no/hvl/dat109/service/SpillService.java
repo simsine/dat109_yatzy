@@ -83,7 +83,11 @@ public class SpillService {
 	}
 
 	public boolean erSpillFullt(Spill spill) {
-		return spill.getPoengtabeller().size() == 6;
+		return antallSpillereISpill(spill) >= 6;
+	}
+	
+	public int antallSpillereISpill(Spill spill) {
+		return spill.getAntallSpillere();
 	}
 
 	/**

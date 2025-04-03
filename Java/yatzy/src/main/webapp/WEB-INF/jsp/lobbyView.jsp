@@ -46,7 +46,7 @@
 						<input type="submit" value="Bli med i spill ${spill.spillnr}">
 					</form>
 					</div>
-					<div class="item2"><p>$Y/6 spillere</p></div>
+					<div class="item2"><p>${spill.antallSpillere}/6 spillere</p></div>
 				</div>
 			</c:forEach>
 		</div>
