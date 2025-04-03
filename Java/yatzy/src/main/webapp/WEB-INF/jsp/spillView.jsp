@@ -18,12 +18,7 @@
 		<div class="menubox">
 			<p>Hei, ${spiller.fornavn}</p>
 		
-			<form method="post" action="/innlogging">
-				<div class="item1">
-					<input type="hidden" value="loggut" name="brukernavn">
-					<input type="submit" value="Logg ut">
-				</div>
-			</form>
+			<a href=/utlogging><p>Logg ut<p></a>
 							
 			<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
 		</div>
