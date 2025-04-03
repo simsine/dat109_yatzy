@@ -32,12 +32,12 @@ public class SpillController {
 	/**
 	 * Henter view for et startet spill
 	 * 
-	 * @param spillId for spillet man vil hente
+	 * @param spillNr for spillet man vil hente
 	 * @return
 	 */
 	@GetMapping("/spill/{id}")
 	public String getSpill(
-		@PathVariable("id") String spillId, 
+		@PathVariable("id") Integer spillNr, 
 		Model model, 
 		HttpSession session
 	) {
@@ -46,17 +46,20 @@ public class SpillController {
 			return "redirect:/innlogging";
 		}
 		
+		Spiller spiller = spillerService.hentInnloggetSpiller(session);
+		
 		model.addAttribute("poengtyper", PoengType.values());
-		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(Integer.parseInt(spillId)));
-		model.addAttribute("spillnr", spillId);
-		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillId);
+		model.addAttribute("poengtabeller", spillService.hentPoengtabellerEtterSpillnr(spillNr));
+		model.addAttribute("spillnr", spillNr);
+		model.addAttribute("runde", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).toString());
+		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillNr);
 		if (terninger == null)
 			terninger = spillService.spillTrekk();
-		model.addAttribute("terninger" + spillId, terninger);
+		model.addAttribute("terninger" + spillNr, terninger);
 		
 		Integer antallkast = 0;
-		if (session.getAttribute("antallkast" + spillId) != null)
-			antallkast = (Integer) session.getAttribute("antallkast" + spillId);
+		if (session.getAttribute("antallkast" + spillNr) != null)
+			antallkast = (Integer) session.getAttribute("antallkast" + spillNr);
 		
 		model.addAttribute("antallkastigjen", 3 - antallkast);
 		
