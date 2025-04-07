@@ -147,7 +147,7 @@ public class SpillService {
 		if (optionPoengType.isEmpty())
 			return false;
 		PoengType poengType = optionPoengType.get();
-		
+
 		if (terninger.size() > Kopp.ANTALL_TERNINGER) {
 			throw new IllegalArgumentException("Kan ikke registrere mer enn " + Kopp.ANTALL_TERNINGER + "terninger.");
 		}
@@ -160,6 +160,7 @@ public class SpillService {
 			}
 			poeng = PoengUtil.yatzy(terninger);
 			poengTabell.registrerPoeng(PoengType.YATZY, poeng);
+			poengtabellRepo.save(poengTabell);
 			return true;
 		}
 
