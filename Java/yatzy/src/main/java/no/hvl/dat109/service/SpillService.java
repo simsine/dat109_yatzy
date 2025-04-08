@@ -258,9 +258,11 @@ public class SpillService {
 		Poengtabell poengtabell = poengtabeller.stream().filter(t -> t.getPoengtabellId().getBrukernavn().equals(brukernavn)).findFirst().get();
 		int index = poengtabeller.indexOf(poengtabell);
 		PoengType typeDin = poengtabell.finnForsteIkkeRegistrerteType().get();
-
-		PoengType typeFoer = poengtabeller.get((index - 1) % poengtabeller.size()).finnForsteIkkeRegistrerteType()
-				.get();
+		PoengType typeFoer;
+		if (index == 0)
+			typeFoer = poengtabeller.getLast().finnForsteIkkeRegistrerteType().get();
+		else
+			typeFoer = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().get();
 		if (typeFoer.compareTo(typeDin) > 0)
 			return true;
 		return false;
