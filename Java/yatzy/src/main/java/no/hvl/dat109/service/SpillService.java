@@ -251,25 +251,29 @@ public class SpillService {
 	}
 
 	public boolean erDetDinTur(Integer spillId, String brukernavn) {
-		
-		List<Poengtabell> poengtabeller = hentPoengtabellerEtterSpillnr(spillId); 
-		
+
+		List<Poengtabell> poengtabeller = hentPoengtabellerEtterSpillnr(spillId);
+
 		if (poengtabeller.size() == 1)
 			return true;
 
-		Poengtabell poengtabell = poengtabeller.stream().filter(t -> t.getPoengtabellId().getBrukernavn().equals(brukernavn)).findFirst().get();
+		Poengtabell poengtabell = poengtabeller.stream()
+				.filter(t -> t.getPoengtabellId().getBrukernavn().equals(brukernavn)).findFirst().get();
 		int index = poengtabeller.indexOf(poengtabell);
 		PoengType typeDin = poengtabell.finnForsteIkkeRegistrerteType().get();
 		System.out.println(typeDin);
 		PoengType venstreType;
 		if (index == 0) {
-			venstreType = poengtabeller.getLast().finnForsteIkkeRegistrerteType().get();
-			if (typeDin.equals(PoengType.ENERE)) return true;
-			if (venstreType.equals(typeDin)) return true;
-		} else {			
-			venstreType = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().get();
+			venstreType = poengtabeller.getLast().finnForsteIkkeRegistrerteType().orElse(null);
+			if (typeDin.equals(PoengType.ENERE))
+				return true;
+			if (venstreType.equals(typeDin))
+				return true;
+		} else {
+			venstreType = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().orElse(null);
 		}
-		
+		if (venstreType == null)
+			return true;
 		if (venstreType.compareTo(typeDin) > 0)
 			return true;
 		return false;

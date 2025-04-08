@@ -55,10 +55,6 @@ public class SpillController {
 		model.addAttribute("spillnr", spillNr);
 		model.addAttribute("typenaa", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).orElse(null));
 		
-		List<Integer> terninger = (List<Integer>) session.getAttribute("terninger" + spillNr);
-		if (terninger == null)
-			terninger = spillService.spillTrekk();
-		model.addAttribute("terninger" + spillNr, terninger);
 		
 		Integer antallkast = 0;
 		if (session.getAttribute("antallkast" + spillNr) != null)
@@ -183,6 +179,7 @@ public class SpillController {
 		if (ferdig)
 			return "redirect:/spill/" + spillId;
 		httpSession.setAttribute("antallkast" + spillId, 0);
+		httpSession.setAttribute("terninger" + spillId, null);
 		
 		return "redirect:/spill/" + spillId;
 	}
