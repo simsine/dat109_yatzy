@@ -27,6 +27,7 @@
 			<div class="gameView">
 				<div class="item1">
 					<h2>Spill ${spillnr}</h2>
+					<p><c:out value="${feilmelding}" /></p>
 				</div>
 				<div class="item2">
 					<h2>Runde: ${typenaa}</h2>

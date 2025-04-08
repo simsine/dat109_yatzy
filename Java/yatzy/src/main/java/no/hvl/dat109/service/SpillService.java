@@ -241,12 +241,29 @@ public class SpillService {
 
 	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
 		List<Poengtabell> poengtabeller = poengtabellRepo.findBySpillnr(spillnr);
-		poengtabeller.sort((o1, o2) -> o1.getPoengtabellId().getBrukernavn().compareTo(o2.getPoengtabellId().getBrukernavn()));
+		poengtabeller.sort(
+				(o1, o2) -> o1.getPoengtabellId().getBrukernavn().compareTo(o2.getPoengtabellId().getBrukernavn()));
 		return poengtabeller;
 	}
 
 	public boolean finnesPoengtabell(Integer spillId, String brukernavn) {
 		return poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillId) != null;
+	}
+
+	public boolean erDetDinTur(Integer spillId, String brukernavn) {
+		
+		System.out.println(brukernavn);
+		List<Poengtabell> poengtabeller = hentPoengtabellerEtterSpillnr(spillId);
+
+		Poengtabell poengtabell = poengtabeller.stream().filter(t -> t.getPoengtabellId().getBrukernavn().equals(brukernavn)).findFirst().get();
+		int index = poengtabeller.indexOf(poengtabell);
+		PoengType typeDin = poengtabell.finnForsteIkkeRegistrerteType().get();
+
+		PoengType typeFoer = poengtabeller.get((index - 1) % poengtabeller.size()).finnForsteIkkeRegistrerteType()
+				.get();
+		if (typeFoer.compareTo(typeDin) > 0)
+			return true;
+		return false;
 	}
 
 }

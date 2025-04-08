@@ -148,11 +148,18 @@ public class SpillController {
 		@PathVariable("id") Integer spillId, 
 		HttpSession httpSession,
 		@RequestParam(required = false) List<String> valgteterninger, 
-		@RequestParam String alleterninger
+		@RequestParam String alleterninger,
+		RedirectAttributes ra
 	) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
 			return "redirect:/innlogging";
+		}
+		
+		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
+		if (!spillService.erDetDinTur(spillId, spiller.getBrukernavn())) {
+			ra.addFlashAttribute("feilmelding", "Det er ikke din tur!");
+			return "redirect:/spill/" + spillId;
 		}
 		
 		List<String> terninger = Arrays.stream(alleterninger.replaceAll("[\\[\\] ]", "").split(","))
@@ -160,7 +167,6 @@ public class SpillController {
 		
 		boolean ferdig = false; 
 		
-		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 		
 		if (valgteterninger == null) 
 			ferdig = !spillService.registrerPoeng(spiller.getBrukernavn(), spillId, terninger);
