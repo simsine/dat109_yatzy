@@ -66,6 +66,8 @@ public class InnloggingController {
 		
 		spillerService.logginnSpiller(httpServletRequest, spiller);
 		
+		
+		
 		return "redirect:/lobby";
 	}
 	

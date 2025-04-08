@@ -252,22 +252,24 @@ public class SpillService {
 
 	public boolean erDetDinTur(Integer spillId, String brukernavn) {
 		
-		System.out.println(brukernavn);
-		List<Poengtabell> poengtabeller = hentPoengtabellerEtterSpillnr(spillId);
+		List<Poengtabell> poengtabeller = hentPoengtabellerEtterSpillnr(spillId); 
+		
+		if (poengtabeller.size() == 1)
+			return true;
 
 		Poengtabell poengtabell = poengtabeller.stream().filter(t -> t.getPoengtabellId().getBrukernavn().equals(brukernavn)).findFirst().get();
 		int index = poengtabeller.indexOf(poengtabell);
 		PoengType typeDin = poengtabell.finnForsteIkkeRegistrerteType().get();
-		PoengType typeFoer;
+		System.out.println(typeDin);
+		PoengType venstreType;
 		if (index == 0) {
-			typeFoer = poengtabeller.getLast().finnForsteIkkeRegistrerteType().get();
+			venstreType = poengtabeller.getLast().finnForsteIkkeRegistrerteType().get();
 			if (typeDin.equals(PoengType.ENERE)) return true;
-
+		} else {			
+			venstreType = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().get();
 		}
-		else
-			typeFoer = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().get();
 		
-		if (typeFoer.compareTo(typeDin) > 0)
+		if (venstreType.compareTo(typeDin) > 0)
 			return true;
 		return false;
 	}
