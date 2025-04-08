@@ -133,11 +133,11 @@ public class SpillController {
 		terninger = spillService.spillTrekkString(valgteterninger);
 
 		httpSession.setAttribute("terninger", terninger);
-		Object antallkast = httpSession.getAttribute("antallkast" + spillId);
+		Integer antallkast = (Integer) httpSession.getAttribute("antallkast" + spillId);
 		if (antallkast == null)
 			httpSession.setAttribute("antallkast" + spillId, 1);
 		else
-			httpSession.setAttribute("antallkast" + spillId, (Integer) antallkast + 1);
+			httpSession.setAttribute("antallkast" + spillId, antallkast + 1);
 
 		return "redirect:/spill/" + spillId;
 	}
