@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import jakarta.servlet.http.HttpSession;
 import no.hvl.dat109.entity.Poengtabell;
@@ -82,7 +83,7 @@ public class SpillController {
 	}
 
 	@PostMapping("/spill/{id}/blimed")
-	public String postBliMedISpill(@PathVariable("id") Integer spillId, Model model, HttpSession httpSession) {
+	public String postBliMedISpill(@PathVariable("id") Integer spillId, Model model, HttpSession httpSession, RedirectAttributes ra) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
 			return "redirect:/innlogging";
@@ -92,8 +93,8 @@ public class SpillController {
 		Optional<Spill> spillOption = spillService.hentSpillEtterNr(spillId);
 
 		if (spillOption.isEmpty()) {
-			model.addAttribute("feilmelding", "Fant ingen spill med den id'en");
-			return "/lobby";
+			ra.addFlashAttribute("feilmelding", "Fant ingen spill med den id'en");
+			return "redirect:/lobby";
 		}
 
 		Spill spill = spillOption.get();
@@ -104,8 +105,8 @@ public class SpillController {
 		}
 			
 		if (spillService.erSpillFullt(spill)) {
-			model.addAttribute("feilmelding", "Spill er allerede fullt");
-			return "/lobby";
+			ra.addFlashAttribute("feilmelding", "Spill er allerede fullt");
+			return "redirect:/lobby";
 		}
 		
 

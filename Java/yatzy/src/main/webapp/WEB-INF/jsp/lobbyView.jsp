@@ -25,6 +25,7 @@
 		<div class="main">
 			<div class="lobby">
 				<h2>Lobby<h2>
+				<p><c:out value="${feilmelding}" /></p>
 			</div>
 			<div class="newGame">
 				<form method="post" action="/spill/opprett">
