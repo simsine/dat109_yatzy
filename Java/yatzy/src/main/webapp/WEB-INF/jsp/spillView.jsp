@@ -29,7 +29,7 @@
 					<h2>Spill ${spillnr}</h2>
 				</div>
 				<div class="item2">
-					<h2>Runde: ${rundenaa}</h2>
+					<h2>Runde: ${typenaa}</h2>
 				</div>
 				<div class="gameBrettContainer">
 					<div class="gameTable">
@@ -94,15 +94,17 @@
 							
 							<div class="trillButtonContainer">
 								<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
-								<c:if test="${antallkastigjen > 0}">
-									<input type="submit" formaction="/spill/${spillnr}/trill"
-										   value="Trill" class="trillButton" />
-								</c:if>
-								<c:if test="${(antallkastigjen < 1) or (alleterninger[0] == alleterninger[1] 
-							        and alleterninger[1] == alleterninger[2] 
-							        and alleterninger[2] == alleterninger[3] 
-							        and alleterninger[3] == alleterninger[4])}">
-							    	<input type="submit" formaction="/spill/${spillnr}/registrer" value="Avslutt runde" class="registrerButton" />
+								<c:if test="${typenaa != null}">
+									<c:if test="${antallkastigjen > 0}">
+										<input type="submit" formaction="/spill/${spillnr}/trill"
+											   value="Trill" class="trillButton" />
+									</c:if>
+									<c:if test="${(antallkastigjen < 1) or (alleterninger[0] == alleterninger[1] 
+								        and alleterninger[1] == alleterninger[2] 
+								        and alleterninger[2] == alleterninger[3] 
+								        and alleterninger[3] == alleterninger[4])}">
+								    	<input type="submit" formaction="/spill/${spillnr}/registrer" value="Avslutt runde" class="registrerButton" />
+									</c:if>
 								</c:if>
 							</div>	
 						</form>
