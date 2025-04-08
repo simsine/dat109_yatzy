@@ -39,7 +39,6 @@ public class LobbyController {
 		
 		List<Spill> spillListe = spillService.hentAlleSpill();
 		
-		System.out.println("Spill liste: ");
 		model.addAttribute("spillListe", spillListe);
 		
 		return "lobbyView";
