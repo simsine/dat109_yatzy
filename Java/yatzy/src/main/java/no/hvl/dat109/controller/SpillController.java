@@ -121,11 +121,18 @@ public class SpillController {
 	public String trill(
 		@PathVariable("id") Integer spillId,
 		HttpSession httpSession,
-		@RequestParam(required = false) List<String> valgteterninger
+		@RequestParam(required = false) List<String> valgteterninger,
+		RedirectAttributes ra
 	) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
 			return "redirect:/innlogging";
+		}
+		
+		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
+		if (!spillService.erDetDinTur(spillId, spiller.getBrukernavn())) {
+			ra.addFlashAttribute("feilmelding", "Det er ikke din tur!");
+			return "redirect:/spill/" + spillId;
 		}
 
 		@SuppressWarnings("unchecked")
@@ -177,6 +184,6 @@ public class SpillController {
 			return "redirect:/spill/" + spillId;
 		httpSession.setAttribute("antallkast" + spillId, 0);
 		
-		return trill(spillId, httpSession, new ArrayList<String>());
+		return "redirect:/spill/" + spillId;
 	}
 }
