@@ -110,9 +110,9 @@
 						</form>
 					</div>
 				</div>
+					<p>Lurer du på reglene? Besøk Wikipedias Yatzy-side <a href="https://no.wikipedia.org/wiki/Yatzy" target="_blank">her</a>.<p>
 			</div>
 		</div>
-		<p>Lurer du på reglene? Besøk Wikipedias Yatzy-side <a href="https://no.wikipedia.org/wiki/Yatzy" target="_blank">her</a>.<p>
 		<footer> 
 			<h2>Credits</h2>
 			<p><a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Candy Design - Flaticon</a><p>
