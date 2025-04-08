@@ -259,10 +259,14 @@ public class SpillService {
 		int index = poengtabeller.indexOf(poengtabell);
 		PoengType typeDin = poengtabell.finnForsteIkkeRegistrerteType().get();
 		PoengType typeFoer;
-		if (index == 0)
+		if (index == 0) {
 			typeFoer = poengtabeller.getLast().finnForsteIkkeRegistrerteType().get();
+			if (typeDin.equals(PoengType.ENERE)) return true;
+
+		}
 		else
 			typeFoer = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().get();
+		
 		if (typeFoer.compareTo(typeDin) > 0)
 			return true;
 		return false;
