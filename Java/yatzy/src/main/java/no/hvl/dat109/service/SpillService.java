@@ -265,6 +265,7 @@ public class SpillService {
 		if (index == 0) {
 			venstreType = poengtabeller.getLast().finnForsteIkkeRegistrerteType().get();
 			if (typeDin.equals(PoengType.ENERE)) return true;
+			if (venstreType.equals(typeDin)) return true;
 		} else {			
 			venstreType = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().get();
 		}
