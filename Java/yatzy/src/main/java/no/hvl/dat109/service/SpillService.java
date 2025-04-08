@@ -240,7 +240,9 @@ public class SpillService {
 	}
 
 	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
-		return poengtabellRepo.findBySpillnr(spillnr);
+		List<Poengtabell> poengtabeller = poengtabellRepo.findBySpillnr(spillnr);
+		poengtabeller.sort((o1, o2) -> o1.getPoengtabellId().getBrukernavn().compareTo(o2.getPoengtabellId().getBrukernavn()));
+		return poengtabeller;
 	}
 
 	public boolean finnesPoengtabell(Integer spillId, String brukernavn) {

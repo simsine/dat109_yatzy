@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
+import no.hvl.dat109.entity.Poengtabell;
 import no.hvl.dat109.entity.Spill;
 import no.hvl.dat109.entity.Spiller;
 import no.hvl.dat109.service.SpillService;
@@ -160,7 +161,7 @@ public class SpillController {
 		
 		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 		
-		if (valgteterninger == null)
+		if (valgteterninger == null) 
 			ferdig = !spillService.registrerPoeng(spiller.getBrukernavn(), spillId, terninger);
 		else
 			ferdig = !spillService.registrerPoeng(spiller.getBrukernavn(), spillId, valgteterninger);
