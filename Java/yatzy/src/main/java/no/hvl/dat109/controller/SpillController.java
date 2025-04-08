@@ -55,6 +55,8 @@ public class SpillController {
 		model.addAttribute("spillnr", spillNr);
 		model.addAttribute("typenaa", spillService.finnPoengType(spiller.getBrukernavn(), spillNr).orElse(null));
 		
+		model.addAttribute("aktivspiller", spillService.finnHvemSinTurDetEr(spillNr));
+		
 		
 		Integer antallkast = 0;
 		if (session.getAttribute("antallkast" + spillNr) != null)

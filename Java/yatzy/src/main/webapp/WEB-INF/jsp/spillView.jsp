@@ -76,7 +76,7 @@
 				<div class="gameDiceContainer">
 					<div class="gameDiceview">
 						<div class="gameDiceHeader">
-							<h3>Det er ${spiller.brukernavn} sin tur</h3>
+							<h3>Det er ${aktivspiller} sin tur</h3>
 							<p>
 								<img src="/click.png" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
 							</p>

@@ -279,4 +279,17 @@ public class SpillService {
 		return false;
 	}
 
+	public String finnHvemSinTurDetEr(Integer spillId) {
+		List<Poengtabell> poengtabeller = hentPoengtabellerEtterSpillnr(spillId);
+
+		String brukernavn;
+
+		for (Poengtabell p : poengtabeller) {
+			brukernavn = p.getPoengtabellId().getBrukernavn();
+			if (erDetDinTur(spillId, brukernavn))
+				return brukernavn;
+		}
+		return null;
+	}
+
 }
