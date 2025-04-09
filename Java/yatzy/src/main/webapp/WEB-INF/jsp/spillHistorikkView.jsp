@@ -59,8 +59,8 @@
 			</div>
 			
 			<div class="spillhistorikk">
+				<h3>Avsluttede spill:</h3>
 				<c:if test="${empty avsluttedespill}">
-					<h3>Avsluttede spill:</h3>
 					<p>Ingen avsluttede spill</p>
 				</c:if>
 			</div>
@@ -84,7 +84,7 @@
 								<c:set var="timeEnd" value="${pt.tidavsluttet}"></c:set>
 								<c:set var="modifiedE" value="${fn:replace(timeEnd, 'T', ' ')}"/>
 								<c:set var="modifiedEndTime" value="${fn:replace(modifiedE, '-', '.')}"/>
-								<p>Avslutt et:  ${modifiedEndTime}</p>
+								<p>Avsluttet:  ${modifiedEndTime}</p>
 							</div>
 
 					</c:forEach>
