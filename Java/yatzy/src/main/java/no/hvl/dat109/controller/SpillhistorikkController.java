@@ -31,7 +31,7 @@ public class SpillhistorikkController {
 		List<Spill> avsluttedespill = spillService.hentAlleFerdigeSpillForSpiller(brukernavn);
 		tidligereSpill.sort((o1, o2) -> o1.getSpill().getTidopprettet().compareTo(o2.getSpill().getTidopprettet()));
 		model.addAttribute("aktivespill", aktivespill);
-		model.addAttribute("avsulttedespill", avsluttedespill);
+		model.addAttribute("avsluttedespill", avsluttedespill);
 		model.addAttribute("brukernavn", brukernavn);
 		
 		return "spillHistorikkView";
