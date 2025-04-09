@@ -39,19 +39,11 @@
 								<tr>
 									<th>Kategori</th>
 									<c:forEach var="poengtabell" items="${poengtabeller}">
-										<th>${poengtabell.poengtabellId.brukernavn}</th>
+										<th style="background-color:${poengtabell.poengtabellId.brukernavn eq aktivspiller ? 'green' : 'grey'}">${poengtabell.poengtabellId.brukernavn}</th>
 									</c:forEach>
 								</tr>
 							</thead>
 							<tbody>
-								<!-- 
-	                            <c:set var="categories" value="${[
-	                                'Enere', 'Toere', 'Treere', 'Firere', 'Femmere', 'Seksere', 
-	                                'Bonus', 'Ett par', 'To par', 'Tre like', 'Fire like', 
-	                                'Liten straight', 'Stor straight', 'Full house', 
-	                                'Sjanse', 'Yatzy', 'Total score'
-	                            ]}" />
-								 -->
 								<c:forEach var="poengtype" items="${poengtyper}">
 									<tr>
 										<td style="background-color:${typenaa eq poengtype ? 'grey' : 'white'}">${poengtype}</td>
@@ -59,6 +51,13 @@
 											<td>${poengtabell.poeng[poengtype] == -1 ? '-' : poengtabell.poeng[poengtype]}</td>
 										</c:forEach>
 									</tr>
+									
+									<c:if test="${poengtype.toString() eq 'SEKSERE'}">
+										<td>Bonus</td>
+										<c:forEach var="poengtabell" items="${poengtabeller}">
+											<td>${poengtabell.bonus}</td>
+										</c:forEach>
+									</c:if>
 								</c:forEach>
 								<tr>
 									<td>Sum</td>
@@ -68,7 +67,6 @@
 								</tr>
 							</tbody>
 						</table>
-	
 						<p>${GameTable}</p>
 					</div>
 				</div>

@@ -1,14 +1,15 @@
 package no.hvl.dat109.entity;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.annotations.Type;
 import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.Column;
@@ -18,7 +19,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import no.hvl.dat109.util.PoengConverter;
@@ -35,7 +35,6 @@ public class Poengtabell {
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
-	
 	
 
 	public PoengtabellId getPoengtabellId() {
@@ -92,7 +91,7 @@ public class Poengtabell {
 	}
 
 	public int getSum() {
-		return this.poeng.values().stream().filter(t -> t != -1).reduce(0, Integer::sum);
+		return this.poeng.values().stream().filter(t -> t != -1).reduce(0, Integer::sum) + getBonus();
 	}
 
 	public boolean isHarTidligYatzy() {
@@ -149,6 +148,16 @@ public class Poengtabell {
 		}
 		
 		return Optional.of(poengType);
+	}
+	
+	public int getBonus() {
+		
+		int sum = poeng.entrySet().stream()
+			    .filter(e -> e.getKey().compareTo(PoengType.ETT_PAR) < 0 && e.getValue() != -1)
+			    .mapToInt(Map.Entry::getValue)
+			    .sum();
+
+			return sum >= 10 ? 50 : 0;
 	}
 
 }
