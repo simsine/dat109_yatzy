@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!DOCTYPE html>
 <html lang="no">
@@ -33,7 +34,7 @@
 				</c:if>
 			</div>
 			
-			<div class="historyGames">
+			<div class="activeGames">
 
 				<c:if test="${not empty aktivespill}">
 					<c:forEach var="pt" items="${aktivespill}">
@@ -45,8 +46,10 @@
 							</div>
 
 							<div class="item2">
-								<p>Opprettet: <c:out value="${pt.tidopprettet}"></c:out></p>
-								<p>Avsluttet: <c:out value="${pt.tidavsluttet}"></c:out></p>
+								<c:set var="timeStart" value="${pt.tidopprettet}"></c:set>
+								<c:set var="modifiedT" value="${fn:replace(timeStart, 'T', ' ')}"/>
+								<c:set var="modifiedStartTime" value="${fn:replace(modifiedT, '-', '.')}"/>
+								<p>Opprettet: ${modifiedStartTime}</p>
 							</div>
 
 					</c:forEach>
@@ -55,12 +58,12 @@
 			
 			<div class="spillhistorikk">
 				<c:if test="${empty avsluttedespill}">
-					<h3>Avsluttende spill:</h3>
+					<h3>Avsluttede spill:</h3>
 					<p>Ingen avsluttede spill</p>
 				</c:if>
 			</div>
 			
-			<div class="historyGames">
+			<div class="endedGames">
 
 				<c:if test="${not empty avsluttedespill}">
 					<c:forEach var="pt" items="${avsluttedespill}">
@@ -72,8 +75,14 @@
 							</div>
 
 							<div class="item2">
-								<p>Opprettet: <c:out value="${pt.tidopprettet}"></c:out></p>
-								<p>Avsluttet: <c:out value="${pt.tidavsluttet}"></c:out></p>
+								<c:set var="timeStart" value="${pt.tidopprettet}"></c:set>
+								<c:set var="modifiedS" value="${fn:replace(timeStart, 'T', ' ')}"/>
+								<c:set var="modifiedStartTime" value="${fn:replace(modifiedS, '-', '.')}"/>
+								<p>Opprettet: ${modifiedStartTime}</p>
+								<c:set var="timeEnd" value="${pt.tidavsluttet}"></c:set>
+								<c:set var="modifiedE" value="${fn:replace(timeEnd, 'T', ' ')}"/>
+								<c:set var="modifiedEndTime" value="${fn:replace(modifiedE, '-', '.')}"/>
+								<p>Avsluttet: ${modifiedEndTime}</p>
 							</div>
 
 					</c:forEach>

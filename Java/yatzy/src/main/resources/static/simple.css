@@ -173,9 +173,6 @@ main p {
 	text-align: center;
 }
 
-.item2 p {
-	margin: 0;
-}
 
 .spillhistorikk h2 {
 	margin-bottom: 2rem;
@@ -193,6 +190,24 @@ main p {
 	grid-template-columns: auto auto;
 	justify-content: center;
 	gap: 1rem;
+}
+
+.activeGames {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.endedGames {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.endedGames .item2 p {
+	margin: 0;
 }
 
 .newGame {
