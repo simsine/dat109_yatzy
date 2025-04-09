@@ -1,5 +1,6 @@
 package no.hvl.dat109.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -171,7 +172,8 @@ public class SpillController {
 		if (ferdig)
 			return "redirect:/spill/" + spillId;
 		httpSession.setAttribute("antallkast" + spillId, 0);
-		httpSession.setAttribute("terninger" + spillId, null);
+		httpSession.setAttribute("terninger", new ArrayList<String>());
+		
 
 		return "redirect:/spill/" + spillId;
 	}
