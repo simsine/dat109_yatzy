@@ -26,14 +26,14 @@
 
 		<div class="main">
 			<div class="spillhistorikk">
-				<h2>Historikk for ${brukernavn}</h2>
-			</div>
-			
-			<div class="aktivespill">
-		
+				<h2>Din spillhistorikk</h2>
+				<h3>Aktive spill:</h3>
 				<c:if test="${empty aktivespill}">
 					<p> Ingen aktive spill</p>
 				</c:if>
+			</div>
+			
+			<div class="historyGames">
 
 				<c:if test="${not empty aktivespill}">
 					<c:forEach var="pt" items="${aktivespill}">
@@ -46,17 +46,24 @@
 
 							<div class="item2">
 								<p>Opprettet: <c:out value="${pt.tidopprettet}"></c:out></p>
+								<p>Avsluttet: <c:out value="${pt.tidavsluttet}"></c:out></p>
 							</div>
 
 					</c:forEach>
 				</c:if>
-				<c:if test="${empty avsulttedespill}">
-					<p> Ingen avsulttede spill</p>
+			</div>
+			
+			<div class="spillhistorikk">
+				<c:if test="${empty avsluttedespill}">
+					<h3>Avsluttende spill:</h3>
+					<p>Ingen avsluttede spill</p>
 				</c:if>
 			</div>
-			<div class="avsulttedespill">
-				<c:if test="${not empty avsulttedespill}">
-					<c:forEach var="pt" items="${avsulttedespill}">
+			
+			<div class="historyGames">
+
+				<c:if test="${not empty avsluttedespill}">
+					<c:forEach var="pt" items="${avsluttedespill}">
 
 							<div class="item1">
 								<a href="/spill/${pt.spillnr}">

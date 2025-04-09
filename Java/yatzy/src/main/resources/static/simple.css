@@ -173,6 +173,10 @@ main p {
 	text-align: center;
 }
 
+.item2 p {
+	margin: 0;
+}
+
 .spillhistorikk h2 {
 	margin-bottom: 2rem;
 }
