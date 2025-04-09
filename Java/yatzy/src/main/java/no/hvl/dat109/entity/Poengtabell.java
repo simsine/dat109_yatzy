@@ -28,14 +28,12 @@ import no.hvl.dat109.yatzy.PoengType;
 @Table(schema = "yatzy")
 public class Poengtabell {
 
-
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name="spillnr", referencedColumnName="spillnr", insertable=false, updatable=false)
+	@JoinColumn(name = "spillnr", referencedColumnName = "spillnr", insertable = false, updatable = false)
 	private Spill spill;
 
 	@EmbeddedId
 	private PoengtabellId poengtabellId;
-	
 
 	public PoengtabellId getPoengtabellId() {
 		return poengtabellId;
@@ -132,32 +130,38 @@ public class Poengtabell {
 	 */
 	public Optional<PoengType> finnForsteIkkeRegistrerteType() {
 
-		Map<PoengType, Integer> sortedMap = this.getAllePoeng().entrySet().stream()
-				.sorted(Map.Entry.comparingByKey())
-				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+		Map<PoengType, Integer> sortedMap = this.getAllePoeng().entrySet().stream().sorted(Map.Entry.comparingByKey())
+				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (oldValue, newValue) -> oldValue,
+						LinkedHashMap::new));
 
-		Optional<Entry<PoengType, Integer>> type = sortedMap.entrySet().stream().filter(t -> t.getValue().equals(-1)).findFirst();
+		Optional<Entry<PoengType, Integer>> type = sortedMap.entrySet().stream().filter(t -> t.getValue().equals(-1))
+				.findFirst();
 
 		if (type.isEmpty())
 			return Optional.empty();
-		
+
 		PoengType poengType = type.get().getKey();
-		
+
 		if (poengType.equals(PoengType.YATZY) && this.getErYatzyRegistrert()) {
 			return Optional.empty();
 		}
-		
+
 		return Optional.of(poengType);
 	}
-	
-	public int getBonus() {
-		
-		int sum = poeng.entrySet().stream()
-			    .filter(e -> e.getKey().compareTo(PoengType.ETT_PAR) < 0 && e.getValue() != -1)
-			    .mapToInt(Map.Entry::getValue)
-			    .sum();
 
-			return sum >= 10 ? 50 : 0;
+	public int getBonus() {
+
+		int sum = poeng.entrySet().stream()
+				.filter(e -> e.getKey().compareTo(PoengType.ETT_PAR) < 0 && e.getValue() != -1)
+				.mapToInt(Map.Entry::getValue).sum();
+		return sum >= 10 ? 50 : 0;
+	}
+
+	public int getSumOppTilOgMedSeksere() {
+		int sum = poeng.entrySet().stream()
+				.filter(e -> e.getKey().compareTo(PoengType.ETT_PAR) < 0 && e.getValue() != -1)
+				.mapToInt(Map.Entry::getValue).sum();
+		return sum;
 	}
 
 }

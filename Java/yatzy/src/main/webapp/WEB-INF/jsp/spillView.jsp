@@ -53,10 +53,18 @@
 									</tr>
 									
 									<c:if test="${poengtype.toString() eq 'SEKSERE'}">
-										<td>Bonus</td>
-										<c:forEach var="poengtabell" items="${poengtabeller}">
-											<td>${poengtabell.bonus}</td>
-										</c:forEach>
+										<tr>
+											<td>Sum</td>
+											<c:forEach var="poengtabell" items="${poengtabeller}">
+												<td>${poengtabell.sumOppTilOgMedSeksere}</td>
+											</c:forEach>
+										</tr>
+										<tr>
+											<td>Bonus</td>
+											<c:forEach var="poengtabell" items="${poengtabeller}">
+												<td>${poengtabell.bonus}</td>
+											</c:forEach>
+										</tr>
 									</c:if>
 								</c:forEach>
 								<tr>
