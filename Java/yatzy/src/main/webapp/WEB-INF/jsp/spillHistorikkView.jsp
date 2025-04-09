@@ -82,14 +82,16 @@
 								<c:set var="timeEnd" value="${pt.tidavsluttet}"></c:set>
 								<c:set var="modifiedE" value="${fn:replace(timeEnd, 'T', ' ')}"/>
 								<c:set var="modifiedEndTime" value="${fn:replace(modifiedE, '-', '.')}"/>
-								<p>Avsluttet: ${modifiedEndTime}</p>
+								<p>Avslutt et:  ${modifiedEndTime}</p>
 							</div>
 
 					</c:forEach>
 				</c:if>
 			</div>
+			<div class="spillhistorikk">
+				<p>*Dato er oppgitt på formatet YYYY.MM.DD</p>
+			</div>
 		</div>
-		
 		<footer> 
 			<h2>Credits</h2>
 			<p><a href="https://www.flaticon.com/free-icons/dice" title="dice icons">Dice icons created by Candy Design - Flaticon</a><p>
