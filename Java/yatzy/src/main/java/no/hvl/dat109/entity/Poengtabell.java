@@ -154,7 +154,7 @@ public class Poengtabell {
 		int sum = poeng.entrySet().stream()
 				.filter(e -> e.getKey().compareTo(PoengType.ETT_PAR) < 0 && e.getValue() != -1)
 				.mapToInt(Map.Entry::getValue).sum();
-		return sum >= 10 ? 50 : 0;
+		return sum >= 42? 50 : 0;
 	}
 
 	public int getSumOppTilOgMedSeksere() {
