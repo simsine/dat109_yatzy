@@ -56,6 +56,12 @@ public class InnloggingController {
             return "logginnView";
         }
         
+        if (!optionSpiller.get().isAktiv()) {
+        	model.addAttribute("errors", List.of("Bruker er deaktivert"));
+        	httpServletResponse.setStatus(401);
+        	return "logginnView";
+        }
+        
         Spiller spiller = optionSpiller.get();
         
         if (!spillerService.erKorrektPassord(innloggingForm.getPassord(), spiller.getSalt(), spiller.getHashetpassord())) {

@@ -15,6 +15,7 @@ public class Spiller {
 	private String etternavn;
 	private String hashetpassord;
 	private String salt;
+	private boolean aktiv;
 	
 	public Spiller() {
 		
@@ -28,6 +29,7 @@ public class Spiller {
 		this.etternavn = etternavn;
 		this.hashetpassord = hashPassord;
 		this.salt = salt;
+		this.setAktiv(true);
 	}
 
 	public String getEmail() {
@@ -72,5 +74,13 @@ public class Spiller {
 
 	public String getBrukernavn() {
 		return brukernavn;
+	}
+
+	public boolean isAktiv() {
+		return aktiv;
+	}
+
+	public void setAktiv(boolean aktiv) {
+		this.aktiv = aktiv;
 	}
 }
