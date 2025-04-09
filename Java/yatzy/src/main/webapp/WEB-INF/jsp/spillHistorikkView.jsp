@@ -20,7 +20,7 @@
 				<p>Hei, ${spiller.brukernavn}</p>
 				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>		
 				<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/lobby" class="unstyled-link"><p> Lobby → </p></a>
+				<a href="/lobby" class="unstyled-link"><p> Lobby→</p></a>
 			</div>
 		</div>
 
@@ -29,7 +29,7 @@
 				<h2>Historikk for ${brukernavn}</h2>
 			</div>
 			
-			<div class="historyGames">
+			<div class="aktivespill">
 		
 				<c:if test="${empty aktivespill}">
 					<p> Ingen aktive spill</p>
@@ -53,7 +53,8 @@
 				<c:if test="${empty avsulttedespill}">
 					<p> Ingen avsulttede spill</p>
 				</c:if>
-
+			</div>
+			<div class="avsulttedespill">
 				<c:if test="${not empty avsulttedespill}">
 					<c:forEach var="pt" items="${avsulttedespill}">
 
@@ -70,7 +71,6 @@
 
 					</c:forEach>
 				</c:if>
-
 			</div>
 		</div>
 		

@@ -161,6 +161,15 @@ public class SpillService {
 				poengTabell.setHarTidligYatzy(true);
 			}
 			poeng = PoengUtil.yatzy(terninger);
+			if (erSoloSpill(spillNr)) {
+				if (poengTabell.finnForsteIkkeRegistrerteType().isEmpty()) {
+					hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));				
+				}
+			} else {			
+				if (erDuSistemann(brukernavn, spillNr) && erAlleForDegFerdig(spillNr, brukernavn)) {
+					hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
+				}
+			}
 			poengTabell.registrerPoeng(PoengType.YATZY, poeng);
 			poengtabellRepo.save(poengTabell);
 			return true;
@@ -217,8 +226,14 @@ public class SpillService {
 			break;
 		}
 		poengTabell.registrerPoeng(poengType, poeng);
-		if (erDuSistemann(brukernavn, spillNr) && erAlleForDegFerdig(spillNr, brukernavn)) {
-			hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
+		if (erSoloSpill(spillNr)) {
+			if (poengTabell.finnForsteIkkeRegistrerteType().isEmpty()) {
+				hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));				
+			}
+		} else {			
+			if (erDuSistemann(brukernavn, spillNr) && erAlleForDegFerdig(spillNr, brukernavn)) {
+				hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
+			}
 		}
 		poengtabellRepo.save(poengTabell);
 		return true;
@@ -334,6 +349,11 @@ public class SpillService {
 	public List<Spill> hentAlleFerdigeSpillForSpiller(String brukernavn) {
 		List<Poengtabell> poengtabellListe = poengtabellRepo.findByBrukernavn(brukernavn);
 		return poengtabellListe.stream().map(t -> t.getSpill()).filter(t -> t.erSpillFerdig()).toList();
+	}
+	
+	public boolean erSoloSpill(Integer spillId) {
+		Spill spill = hentSpillEtterNr(spillId).get();
+		return spill.getAntallSpillere() == 1;
 	}
 
 }
