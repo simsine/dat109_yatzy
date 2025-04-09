@@ -66,6 +66,9 @@ public class InnloggingController {
 		
 		spillerService.logginnSpiller(httpServletRequest, spiller);
 		
+		if(spillerService.erAdmin(httpServletRequest.getSession())) {
+			httpServletRequest.getSession().setAttribute("isAdmin", true);			
+		}
 		
 		
 		return "redirect:/lobby";

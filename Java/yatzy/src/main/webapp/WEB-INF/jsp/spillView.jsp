@@ -17,7 +17,9 @@
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.fornavn}</p>
-				<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+				<c:if test="${isAdmin eq true}">
+					<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+				</c:if>
 				<a href=/utlogging><button>Logg ut</button></a>		
 				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
