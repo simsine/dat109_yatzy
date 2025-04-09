@@ -31,21 +31,41 @@
 			
 			<div class="historyGames">
 		
-				<c:if test="${empty tidligereSpill}">
-					<p> Ingen tidligere spill</p>
+				<c:if test="${empty aktivespill}">
+					<p> Ingen aktive spill</p>
 				</c:if>
 
-				<c:if test="${not empty tidligereSpill}">
-					<c:forEach var="pt" items="${tidligereSpill}">
+				<c:if test="${not empty aktivespill}">
+					<c:forEach var="pt" items="${aktivespill}">
 
 							<div class="item1">
-								<a href="/spill/${pt.poengtabellId.spillnr}">
-									<button> Spill ${pt.poengtabellId.spillnr}</button>
+								<a href="/spill/${pt.spillnr}">
+									<button> Spill ${pt.spillnr}</button>
 								</a>
 							</div>
 
 							<div class="item2">
-								<p>${pt.spill.tidopprettet}</p>
+								<p>Opprettet: <c:out value="${pt.tidopprettet}"></c:out></p>
+							</div>
+
+					</c:forEach>
+				</c:if>
+				<c:if test="${empty avsulttedespill}">
+					<p> Ingen avsulttede spill</p>
+				</c:if>
+
+				<c:if test="${not empty avsulttedespill}">
+					<c:forEach var="pt" items="${avsulttedespill}">
+
+							<div class="item1">
+								<a href="/spill/${pt.spillnr}">
+									<button> Spill ${pt.spillnr}</button>
+								</a>
+							</div>
+
+							<div class="item2">
+								<p>Opprettet: <c:out value="${pt.tidopprettet}"></c:out></p>
+								<p>Avsluttet: <c:out value="${pt.tidavsluttet}"></c:out></p>
 							</div>
 
 					</c:forEach>

@@ -24,5 +24,7 @@ public class SpillgjennomgangService {
 		return poengtabellListe;
 	}
 	
+			
+	
 	
 }

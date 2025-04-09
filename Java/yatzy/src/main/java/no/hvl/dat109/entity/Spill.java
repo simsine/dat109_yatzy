@@ -85,4 +85,8 @@ public class Spill {
 		this.oppretter = oppretter;
 	}
 
+	public boolean erSpillFerdig() {
+		return this.tidavsluttet != null;
+	}
+
 }

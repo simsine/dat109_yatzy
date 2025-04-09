@@ -37,7 +37,7 @@ public class LobbyController {
 			return "redirect:/innlogging";
 		}
 		
-		List<Spill> spillListe = spillService.hentAlleSpill();
+		List<Spill> spillListe = spillService.hentAlleIkkeFulleOgIkkeStartetSpill();
 		
 		model.addAttribute("spillListe", spillListe);
 		
