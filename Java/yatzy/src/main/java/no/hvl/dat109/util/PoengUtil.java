@@ -1,8 +1,9 @@
 package no.hvl.dat109.util;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+
+import no.hvl.dat109.yatzy.Kopp;
 
 public class PoengUtil {
 
@@ -101,7 +102,7 @@ public class PoengUtil {
 			}
 		}
 		int par2 = 0;
-		for (int i = par1-1; i > 0; i--) {
+		for (int i = par1 - 1; i > 0; i--) {
 			if (map.get(i) >= 2 && i != par1) {
 				par2 = i;
 				break;
@@ -140,6 +141,10 @@ public class PoengUtil {
 	public static Integer litenStraight(List<Integer> liste) {
 		List<Integer> sortert = liste.stream().sorted((a, b) -> a - b).toList();
 
+		if (sortert.size() != Kopp.ANTALL_TERNINGER) {
+			return 0;
+		}
+
 		for (int i = 0; i < sortert.size(); i++) {
 			if (i + 1 != sortert.get(i)) {
 				return 0;
@@ -150,6 +155,10 @@ public class PoengUtil {
 
 	public static Integer storStraight(List<Integer> liste) {
 		List<Integer> sortert = liste.stream().sorted((a, b) -> a - b).toList();
+
+		if (sortert.size() != Kopp.ANTALL_TERNINGER) {
+			return 0;
+		}
 
 		for (int i = 0; i < sortert.size(); i++) {
 			if (i + 2 != sortert.get(i)) {
@@ -199,7 +208,7 @@ public class PoengUtil {
 	public static boolean erYatzy(List<Integer> liste) {
 		HashMap<Integer, Integer> map = hashMapAvListe(liste);
 		for (int i = 6; i > 0; i--) {
-			if(map.get(i) >= 5) {
+			if (map.get(i) >= 5) {
 				return true;
 			}
 		}

@@ -34,7 +34,7 @@
 							<label for="epost">Epost</label>
 								<input
 								   type="email" id="epost" name="email" value="${registreringForm.email}"
-								   minlength="2" maxlength="20" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" required
+								   minlength="2" maxlength="100" pattern="^[\w\-\.]+@([\w-]+\.)+[\w-]{2,}$" required
 								   oninvalid="this.setCustomValidity('Epost må være gyldig')"
 								   oninput="this.setCustomValidity('')" 
 								   >
