@@ -8,6 +8,33 @@
 		<meta charset="UTF-8">
 		<title>YATZY > Lobby</title>
 		<link rel="stylesheet" href="/simple.css">
+		<script>
+		    document.addEventListener("DOMContentLoaded", () => {
+		        const tooltip = document.createElement("div");
+		        tooltip.style.position = "absolute";
+		        document.body.appendChild(tooltip);
+		
+		        document.querySelectorAll(".visSpillere").forEach(button => {
+		            const spillere = button.getAttribute("data-spillere");
+		
+		            
+		            button.addEventListener("mouseover", (e) => {
+		                tooltip.innerHTML = spillere;
+		                tooltip.style.display = "block";
+		                
+		                const rect = button.getBoundingClientRect();
+		                
+		                tooltip.style.top = (rect.top) + "px";
+		                tooltip.style.left = (rect.left + 100) + "px"; 
+		            });
+		
+		            button.addEventListener("mouseleave", () => {
+		                tooltip.style.display = "none";
+		            });
+		        });
+		    });
+		</script>
+
 	</head>
 	
 	<body>
@@ -26,7 +53,7 @@
 		</div>
 		<div class="main">
 			<div class="lobby">
-				<h2>Lobby<h2>
+				<h2>Lobby</h2>
 				<p><c:out value="${feilmelding}" /></p>
 			</div>
 			<div class="newGame">
@@ -43,7 +70,9 @@
 						<input type="submit" value="Bli med i spill ${spill.spillnr}">
 					</form>
 					</div>
-					<div class="item2"><p>${spill.antallSpillere}/6 spillere</p></div>
+					<div class="item2">
+						<p class="visSpillere" data-spillere="${spill.spillereBrukernavn}">${spill.antallSpillere}/6 spillere</p>
+					</div>
 				</div>
 			</c:forEach>
 		</div>

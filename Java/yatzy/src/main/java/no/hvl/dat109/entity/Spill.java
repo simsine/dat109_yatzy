@@ -21,7 +21,7 @@ public class Spill {
 
 	@OneToMany
 	@JoinColumn(name = "spillnr")
-	private List<Poengtabell> poengTabeller;
+	private List<Poengtabell> poengtabeller;
 
 	private LocalDateTime tidopprettet;
 
@@ -34,7 +34,7 @@ public class Spill {
 
 	public Spill(List<Poengtabell> poengtabeller) {
 		super();
-		this.poengTabeller = poengtabeller;
+		this.poengtabeller = poengtabeller;
 	}
 
 	public Spill() {
@@ -50,15 +50,15 @@ public class Spill {
 	}
 
 	public List<Poengtabell> getPoengtabeller() {
-		return poengTabeller;
+		return poengtabeller;
 	}
 	
 	public int getAntallSpillere() {
-		return poengTabeller.size();
+		return poengtabeller.size();
 	}
 
 	public void setPoengtabeller(List<Poengtabell> poengtabeller) {
-		this.poengTabeller = poengtabeller;
+		this.poengtabeller = poengtabeller;
 	}
 
 	public LocalDateTime getTidopprettet() {
@@ -87,6 +87,10 @@ public class Spill {
 
 	public boolean erSpillFerdig() {
 		return this.tidavsluttet != null;
+	}
+	
+	public List<String> getSpillereBrukernavn(){
+		return this.poengtabeller.stream().map(t -> t.getPoengtabellId().getBrukernavn()).toList();
 	}
 
 }
