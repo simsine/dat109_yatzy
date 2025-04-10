@@ -4,38 +4,65 @@
 
 <!DOCTYPE html>
 <html lang="no">
-    <head>
-        <meta charset="UTF-8">
-        <title>YATZY > Admin</title>
-        <link rel="stylesheet" href="/simple.css">
-    </head>
-    
-    <body>
-        <div class="header">
-            <h1>
-                <a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
-            </h1>
-            <div class="menubox">
-                <p>Hei, ${spiller.brukernavn}</p>
-              	<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/lobby" class="unstyled-link"><p> Lobby → </p></a>
-                <a href="/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
-            </div>
-        </div>
-        <div class="main">
-            <div class="lobby">
-                <h2>Admin - Slett spill<h2>
-            </div>
-            <c:forEach var="spill" items="${spillListe}">
-                <div class="lobbyGames">
-                    <div class="item1">
-                        <form method="post" action="/admin/slett/${spill.spillnr}">
-                            <input type="submit" value="Slett spill ${spill.spillnr}">
-                        </form>                            
-                    </div>
-                    <div class="item2"><p>${spill.antallSpillere}/6 spillere</p></div>
-                </div>
-            </c:forEach>
-        </div>
-    </body>
+<head>
+<meta charset="UTF-8">
+<title>YATZY > Admin</title>
+<link rel="stylesheet" href="/simple.css">
+</head>
+
+<body>
+	<div class="header">
+		<h1>
+			<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png"
+				alt="2 stykk terninger"></a>
+		</h1>
+		<div class="menubox">
+			<p>Hei, ${spiller.brukernavn}</p>
+			<a href=/utlogging><button>Logg ut</button></a> <a href="/lobby"
+				class="unstyled-link"><p>Lobby →</p></a> <a
+				href="/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
+		</div>
+	</div>
+	<div class="main">
+		<div class="lobby">
+			<h2>Admin - Slett spill</h2>
+		</div>
+		<c:forEach var="spill" items="${spillListe}">
+			<div class="lobbyGames">
+				<div class="item1">
+					<form method="post" action="/admin/slett/${spill.spillnr}">
+						<input type="submit" value="Slett spill ${spill.spillnr}">
+					</form>
+				</div>
+				<div class="item2">
+					<p>${spill.antallSpillere}/6spillere</p>
+				</div>
+			</div>
+		</c:forEach>
+		<div class="lobby">
+			<h2>Admin - Deaktiver spiller</h2>
+		</div>
+		<c:forEach var="spiller" items="${spillerListe}">
+			<div class="lobbyGames">
+				<div class="item1">
+					<c:choose>
+					  <c:when test = "${spiller.aktiv eq false}">
+						<form method="post" action="/admin/aktiver/${spiller.brukernavn}">
+							<input type="submit" value="Aktiver">
+						</form>			           
+			         </c:when>
+			         <c:otherwise>
+						<form method="post" action="/admin/deaktiver/${spiller.brukernavn}">
+							<input type="submit" value="Deaktiver">
+						</form>
+			         </c:otherwise>
+			      </c:choose>
+				</div>
+				<div class="item2">
+					<p style="color:${spiller.aktiv eq false ? 'red' : ''}" >${spiller.brukernavn}</p>
+				</div>
+			</div>
+		</c:forEach>
+	</div>
+</body>
 </html>

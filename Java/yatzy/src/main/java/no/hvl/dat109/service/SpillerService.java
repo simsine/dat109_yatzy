@@ -1,5 +1,6 @@
 package no.hvl.dat109.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +54,29 @@ public class SpillerService {
 		Optional<Admin> admins = adminRepo.findById(hentInnloggetSpiller(session).getBrukernavn());
 		return admins.isPresent();
 	}
+
+	public void deaktiverBruker(String brukernavn) {
+		Optional<Spiller> spiller = spillerRepo.findById(brukernavn);
+		if (spiller.isEmpty()) {
+			System.out.println("Fant ikke spiller med brukenavn " + brukernavn);
+			return;
+		}
+		spiller.get().setAktiv(false);
+		spillerRepo.save(spiller.get());
+	}
+
+	public void aktiverBruker(String brukernavn) {
+		Optional<Spiller> spiller = spillerRepo.findById(brukernavn);
+		if (spiller.isEmpty()) {
+			System.out.println("Fant ikke spiller med brukenavn " + brukernavn);
+			return;
+		}
+		spiller.get().setAktiv(true);
+		spillerRepo.save(spiller.get());
+	}
+	
+	public List<Spiller> hentAlleSpillere() {
+		return spillerRepo.findAll();
+	}
+
 }
