@@ -8,6 +8,35 @@
 <meta charset="UTF-8">
 <title>YATZY > Admin</title>
 <link rel="stylesheet" href="/simple.css">
+		<script>
+		    document.addEventListener("DOMContentLoaded", () => {
+		        const tooltip = document.createElement("div");
+		        tooltip.style.position = "absolute";
+		        document.body.appendChild(tooltip);
+		
+		        document.querySelectorAll(".visSpillere").forEach(button => {
+		            const spillere = button.getAttribute("data-spillere");
+		
+		            
+		            button.addEventListener("mouseover", (e) => {
+		                tooltip.innerHTML = spillere;
+		                tooltip.style.display = "block";
+		                
+		                // Bruk offsetTop og offsetLeft for å få posisjon i forhold til hele dokumentet
+		                const rect = button.getBoundingClientRect();
+		                const buttonTop = rect.top + window.pageYOffset;
+		                const buttonLeft = rect.left + window.pageXOffset;
+
+		                tooltip.style.top = (buttonTop) + "px"; // 5px under knappen
+		                tooltip.style.left = (buttonLeft + 100) + "px"; // Juster til venstre for knappen 
+		            });
+		
+		            button.addEventListener("mouseleave", () => {
+		                tooltip.style.display = "none";
+		            });
+		        });
+		    });
+		</script>
 </head>
 
 <body>
@@ -35,7 +64,7 @@
 					</form>
 				</div>
 				<div class="item2">
-					<p>${spill.antallSpillere}/6spillere</p>
+					<p class="visSpillere" data-spillere="${spill.spillereBrukernavn}">${spill.antallSpillere}/6 spillere</p>
 				</div>
 			</div>
 		</c:forEach>

@@ -22,10 +22,13 @@
 		                tooltip.innerHTML = spillere;
 		                tooltip.style.display = "block";
 		                
+		                // Bruk offsetTop og offsetLeft for å få posisjon i forhold til hele dokumentet
 		                const rect = button.getBoundingClientRect();
-		                
-		                tooltip.style.top = (rect.top) + "px";
-		                tooltip.style.left = (rect.left + 100) + "px"; 
+		                const buttonTop = rect.top + window.pageYOffset;
+		                const buttonLeft = rect.left + window.pageXOffset;
+
+		                tooltip.style.top = (buttonTop) + "px"; // 5px under knappen
+		                tooltip.style.left = (buttonLeft + 100) + "px"; // Juster til venstre for knappen 
 		            });
 		
 		            button.addEventListener("mouseleave", () => {

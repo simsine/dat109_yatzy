@@ -16,7 +16,7 @@
 				<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
-				<p>Hei, ${spiller.fornavn}</p>
+				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
 					<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
