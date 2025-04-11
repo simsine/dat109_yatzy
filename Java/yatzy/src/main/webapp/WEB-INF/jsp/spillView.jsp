@@ -13,14 +13,14 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="<c:url value='/'/>" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
+				<a href="<c:url value='/'/>" class="unstyled-link">YATZY<img src="<c:url value='/YatzyLogo.png'/>" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
 					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
-				<a href=/utlogging><button>Logg ut</button></a>		
+				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>		
 				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
@@ -87,7 +87,7 @@
 						<div class="gameDiceHeader">
 							<h3>Det er ${aktivspiller} sin tur</h3>
 							<p>
-								<img src="/click.png" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
+								<img src="<c:url value='/click.png'/>" alt="Musepil som klikker" width="20px"> Klikk på terningene du vil beholde
 							</p>
 						</div>
 						
