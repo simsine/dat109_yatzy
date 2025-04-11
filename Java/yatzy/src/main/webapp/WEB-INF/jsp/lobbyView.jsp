@@ -43,15 +43,15 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/${pageContext.request.contextPath}" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
+				<a href="/${pageContext.request.contextPath}/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/${pageContext.request.contextPath}admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="/${pageContext.request.contextPath}/admin" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
 				<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/${pageContext.request.contextPath}spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
+				<a href="/${pageContext.request.contextPath}/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>
 		<div class="main">
@@ -60,7 +60,7 @@
 				<p><c:out value="${feilmelding}" /></p>
 			</div>
 			<div class="newGame">
-				<form method="post" action="/${pageContext.request.contextPath}spill/opprett">
+				<form method="post" action="/${pageContext.request.contextPath}/spill/opprett">
 					<div class="item1">
 						<input type="submit" value="Opprett nytt spill">
 					</div>
@@ -69,7 +69,7 @@
 			<c:forEach var="spill" items="${spillListe}">
 				<div class="lobbyGames">
 					<div class="item1">
-					<form action="/${pageContext.request.contextPath}spill/${spill.spillnr}/blimed" method="post">
+					<form action="/${pageContext.request.contextPath}/spill/${spill.spillnr}/blimed" method="post">
 						<input type="submit" value="Bli med i spill ${spill.spillnr}">
 					</form>
 					</div>
