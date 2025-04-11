@@ -1,17 +1,18 @@
 package no.hvl.dat109.service;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import static org.mockito.Mockito.when;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import no.hvl.dat109.entity.Poengtabell;
@@ -46,12 +47,12 @@ class SpillServiceTest {
 
 		List<String> terninger = new ArrayList<>(List.of("1", "2", "3", "4", "5"));
 
-		assertEquals(PoengType.ENERE, poengtabell.finnForsteIkkeRegistrerteType());
+		assertEquals(PoengType.ENERE, poengtabell.finnForsteIkkeRegistrerteType().get());
 
 		spillService.registrerPoeng("lol", 1, terninger);
 
 		assertEquals(1, poengtabell.getPoeng(PoengType.ENERE));
-		
+
 		assertEquals(PoengType.TOERE, poengtabell.finnForsteIkkeRegistrerteType());
 
 		terninger = new ArrayList<>(List.of("1", "2", "3", "4", "5"));
@@ -59,46 +60,47 @@ class SpillServiceTest {
 		spillService.registrerPoeng("lol", 1, terninger);
 
 		assertEquals(2, poengtabell.getPoeng(PoengType.TOERE));
-		
+
 		assertEquals(PoengType.TREERE, poengtabell.finnForsteIkkeRegistrerteType());
 
 	}
+
 	@Test
 	void testRegistrerPoengTidligYatzy() {
-		
+
 		Poengtabell poengtabell = new Poengtabell();
-		
+
 		when(poengtabellRepo.findByBrukernavnAndSpillnr("lol", 1)).thenReturn(poengtabell);
-		
+
 		List<String> terninger = new ArrayList<>(List.of("1", "1", "1", "1", "1"));
-		
-		assertEquals(PoengType.ENERE, poengtabell.finnForsteIkkeRegistrerteType());
-		
+
+		assertEquals(PoengType.ENERE, poengtabell.finnForsteIkkeRegistrerteType().get());
+
 		spillService.registrerPoeng("lol", 1, terninger);
-		
+
 		assertEquals(-1, poengtabell.getPoeng(PoengType.ENERE));
 		assertEquals(50, poengtabell.getPoeng(PoengType.YATZY));
-		
-		assertEquals(PoengType.ENERE, poengtabell.finnForsteIkkeRegistrerteType());
-		
+
+		assertEquals(PoengType.ENERE, poengtabell.finnForsteIkkeRegistrerteType().get());
+
 		terninger = new ArrayList<>(List.of("1", "1", "1", "1", "1"));
-		
+
 		spillService.registrerPoeng("lol", 1, terninger);
-		
+
 		assertEquals(5, poengtabell.getPoeng(PoengType.ENERE));
-		
+
 		assertEquals(PoengType.TOERE, poengtabell.finnForsteIkkeRegistrerteType());
 	}
 
 	@Test
-		void testHentAlleSpill() {
-			List<Spill> spillListe = List.of(new Spill(), new Spill());
-			when(spillRepo.findAll()).thenReturn(spillListe);
+	void testHentAlleSpill() {
+		List<Spill> spillListe = List.of(new Spill(), new Spill());
+		when(spillRepo.findAll()).thenReturn(spillListe);
 
-			List<Spill> result = spillService.hentAlleSpill();
+		List<Spill> result = spillService.hentAlleSpill();
 
-			assertEquals(2, result.size());
-		}
+		assertEquals(2, result.size());
+	}
 
 	@Test
 	void testHentSpillEtterNr() {
@@ -115,7 +117,7 @@ class SpillServiceTest {
 
 	@Test
 	void testHentPoengTabellEtterSpillnr() {
-		List <Poengtabell> ptList = List.of(new Poengtabell(), new Poengtabell());
+		List<Poengtabell> ptList = List.of(new Poengtabell(), new Poengtabell());
 		when(poengtabellRepo.findBySpillnr(3)).thenReturn(ptList);
 
 		List<Poengtabell> result = spillService.hentPoengtabellerEtterSpillnr(3);
