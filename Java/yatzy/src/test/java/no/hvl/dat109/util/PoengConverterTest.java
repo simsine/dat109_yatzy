@@ -33,7 +33,7 @@ class PoengConverterTest {
 
         // Test at JSON ikke er null og har riktig format
         assertNotNull(json);
-        assertTrue(json.equals("{\"TOERE\":4,\"ENERE\":3}") || json.equals("{\"TOERE\":4,\"ENERE\":3}"));
+        assertTrue(json.equals("{\"ENERE\":3,\"TOERE\":4}") || json.equals("{\"TOERE\":4,\"ENERE\":3}"));
     }
 
     @Test
