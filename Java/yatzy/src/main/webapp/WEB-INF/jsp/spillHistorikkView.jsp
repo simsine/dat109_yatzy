@@ -8,22 +8,22 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>YATZY > Historikk</title>
-		<link rel="stylesheet" href="/simple.css">
+		<link rel="stylesheet" href="<c:url value='/simple.css'/>">
 	</head>
 	
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/${pageContext.request.contextPath}/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
+				<a href="<c:url value='/'/>" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
 			</h1>
 			
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/${pageContext.request.contextPath}/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
-				<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/${pageContext.request.contextPath}/lobby" class="unstyled-link"><p> Lobby→</p></a>
+				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
+				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p> Lobby→</p></a>
 			</div>
 		</div>
 
@@ -42,7 +42,7 @@
 					<c:forEach var="pt" items="${aktivespill}">
 
 							<div class="item1">
-								<a href="/${pageContext.request.contextPath}/spill/${pt.spillnr}">
+								<a href="<c:url value='/spill/${pt.spillnr}'/>">
 									<button> Spill ${pt.spillnr}</button>
 								</a>
 							</div>
@@ -71,7 +71,7 @@
 					<c:forEach var="pt" items="${avsluttedespill}">
 
 							<div class="item1">
-								<a href="/${pageContext.request.contextPath}/spill/${pt.spillnr}">
+								<a href="<c:url value='/spill/${pt.spillnr}'/>">
 									<button> Spill ${pt.spillnr}</button>
 								</a>
 							</div>

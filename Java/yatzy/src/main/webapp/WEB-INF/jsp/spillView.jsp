@@ -7,21 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <title>YATZY > Spill</title>
-<link rel="stylesheet" href="/simple.css">
+<link rel="stylesheet" href="<c:url value='/simple.css'/>">
 </head>
 
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/${pageContext.request.contextPath}/" class="unstyled-link">YATZY<img src="/${pageContext.request.contextPath}/YatzyLogo.png" alt="2 stykk terninger"></a>
+				<a href="<c:url value='/'/>" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/${pageContext.request.contextPath}/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
 				<a href=/utlogging><button>Logg ut</button></a>		
-				<a href="/${pageContext.request.contextPath}/lobby" class="unstyled-link"><p>Lobby→</p></a>
+				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
 	
@@ -96,7 +96,7 @@
 								<c:forEach items="${terninger}" var="terning">
 									<label class="image-checkbox"> 
 										<input type="checkbox" name="valgteterninger" value="${terning}"> 
-										<img src="/${pageContext.request.contextPath}/terning${terning}.png">
+										<img src="/terning${terning}.png">
 									</label>
 								</c:forEach>
 								<input type="hidden" name="alleterninger" value="${terninger}" />
@@ -106,14 +106,14 @@
 								<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
 								<c:if test="${typenaa != null}">
 									<c:if test="${antallkastigjen > 0}">
-										<input type="submit" formaction="/${pageContext.request.contextPath}/spill/${spillnr}/trill"
+										<input type="submit" formaction="<c:url value='/spill/${spillnr}/trill'/>"
 											   value="Trill" class="trillButton" />
 									</c:if>
 									<c:if test="${(antallkastigjen < 1) or (alleterninger[0] == alleterninger[1] 
 								        and alleterninger[1] == alleterninger[2] 
 								        and alleterninger[2] == alleterninger[3] 
 								        and alleterninger[3] == alleterninger[4])}">
-								    	<input type="submit" formaction="/${pageContext.request.contextPath}/spill/${spillnr}/registrer" value="Avslutt runde" class="registrerButton" />
+								    	<input type="submit" formaction="<c:url value='/spill/${spillnr}/registrer'/>" value="Avslutt runde" class="registrerButton" />
 									</c:if>
 								</c:if>
 							</div>	
