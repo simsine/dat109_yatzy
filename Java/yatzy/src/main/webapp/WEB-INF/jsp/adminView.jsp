@@ -54,7 +54,8 @@
 	</div>
 	<div class="main">
 		<div class="lesserTitle">
-			<h2>Admin - Slett spill</h2>
+			<h1>Adminside</h1>
+			<h2>Slett spill</h2>
 		</div>
 		<c:forEach var="spill" items="${spillListe}">
 			<div class="deleteGames">
@@ -69,7 +70,7 @@
 			</div>
 		</c:forEach>
 		<div class="lesserTitle">
-			<h2>Admin - Deaktiver spiller</h2>
+			<h2>Deaktiver spiller</h2>
 		</div>
 		<c:forEach var="spiller" items="${spillerListe}">
 			<div class="deletePlayers">

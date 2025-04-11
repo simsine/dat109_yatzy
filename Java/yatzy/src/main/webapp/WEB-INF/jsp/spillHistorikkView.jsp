@@ -58,7 +58,7 @@
 				</c:if>
 			</div>
 			
-			<div class="gameHistorikk">
+			<div class="gameHistory">
 				<h3>Avsluttede spill:</h3>
 				<c:if test="${empty avsluttedespill}">
 					<p>Ingen avsluttede spill</p>
@@ -90,7 +90,7 @@
 					</c:forEach>
 				</c:if>
 			</div>
-			<div class="spillhistorikk">
+			<div class="gameHistory">
 				<p>*Dato er oppgitt på formatet YYYY.MM.DD</p>
 			</div>
 		</div>
