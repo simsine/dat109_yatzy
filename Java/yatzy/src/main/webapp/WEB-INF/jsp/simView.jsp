@@ -13,14 +13,14 @@
 	
 	<body>
 		<div class="header">
-			<a href="/" class="unstyled-link">YATZY sim<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
+			<a href="/${pageContext.request.contextPath}" class="unstyled-link">YATZY sim<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
 			<div class="menubox">
 				<p>Hei, ${fornavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="/${pageContext.request.contextPath}admin" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
 				<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/lobby" class="unstyled-link"><p>Lobby→</p></a>			
+				<a href="/${pageContext.request.contextPath}lobby" class="unstyled-link"><p>Lobby→</p></a>			
 			</div>
 		</div>
 		<div class="main">

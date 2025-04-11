@@ -42,14 +42,14 @@
 <body>
 	<div class="header">
 		<h1>
-			<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png"
+			<a href="/${pageContext.request.contextPath}" class="unstyled-link">YATZY<img src="YatzyLogo.png"
 				alt="2 stykk terninger"></a>
 		</h1>
 		<div class="menubox">
 			<p>Hei, ${spiller.brukernavn}</p>
-			<a href=/utlogging><button>Logg ut</button></a> <a href="/lobby"
+			<a href=/utlogging><button>Logg ut</button></a> <a href="/${pageContext.request.contextPath}lobby"
 				class="unstyled-link"><p>Lobby →</p></a> <a
-				href="/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
+				href="/${pageContext.request.contextPath}spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
 		</div>
 	</div>
 	<div class="main">
@@ -59,7 +59,7 @@
 		<c:forEach var="spill" items="${spillListe}">
 			<div class="deleteGames">
 				<div class="item1">
-					<form method="post" action="/admin/slett/${spill.spillnr}">
+					<form method="post" action="/${pageContext.request.contextPath}admin/slett/${spill.spillnr}">
 						<input type="submit" value="Slett spill ${spill.spillnr}">
 					</form>
 				</div>
@@ -76,12 +76,12 @@
 				<div class="item1">
 					<c:choose>
 					  <c:when test = "${spiller.aktiv eq false}">
-						<form method="post" action="/admin/aktiver/${spiller.brukernavn}">
+						<form method="post" action="/${pageContext.request.contextPath}admin/aktiver/${spiller.brukernavn}">
 							<input type="submit" value="Aktiver">
 						</form>			           
 			         </c:when>
 			         <c:otherwise>
-						<form method="post" action="/admin/deaktiver/${spiller.brukernavn}">
+						<form method="post" action="/${pageContext.request.contextPath}admin/deaktiver/${spiller.brukernavn}">
 							<input type="submit" value="Deaktiver">
 						</form>
 			         </c:otherwise>

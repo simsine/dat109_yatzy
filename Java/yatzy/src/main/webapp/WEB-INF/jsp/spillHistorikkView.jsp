@@ -14,16 +14,16 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
+				<a href="/${pageContext.request.contextPath}" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
 			</h1>
 			
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="/${pageContext.request.contextPath}admin" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
 				<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/lobby" class="unstyled-link"><p> Lobby→</p></a>
+				<a href="/${pageContext.request.contextPath}lobby" class="unstyled-link"><p> Lobby→</p></a>
 			</div>
 		</div>
 
@@ -42,7 +42,7 @@
 					<c:forEach var="pt" items="${aktivespill}">
 
 							<div class="item1">
-								<a href="/spill/${pt.spillnr}">
+								<a href="/${pageContext.request.contextPath}spill/${pt.spillnr}">
 									<button> Spill ${pt.spillnr}</button>
 								</a>
 							</div>
@@ -71,7 +71,7 @@
 					<c:forEach var="pt" items="${avsluttedespill}">
 
 							<div class="item1">
-								<a href="/spill/${pt.spillnr}">
+								<a href="/${pageContext.request.contextPath}spill/${pt.spillnr}">
 									<button> Spill ${pt.spillnr}</button>
 								</a>
 							</div>
