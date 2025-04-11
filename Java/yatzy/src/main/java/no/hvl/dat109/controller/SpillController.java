@@ -36,11 +36,11 @@ public class SpillController {
 	 * @param spillNr for spillet man vil hente
 	 * @return
 	 */
-	@GetMapping("/yatzy-1.0/spill/{id}")
+	@GetMapping("/spill/{id}")
 	public String getSpill(@PathVariable("id") Integer spillNr, Model model, HttpSession session) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(session)) {
-			return "redirect:/yatzy-1.0/innlogging";
+			return "redirect:/innlogging";
 		}
 
 		Spiller spiller = spillerService.hentInnloggetSpiller(session);
@@ -61,25 +61,25 @@ public class SpillController {
 		return "spillView";
 	}
 
-	@PostMapping("/yatzy-1.0/spill/opprett")
+	@PostMapping("/spill/opprett")
 	public String postOpprettSpill(HttpSession httpSession) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
-			return "redirect:/yatzy-1.0/innlogging";
+			return "redirect:/innlogging";
 		}
 		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 
 		Spill nyttSpill = spillService.opprettNyttSpill(spiller.getBrukernavn());
 
-		return "redirect:/yatzy-1.0/spill/" + nyttSpill.getSpillnr();
+		return "redirect:/spill/" + nyttSpill.getSpillnr();
 	}
 
-	@PostMapping("/yatzy-1.0/spill/{id}/blimed")
+	@PostMapping("/spill/{id}/blimed")
 	public String postBliMedISpill(@PathVariable("id") Integer spillId, Model model, HttpSession httpSession,
 			RedirectAttributes ra) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
-			return "redirect:/yatzy-1.0/innlogging";
+			return "redirect:/innlogging";
 		}
 		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 
@@ -87,46 +87,46 @@ public class SpillController {
 		
 		if (spillService.erSpillStartet(spillId)) {
 			ra.addFlashAttribute("feilmelding", "Spill er allerede startet");
-			return "redirect:/yatzy-1.0/lobby";
+			return "redirect:/lobby";
 		}
 			
 
 		if (spillOption.isEmpty()) {
 			ra.addFlashAttribute("feilmelding", "Fant ingen spill med den id'en");
-			return "redirect:/yatzy-1.0/lobby";
+			return "redirect:/lobby";
 		}
 
 		Spill spill = spillOption.get();
 
 		if (spillService.finnesPoengtabell(spillId, spiller.getBrukernavn())) {
 			System.out.println("finnes fra for av");
-			return "redirect:/yatzy-1.0/spill/" + spill.getSpillnr();
+			return "redirect:/spill/" + spill.getSpillnr();
 		}
 
 		if (spillService.erSpillFullt(spill)) {
 			ra.addFlashAttribute("feilmelding", "Spill er allerede fullt");
-			return "redirect:/yatzy-1.0/lobby";
+			return "redirect:/lobby";
 		}
 
 		spillService.leggtilSpiller(spiller.getBrukernavn(), spillId);
 		System.out.println("finnes ikke fra for av opretter ny poengtabell");
 		httpSession.setAttribute("antallkast" + spillId, 0);
 
-		return "redirect:/yatzy-1.0/spill/" + spill.getSpillnr();
+		return "redirect:/spill/" + spill.getSpillnr();
 	}
 
-	@PostMapping("/yatzy-1.0/spill/{id}/trill")
+	@PostMapping("/spill/{id}/trill")
 	public String trill(@PathVariable("id") Integer spillId, HttpSession httpSession,
 			@RequestParam(required = false) List<String> valgteterninger, RedirectAttributes ra) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
-			return "redirect:/yatzy-1.0/innlogging";
+			return "redirect:/innlogging";
 		}
 
 		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 		if (!spillService.erDetDinTur(spillId, spiller.getBrukernavn())) {
 			ra.addFlashAttribute("feilmelding", "Det er ikke din tur!");
-			return "redirect:/yatzy-1.0/spill/" + spillId;
+			return "redirect:/spill/" + spillId;
 		}
 
 		@SuppressWarnings("unchecked")
@@ -141,22 +141,22 @@ public class SpillController {
 		else
 			httpSession.setAttribute("antallkast" + spillId, antallkast + 1);
 
-		return "redirect:/yatzy-1.0/spill/" + spillId;
+		return "redirect:/spill/" + spillId;
 	}
 
-	@PostMapping("/yatzy-1.0/spill/{id}/registrer")
+	@PostMapping("/spill/{id}/registrer")
 	public String registrer(@PathVariable("id") Integer spillId, HttpSession httpSession,
 			@RequestParam(required = false) List<String> valgteterninger, @RequestParam String alleterninger,
 			RedirectAttributes ra) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
-			return "redirect:/yatzy-1.0/innlogging";
+			return "redirect:/innlogging";
 		}
 
 		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 		if (!spillService.erDetDinTur(spillId, spiller.getBrukernavn())) {
 			ra.addFlashAttribute("feilmelding", "Det er ikke din tur!");
-			return "redirect:/yatzy-1.0/spill/" + spillId;
+			return "redirect:/spill/" + spillId;
 		}
 
 		List<String> terninger = Arrays.stream(alleterninger.replaceAll("[\\[\\] ]", "").split(","))
@@ -175,6 +175,6 @@ public class SpillController {
 		httpSession.setAttribute("terninger", new ArrayList<String>());
 		
 
-		return "redirect:/yatzy-1.0/spill/" + spillId;
+		return "redirect:/spill/" + spillId;
 	}
 }

@@ -23,7 +23,7 @@ public class SimulerController {
 	@Autowired
 	YatzySimSpill yatzySimSpill;
 
-	@GetMapping("/yatzy-1.0/simuler")
+	@GetMapping("/simuler")
 	public String getSimuler(Model model) {
 		Poengtabell poengTabell = yatzySimSpill.simulerSpill();
 		Map<Object, Object> sortedMap = poengTabell.getAllePoeng().entrySet()

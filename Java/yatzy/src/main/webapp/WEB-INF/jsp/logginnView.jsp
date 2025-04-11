@@ -13,13 +13,13 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/yatzy-1.0/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
+				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 		</div>
 		<div class="main">
 			<div class="schema">
 				<h2>Logg inn</h2>
-				<form method="POST" action="/yatzy-1.0/innlogging">
+				<form method="POST" action="/innlogging">
 					<c:if test="${errors.size() > 0}">
 						<p style="color:red;">Feil:</p>
 						<ul style="color:red;">
@@ -51,7 +51,7 @@
 						<input type="submit" value="Logg inn">
 					</fieldset>
 				</form>
-				<p>Ny spiller? <a href="/yatzy-1.0/registrering">Opprett bruker</a></p>
+				<p>Ny spiller? <a href="/registrering">Opprett bruker</a></p>
 			</div>
 		</div>
 		

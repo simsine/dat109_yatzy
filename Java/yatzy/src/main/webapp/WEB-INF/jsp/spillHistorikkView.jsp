@@ -14,16 +14,16 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/yatzy-1.0/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
+				<a href="/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
 			</h1>
 			
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/yatzy-1.0/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
-				<a href=/yatzy-1.0/utlogging><button>Logg ut</button></a>
-				<a href="/yatzy-1.0/lobby" class="unstyled-link"><p> Lobby→</p></a>
+				<a href=/utlogging><button>Logg ut</button></a>
+				<a href="/lobby" class="unstyled-link"><p> Lobby→</p></a>
 			</div>
 		</div>
 

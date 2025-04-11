@@ -30,7 +30,7 @@ public class SpillhistorikkController {
 	private SpillService spillService;
 
 	
-	@GetMapping("/yatzy-1.0/spillhistorikk/{brukernavn}")
+	@GetMapping("/spillhistorikk/{brukernavn}")
 	public String getSpillhistorikk(@PathVariable("brukernavn") String brukernavn, Model model, HttpSession session) {
 		List<Spill> aktivespill = new ArrayList<>(spillService.hentAlleIkkeFerdigeSpillForSpiller(brukernavn));
 		aktivespill.sort((o1, o2) -> o1.getTidopprettet().compareTo(o2.getTidopprettet()));
@@ -41,7 +41,7 @@ public class SpillhistorikkController {
 		model.addAttribute("brukernavn", brukernavn);
 		Spiller spiller = (Spiller) session.getAttribute("spiller");
 		if (!spiller.getBrukernavn().equals(brukernavn)) {
-			return "redirect:/yatzy-1.0/lobby";
+			return "redirect:/lobby";
 		}
 		
 		return "spillHistorikkView";

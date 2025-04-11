@@ -43,15 +43,15 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="/yatzy-1.0/" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk terninger"></a>
+				<a href="/" class="unstyled-link">YATZY<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
 			</h1>
 			<div class="menubox">
 				<p>Hei, ${spiller.brukernavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/yatzy-1.0/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="/admin" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
-				<a href=/yatzy-1.0/utlogging><button>Logg ut</button></a>
-				<a href="/yatzy-1.0/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
+				<a href=/utlogging><button>Logg ut</button></a>
+				<a href="/spillhistorikk/${spiller.brukernavn}" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>
 		<div class="main">
@@ -60,7 +60,7 @@
 				<p><c:out value="${feilmelding}" /></p>
 			</div>
 			<div class="newGame">
-				<form method="post" action="/yatzy-1.0/spill/opprett">
+				<form method="post" action="/spill/opprett">
 					<div class="item1">
 						<input type="submit" value="Opprett nytt spill">
 					</div>
@@ -69,7 +69,7 @@
 			<c:forEach var="spill" items="${spillListe}">
 				<div class="lobbyGames">
 					<div class="item1">
-					<form action="/yatzy-1.0/spill/${spill.spillnr}/blimed" method="post">
+					<form action="/spill/${spill.spillnr}/blimed" method="post">
 						<input type="submit" value="Bli med i spill ${spill.spillnr}">
 					</form>
 					</div>
