@@ -25,13 +25,13 @@ public class InnloggingController {
 	@Autowired
 	SpillerService spillerService;
 	
-	@GetMapping("/innlogging")
+	@GetMapping("/yatzy-1.0/innlogging")
 	public String getInnlogging(HttpSession httpSession) {
 		if (LoginUtil.erBrukerInnlogget(httpSession)) return "redirect:/lobby";
 		return "logginnView";
 	}
 	
-	@PostMapping("/innlogging")
+	@PostMapping("/yatzy-1.0/innlogging")
 	public String postInnlogging(
 		Model model,
 		@Valid InnloggingForm innloggingForm, BindingResult bindingResult, 
@@ -77,10 +77,10 @@ public class InnloggingController {
 		}
 		
 		
-		return "redirect:/lobby";
+		return "redirect:/yatzy-1.0/lobby";
 	}
 	
-	@GetMapping("/utlogging")
+	@GetMapping("/yatzy-1.0/utlogging")
 	public String postUtlogging(HttpSession httpSession) {
 		spillerService.loggUtSpiller(httpSession);
 		return "redirect:/innlogging";

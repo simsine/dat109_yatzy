@@ -24,17 +24,26 @@ public class LobbyController {
 	public String getIndex(HttpSession httpSession) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
-			return "redirect:/innlogging";
+			return "redirect:/yatzy-1.0/innlogging";
 		}
 		
-		return "redirect:/lobby";
+		return "redirect:/yatzy-1.0/lobby";
+	}
+	@GetMapping("/yatzy-1.0/")
+	public String getIndexYatzy(HttpSession httpSession) {
+		// Omdiriger om ikke innlogget
+		if (!spillerService.erSpillerInnlogget(httpSession)) {
+			return "redirect:/yatzy-1.0/innlogging";
+		}
+		
+		return "redirect:/yatzy-1.0/lobby";
 	}
 	
-	@GetMapping("/lobby")
+	@GetMapping("/yatzy-1.0/lobby")
 	public String getLobby(Model model, HttpSession httpSession) {
 		// Omdiriger om ikke innlogget
 		if (!spillerService.erSpillerInnlogget(httpSession)) {
-			return "redirect:/innlogging";
+			return "redirect:/yatzy-1.0/innlogging";
 		}
 		
 		List<Spill> spillListe = spillService.hentAlleIkkeFulleOgIkkeStartetSpill();

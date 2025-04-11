@@ -25,12 +25,12 @@ public class RegistreringController {
 	@Autowired
 	RegistreringService registreringService;
 	
-	@GetMapping("/registrering")
+	@GetMapping("/yatzy-1.0/registrering")
 	public String getRegistrering() {
 		return "registrerView";
 	}
 	
-	@PostMapping("/registrering")
+	@PostMapping("/yatzy-1.0/registrering")
 	public String postRegistrering(
 		Model model,
 		@Valid RegistreringForm registreringForm, BindingResult bindingResult,
@@ -58,6 +58,6 @@ public class RegistreringController {
 		
 		LoginUtil.loggInnBruker(httpServletRequest, nySpiller);
 		
-		return "redirect:/lobby";
+		return "redirect:/yatzy-1.0/lobby";
 	}
 }

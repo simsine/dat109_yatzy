@@ -24,7 +24,7 @@ public class AdminController {
 	@Autowired
 	SpillerService spillerService;
 
-	@GetMapping("/admin")
+	@GetMapping("/yatzy-1.0/admin")
 	public String getAdmin(Model model, HttpSession session) {
 
 		if (!spillerService.erSpillerInnlogget(session)) {
@@ -37,25 +37,25 @@ public class AdminController {
 		spillerListe.sort(Comparator.comparing(Spiller::getBrukernavn));
 		model.addAttribute("spillerListe", spillerListe);
 
-		return spillerService.erAdmin(session) ? "adminView" : "redirect:/lobby";
+		return spillerService.erAdmin(session) ? "adminView" : "redirect:/yatzy-1.0/lobby";
 
 	}
 
-	@PostMapping("/admin/slett/{id}")
+	@PostMapping("/yatzy-1.0/admin/slett/{id}")
 	public String postSlettSpill(@PathVariable("id") Integer spillnr) {
 		spillService.slettSpill(spillnr);
-		return "redirect:/admin";
+		return "redirect:/yatzy-1.0/admin";
 	}
 	
-	@PostMapping("/admin/deaktiver/{brukernavn}")
+	@PostMapping("/yatzy-1.0/admin/deaktiver/{brukernavn}")
 	public String postDeaktiverBruker(@PathVariable("brukernavn") String brukernavn) {
 		spillerService.deaktiverBruker(brukernavn);
-		return "redirect:/admin";
+		return "redirect:/yatzy-1.0/admin";
 	}
 	
-	@PostMapping("/admin/aktiver/{brukernavn}")
+	@PostMapping("/yatzy-1.0/admin/aktiver/{brukernavn}")
 	public String postAktiverBruker(@PathVariable("brukernavn") String brukernavn) {
 		spillerService.aktiverBruker(brukernavn);
-		return "redirect:/admin";
+		return "redirect:/yatzy-1.0/admin";
 	}
 }
