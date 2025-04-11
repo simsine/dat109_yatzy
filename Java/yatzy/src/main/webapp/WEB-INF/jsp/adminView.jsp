@@ -47,9 +47,9 @@
 		</h1>
 		<div class="menubox">
 			<p>Hei, ${spiller.brukernavn}</p>
-			<a href=/utlogging><button>Logg ut</button></a> <a href="/${pageContext.request.contextPath}/lobby"
-				class="unstyled-link">Lobby →</a> 
-				<a href="<c:url value='/spillhistorikk/${spiller.brukernavn}'/>" class="unstyled-link">Spillhistorikk→</a>
+			<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
+			<a href="<c:url value='/lobby'/>" class="unstyled-link">Lobby →</a> 
+			<a href="<c:url value='/spillhistorikk/${spiller.brukernavn}'/>" class="unstyled-link">Spillhistorikk→</a>
 		</div>
 	</div>
 	<div class="main">

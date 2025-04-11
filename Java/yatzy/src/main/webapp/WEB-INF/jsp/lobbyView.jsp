@@ -50,7 +50,7 @@
 				<c:if test="${isAdmin eq true}">
 					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
-				<a href=/utlogging><button>Logg ut</button></a>
+				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
 				<a href="<c:url value='/spillhistorikk/${spiller.brukernavn}'/>" class="unstyled-link"><p>Spillhistorikk→</p></a>
 			</div>
 		</div>

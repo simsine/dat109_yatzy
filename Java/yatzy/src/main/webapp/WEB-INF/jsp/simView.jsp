@@ -7,20 +7,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>YATZY > Simulering</title>
-		<link rel="stylesheet" href="/simple.css">
+		<link rel="stylesheet" href="<c:url value='/simple.css'/>">
 		<title>Yatzy > Simulering</title>
 	</head>
 	
 	<body>
 		<div class="header">
-			<a href="/${pageContext.request.contextPath}/" class="unstyled-link">YATZY sim<img src="YatzyLogo.png" alt="2 stykk terninger"></a>
+			<a href="<c:url value='/'/>" class="unstyled-link">YATZY sim<img src="<c:url value='/YatzyLogo.png'/>" alt="2 stykk terninger"></a>
 			<div class="menubox">
 				<p>Hei, ${fornavn}</p>
 				<c:if test="${isAdmin eq true}">
-					<a href="/${pageContext.request.contextPath}/admin" class="unstyled-link"><p>Adminside→</p></a>
+					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
-				<a href=/utlogging><button>Logg ut</button></a>
-				<a href="/${pageContext.request.contextPath}/lobby" class="unstyled-link"><p>Lobby→</p></a>			
+				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
+				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p>Lobby→</p></a>			
 			</div>
 		</div>
 		<div class="main">
