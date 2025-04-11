@@ -96,14 +96,14 @@
 								<c:forEach items="${terninger}" var="terning">
 									<label class="image-checkbox"> 
 										<input type="checkbox" name="valgteterninger" value="${terning}"> 
-										<img src="<c:url value='/terning${terning}.png'/>" alt="${terning}">
+										<img src="<c:url value='/terning${terning}.png'/>" alt="terning som viser ${terning}">
 									</label>
 								</c:forEach>
 								<input type="hidden" name="alleterninger" value="${terninger}" />
 							</div>
 							<p><c:out value="${feilmelding}"/></p>
 							<div class="trillButtonContainer">
-								<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
+								<p>Du har <c:out value="${antallkastigjen}"/> kast igjen</p>
 								<c:if test="${typenaa != null}">
 									<c:if test="${antallkastigjen > 0}">
 										<input type="submit" formaction="<c:url value='/spill/${spillnr}/trill'/>"

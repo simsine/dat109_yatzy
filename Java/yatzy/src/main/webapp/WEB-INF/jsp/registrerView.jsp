@@ -24,7 +24,7 @@
 						<p style="color:red;">Feil:</p>
 						<ul style="color:red;">
 							<c:forEach var="e" items="${errors}">
-								<li>${e}</li>
+								<p>${e}</p>
 							</c:forEach>			
 						</ul>			
 					</c:if>
