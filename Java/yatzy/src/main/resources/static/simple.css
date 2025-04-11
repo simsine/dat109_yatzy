@@ -161,20 +161,22 @@ main p {
 	margin: 0px;
 }
 
-.lobby {
+.lesserTitle {
 	text-align: center;
+	margin-top: 1rem;
+	margin-bottom: 0.5rem;
 }
 
-.lobby h2 {
+.lesserTitle h2 {
 	margin-bottom: 2rem;
 }
 
-.spillhistorikk {
+.gameHistory {
 	text-align: center;
 }
 
 
-.spillhistorikk h2 {
+.gameHistory h2 {
 	margin-bottom: 2rem;
 }
 
@@ -197,12 +199,6 @@ main p {
 	justify-content: center;
 	grid-template-columns: 7rem 15rem;
 	gap: 1rem;
-}
-
-.adminTitle {
-	text-align: center;
-	margin-top: 1rem;
-	margin-bottom: 0.5rem;
 }
 
 .historyGames {

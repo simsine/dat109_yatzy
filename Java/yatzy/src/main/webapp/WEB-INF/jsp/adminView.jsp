@@ -53,7 +53,7 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="adminTitle">
+		<div class="lesserTitle">
 			<h2>Admin - Slett spill</h2>
 		</div>
 		<c:forEach var="spill" items="${spillListe}">
@@ -68,7 +68,7 @@
 				</div>
 			</div>
 		</c:forEach>
-		<div class="adminTitle">
+		<div class="lesserTitle">
 			<h2>Admin - Deaktiver spiller</h2>
 		</div>
 		<c:forEach var="spiller" items="${spillerListe}">
