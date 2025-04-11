@@ -96,7 +96,7 @@
 								<c:forEach items="${terninger}" var="terning">
 									<label class="image-checkbox"> 
 										<input type="checkbox" name="valgteterninger" value="${terning}"> 
-										<img src="/terning${terning}.png">
+										<img src="<c:url value='/terning${terning}.png'/>" alt="${terning}">
 									</label>
 								</c:forEach>
 								<input type="hidden" name="alleterninger" value="${terninger}" />

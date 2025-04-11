@@ -14,7 +14,7 @@
 	<body>
 		<div class="header">
 			<h1>
-				<a href="<c:url value='/'/>" class="unstyled-link">YATZY<img src="/YatzyLogo.png" alt="2 stykk røde terninger"></a>
+				<a href="<c:url value='/'/>" class="unstyled-link">YATZY<img src="<c:url value='/YatzyLogo.png'/>" alt="2 stykk røde terninger"></a>
 			</h1>
 			
 			<div class="menubox">
