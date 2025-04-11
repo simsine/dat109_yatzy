@@ -10,6 +10,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PoengConverterTest {
 
@@ -32,7 +33,7 @@ class PoengConverterTest {
 
         // Test at JSON ikke er null og har riktig format
         assertNotNull(json);
-        assertEquals("{\"TOERE\":4,\"ENERE\":3}", json);
+        assertTrue(json.equals("{\"TOERE\":4,\"ENERE\":3}") || json.equals("{\"TOERE\":4,\"ENERE\":3}"));
     }
 
     @Test
