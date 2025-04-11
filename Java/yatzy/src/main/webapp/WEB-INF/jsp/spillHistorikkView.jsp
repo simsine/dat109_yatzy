@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="main">
-			<div class="spillhistorikk">
+			<div class="gameHistory">
 				<h2>Din spillhistorikk</h2>
 				<h3>Aktive spill:</h3>
 				<c:if test="${empty aktivespill}">
@@ -58,7 +58,7 @@
 				</c:if>
 			</div>
 			
-			<div class="spillhistorikk">
+			<div class="gameHistorikk">
 				<h3>Avsluttede spill:</h3>
 				<c:if test="${empty avsluttedespill}">
 					<p>Ingen avsluttede spill</p>

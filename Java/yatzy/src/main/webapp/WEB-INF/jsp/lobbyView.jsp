@@ -55,7 +55,7 @@
 			</div>
 		</div>
 		<div class="main">
-			<div class="lobby">
+			<div class="lesserTitle">
 				<h2>Lobby</h2>
 				<p><c:out value="${feilmelding}" /></p>
 			</div>
