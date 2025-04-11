@@ -53,11 +53,11 @@
 		</div>
 	</div>
 	<div class="main">
-		<div class="lobby">
+		<div class="adminTitle">
 			<h2>Admin - Slett spill</h2>
 		</div>
 		<c:forEach var="spill" items="${spillListe}">
-			<div class="lobbyGames">
+			<div class="deleteGames">
 				<div class="item1">
 					<form method="post" action="/admin/slett/${spill.spillnr}">
 						<input type="submit" value="Slett spill ${spill.spillnr}">
@@ -68,11 +68,11 @@
 				</div>
 			</div>
 		</c:forEach>
-		<div class="lobby">
+		<div class="adminTitle">
 			<h2>Admin - Deaktiver spiller</h2>
 		</div>
 		<c:forEach var="spiller" items="${spillerListe}">
-			<div class="lobbyGames">
+			<div class="deletePlayers">
 				<div class="item1">
 					<c:choose>
 					  <c:when test = "${spiller.aktiv eq false}">

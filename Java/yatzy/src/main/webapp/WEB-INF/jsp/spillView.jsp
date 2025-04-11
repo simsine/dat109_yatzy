@@ -29,7 +29,6 @@
 			<div class="gameView">
 				<div class="item1">
 					<h2>Spill ${spillnr}</h2>
-					<p><c:out value="${feilmelding}" /></p>
 				</div>
 				<div class="item2">
 					<h2>Runde: ${typenaa}</h2>
@@ -102,7 +101,7 @@
 								</c:forEach>
 								<input type="hidden" name="alleterninger" value="${terninger}" />
 							</div>
-							
+							<p><c:out value="${feilmelding}"/></p>
 							<div class="trillButtonContainer">
 								<p>Du har <c:out value="${antallkastigjen}" /> kast igjen</p>
 								<c:if test="${typenaa != null}">
