@@ -42,6 +42,15 @@ class SpillServiceTest {
 	void testRegistrerPoengVanlig() {
 
 		Poengtabell poengtabell = new Poengtabell();
+		
+		Spill spill = new Spill();
+		spill.setPoengtabeller(List.of(poengtabell));
+		
+		Optional<Spill> opspill = Optional.of(spill);
+		
+
+		when(poengtabellRepo.findByBrukernavnAndSpillnr("lol", 1)).thenReturn(poengtabell);
+		when(spillRepo.findById(1)).thenReturn(opspill);
 
 		when(poengtabellRepo.findByBrukernavnAndSpillnr("lol", 1)).thenReturn(poengtabell);
 
@@ -53,7 +62,7 @@ class SpillServiceTest {
 
 		assertEquals(1, poengtabell.getPoeng(PoengType.ENERE));
 
-		assertEquals(PoengType.TOERE, poengtabell.finnForsteIkkeRegistrerteType());
+		assertEquals(PoengType.TOERE, poengtabell.finnForsteIkkeRegistrerteType().get());
 
 		terninger = new ArrayList<>(List.of("1", "2", "3", "4", "5"));
 
@@ -61,7 +70,7 @@ class SpillServiceTest {
 
 		assertEquals(2, poengtabell.getPoeng(PoengType.TOERE));
 
-		assertEquals(PoengType.TREERE, poengtabell.finnForsteIkkeRegistrerteType());
+		assertEquals(PoengType.TREERE, poengtabell.finnForsteIkkeRegistrerteType().get());
 
 	}
 
@@ -69,8 +78,15 @@ class SpillServiceTest {
 	void testRegistrerPoengTidligYatzy() {
 
 		Poengtabell poengtabell = new Poengtabell();
+		
+		Spill spill = new Spill();
+		spill.setPoengtabeller(List.of(poengtabell));
+		
+		Optional<Spill> opspill = Optional.of(spill);
+		
 
 		when(poengtabellRepo.findByBrukernavnAndSpillnr("lol", 1)).thenReturn(poengtabell);
+		when(spillRepo.findById(1)).thenReturn(opspill);
 
 		List<String> terninger = new ArrayList<>(List.of("1", "1", "1", "1", "1"));
 
@@ -89,7 +105,7 @@ class SpillServiceTest {
 
 		assertEquals(5, poengtabell.getPoeng(PoengType.ENERE));
 
-		assertEquals(PoengType.TOERE, poengtabell.finnForsteIkkeRegistrerteType());
+		assertEquals(PoengType.TOERE, poengtabell.finnForsteIkkeRegistrerteType().get());
 	}
 
 	@Test
@@ -117,7 +133,12 @@ class SpillServiceTest {
 
 	@Test
 	void testHentPoengTabellEtterSpillnr() {
-		List<Poengtabell> ptList = List.of(new Poengtabell(), new Poengtabell());
+		Integer spillnr = 1;
+		Poengtabell pt1 = new Poengtabell();
+		pt1.setPoengtabellId(new PoengtabellId("bruker1", spillnr));
+		Poengtabell pt2 = new Poengtabell();
+		pt2.setPoengtabellId(new PoengtabellId("bruker2", spillnr));
+		List<Poengtabell> ptList = List.of(pt1, pt2);
 		when(poengtabellRepo.findBySpillnr(3)).thenReturn(ptList);
 
 		List<Poengtabell> result = spillService.hentPoengtabellerEtterSpillnr(3);

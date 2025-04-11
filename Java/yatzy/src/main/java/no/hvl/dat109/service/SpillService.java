@@ -2,7 +2,7 @@ package no.hvl.dat109.service;
 
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -260,7 +260,7 @@ public class SpillService {
 	}
 
 	public List<Poengtabell> hentPoengtabellerEtterSpillnr(Integer spillnr) {
-		List<Poengtabell> poengtabeller = poengtabellRepo.findBySpillnr(spillnr);
+		List<Poengtabell> poengtabeller = new ArrayList<>(poengtabellRepo.findBySpillnr(spillnr));
 		poengtabeller.sort(
 				(o1, o2) -> o1.getPoengtabellId().getBrukernavn().compareTo(o2.getPoengtabellId().getBrukernavn()));
 		return poengtabeller;
