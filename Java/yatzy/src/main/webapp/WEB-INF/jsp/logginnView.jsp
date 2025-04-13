@@ -33,7 +33,7 @@
 						<label for="brukernavn">Brukernavn</label>
 							<input
 							   type="text" id="brukernavn" name="brukernavn"
-							   minlength="3" maxlength="20" pattern="^[a-zA-Z0-9_-]{3,20}$" required
+							   minlength="3" maxlength="20" pattern="^[a-zA-Z0-9_\-]{3,20}$" required
 							   oninvalid="this.setCustomValidity('Ikke riktig epost eller passord')"
 							   oninput="this.setCustomValidity('')" 
 							   >

@@ -7,6 +7,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -29,6 +30,8 @@ public class SpillController {
 	SpillService spillService;
 	@Autowired
 	SpillerService spillerService;
+	@Autowired
+	SimpMessagingTemplate messagingTemplate;
 
 	/**
 	 * Henter view for et startet spill
@@ -84,12 +87,11 @@ public class SpillController {
 		Spiller spiller = spillerService.hentInnloggetSpiller(httpSession);
 
 		Optional<Spill> spillOption = spillService.hentSpillEtterNr(spillId);
-		
+
 		if (spillService.erSpillStartet(spillId)) {
 			ra.addFlashAttribute("feilmelding", "Spill er allerede startet");
 			return "redirect:/lobby";
 		}
-			
 
 		if (spillOption.isEmpty()) {
 			ra.addFlashAttribute("feilmelding", "Fant ingen spill med den id'en");
@@ -111,6 +113,7 @@ public class SpillController {
 		spillService.leggtilSpiller(spiller.getBrukernavn(), spillId);
 		System.out.println("finnes ikke fra for av opretter ny poengtabell");
 		httpSession.setAttribute("antallkast" + spillId, 0);
+		messagingTemplate.convertAndSend("/topic/game/" + spillId, "refresh");
 
 		return "redirect:/spill/" + spill.getSpillnr();
 	}
@@ -173,7 +176,10 @@ public class SpillController {
 			return "redirect:/spill/" + spillId;
 		httpSession.setAttribute("antallkast" + spillId, 0);
 		httpSession.setAttribute("terninger", new ArrayList<String>());
-		
+
+		// Sender en melding over websockets til alle spillere i samme spill, som
+		// automatisk refresher siden for dem
+		messagingTemplate.convertAndSend("/topic/game/" + spillId, "refresh");
 
 		return "redirect:/spill/" + spillId;
 	}

@@ -43,7 +43,7 @@
 	   						<label for="brukernavn">Brukernavn</label>
 	   							<input
 	   							   type="text" id="brukernavn" name="brukernavn" value="${registreringForm.brukernavn}"
-	   							   minlength="2" maxlength="20" pattern="^[a-zA-Z0-9_-]{3,20}$" required
+	   							   minlength="2" maxlength="20" pattern="^[a-zA-Z0-9_\-]{3,20}$" required
 	   							   oninvalid="this.setCustomValidity('Brukernavn må være engelske bokstaver, tall og understrek(_), og unikt')"
 	   							   oninput="this.setCustomValidity('')" 
 	   							   >

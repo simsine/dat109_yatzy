@@ -28,7 +28,7 @@
 
 @font-face{
 	font-family: 'MoiraiOne';
-	src: url('/MoiraiOne-Regular.ttf') format("truetype");
+	src: url('MoiraiOne-Regular.ttf') format("truetype");
 }
 
 /* Reset box-sizing */
