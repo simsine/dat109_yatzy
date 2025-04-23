@@ -163,11 +163,13 @@ public class SpillService {
 			poeng = PoengUtil.yatzy(terninger);
 			if (erSoloSpill(spillNr)) {
 				if (poengTabell.finnForsteIkkeRegistrerteType().isEmpty()) {
-					hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));				
+					hentSpillEtterNr(spillNr).get()
+							.setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
 				}
-			} else {			
+			} else {
 				if (erDuSistemann(brukernavn, spillNr) && erAlleForDegFerdig(spillNr, brukernavn)) {
-					hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
+					hentSpillEtterNr(spillNr).get()
+							.setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
 				}
 			}
 			poengTabell.registrerPoeng(PoengType.YATZY, poeng);
@@ -228,9 +230,9 @@ public class SpillService {
 		poengTabell.registrerPoeng(poengType, poeng);
 		if (erSoloSpill(spillNr)) {
 			if (poengTabell.finnForsteIkkeRegistrerteType().isEmpty()) {
-				hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));				
+				hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
 			}
-		} else {			
+		} else {
 			if (erDuSistemann(brukernavn, spillNr) && erAlleForDegFerdig(spillNr, brukernavn)) {
 				hentSpillEtterNr(spillNr).get().setTidavsluttet(LocalDateTime.now().truncatedTo(ChronoUnit.SECONDS));
 			}
@@ -288,7 +290,7 @@ public class SpillService {
 			venstreType = poengtabeller.getLast().finnForsteIkkeRegistrerteType().orElse(null);
 			if (typeDin.equals(PoengType.ENERE))
 				return true;
-			if (venstreType.equals(typeDin))
+			if (venstreType == null || venstreType.equals(typeDin))
 				return true;
 		} else {
 			venstreType = poengtabeller.get(index - 1).finnForsteIkkeRegistrerteType().orElse(null);
@@ -320,37 +322,37 @@ public class SpillService {
 
 	public List<Spill> hentAlleIkkeFulleOgIkkeStartetSpill() {
 		List<Spill> spillListe = spillRepo.findAll();
-		return spillListe.stream().filter(t -> !erSpillStartet(t.getSpillnr()) && !erSpillFullt(t))
-				.toList();
+		return spillListe.stream().filter(t -> !erSpillStartet(t.getSpillnr()) && !erSpillFullt(t)).toList();
 	}
-	
+
 	public List<Spill> hentAlleIkkeFerdigeSpillForSpiller(String brukernavn) {
 		List<Poengtabell> poengtabellListe = poengtabellRepo.findByBrukernavn(brukernavn);
 		return poengtabellListe.stream().map(t -> t.getSpill()).filter(t -> !t.erSpillFerdig()).toList();
 	}
-	
+
 	public boolean erDuSistemann(String brukernavn, Integer spillId) {
-		
+
 		List<Poengtabell> poengtabellListe = hentPoengtabellerEtterSpillnr(spillId);
-		
+
 		Poengtabell poengtabell = poengtabellRepo.findByBrukernavnAndSpillnr(brukernavn, spillId);
-		
+
 		int index = poengtabellListe.indexOf(poengtabell);
-		
+
 		return index == poengtabellListe.size() - 1;
 	}
-	
+
 	public boolean erAlleForDegFerdig(Integer spillId, String brukernavn) {
 		List<Poengtabell> poengtabellListe = hentPoengtabellerEtterSpillnr(spillId);
-		return poengtabellListe.stream().filter(t -> !t.getPoengtabellId().getBrukernavn().equals(brukernavn)).allMatch(t -> t.allePoengRegistrert());
-		
+		return poengtabellListe.stream().filter(t -> !t.getPoengtabellId().getBrukernavn().equals(brukernavn))
+				.allMatch(t -> t.allePoengRegistrert());
+
 	}
 
 	public List<Spill> hentAlleFerdigeSpillForSpiller(String brukernavn) {
 		List<Poengtabell> poengtabellListe = poengtabellRepo.findByBrukernavn(brukernavn);
 		return poengtabellListe.stream().map(t -> t.getSpill()).filter(t -> t.erSpillFerdig()).toList();
 	}
-	
+
 	public boolean erSoloSpill(Integer spillId) {
 		Spill spill = hentSpillEtterNr(spillId).get();
 		return spill.getAntallSpillere() == 1;

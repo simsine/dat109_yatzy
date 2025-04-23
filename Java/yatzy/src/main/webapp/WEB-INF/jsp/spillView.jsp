@@ -7,9 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>YATZY > Spill</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
 <link rel="stylesheet" href="<c:url value='/simple.css'/>">
 </head>
-
 	<body>
 		<div class="header">
 			<h1>
@@ -24,7 +25,38 @@
 				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
-	
+        <!-- Websockets start -->
+            <script>
+                
+                let stompClient;
+                
+                function connect() {
+                    const socket = new SockJS('/yatzy-1.0/game');
+                    const stompClient = Stomp.over(socket);
+    
+                    stompClient.connect({}, function(frame) {
+                        console.log('Connected: ' + frame);
+                        stompClient.subscribe('/topic/game/' + ${spillnr}, function(message) {
+                            const messageContent = message.body;    
+                            if (messageContent === "refresh") {
+                                window.location.reload();
+                            } else {
+                                console.log("Received message: ", messageContent);
+                            }
+                        });
+                    });
+                }
+                
+                window.onload = connect;
+
+                window.onbeforeunload = function() {
+                    if (stompClient) {
+                        stompClient.disconnect();
+                    }
+                };
+            </script>
+        <!-- Websockets slutt -->
+
 		<div class="main">
 			<div class="gameView">
 				<div class="item1">

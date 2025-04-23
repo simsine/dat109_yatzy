@@ -60,7 +60,7 @@
 		<c:forEach var="spill" items="${spillListe}">
 			<div class="deleteGames">
 				<div class="item1">
-					<form method="post" action="/<c:url value='/admin/slett/${spill.spillnr}'/>">
+					<form method="post" action="<c:url value='/admin/slett/${spill.spillnr}'/>">
 						<input type="submit" value="Slett spill ${spill.spillnr}">
 					</form>
 				</div>
