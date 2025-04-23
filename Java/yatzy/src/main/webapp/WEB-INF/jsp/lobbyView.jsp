@@ -51,7 +51,7 @@
 					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
 				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
-				<a href="<c:url value='/spillhistorikk/${spiller.brukernavn}'/>" class="unstyled-link"><p>Spillhistorikk→</p></a>
+				<a href="<c:url value='/spillhistorikk/${spiller.brukernavn}'/>" class="unstyled-link"><p>Mine spill→</p></a>
 			</div>
 		</div>
 		<div class="main">

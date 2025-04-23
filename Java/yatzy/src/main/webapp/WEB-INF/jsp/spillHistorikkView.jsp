@@ -23,16 +23,16 @@
 					<a href="<c:url value='/admin'/>" class="unstyled-link"><p>Adminside→</p></a>
 				</c:if>
 				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
-				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p> Lobby→</p></a>
+				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p>Lobby→</p></a>
 			</div>
 		</div>
 
 		<div class="main">
 			<div class="gameHistory">
-				<h2>Din spillhistorikk</h2>
+				<h2>Dine spill</h2>
 				<h3>Aktive spill:</h3>
 				<c:if test="${empty aktivespill}">
-					<p> Ingen aktive spill</p>
+					<p>Ingen aktive spill</p>
 				</c:if>
 			</div>
 			
@@ -43,7 +43,7 @@
 
 							<div class="item1">
 								<a href="<c:url value='/spill/${pt.spillnr}'/>">
-									<button> Spill ${pt.spillnr}</button>
+									<button>Spill ${pt.spillnr}</button>
 								</a>
 							</div>
 
