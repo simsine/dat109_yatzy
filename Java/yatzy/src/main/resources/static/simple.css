@@ -184,7 +184,7 @@ main p {
 
 .deleteGames {
 	display: grid;
-	grid-template-columns: 8rem 15rem;
+	grid-template-columns: 9rem 15rem;
 	justify-content: center;
 	gap: 1rem;
 }
