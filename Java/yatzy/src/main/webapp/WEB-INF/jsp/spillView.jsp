@@ -23,6 +23,7 @@
 				</c:if>
 				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>		
 				<a href="<c:url value='/lobby'/>" class="unstyled-link"><p>Lobby→</p></a>
+				<a href="<c:url value='/leaderboard'/>" class="unstyled-link"><p>Leaderboard→</p></a>
 			</div>
 		</div>
         <!-- Websockets start -->

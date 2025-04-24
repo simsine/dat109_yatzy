@@ -52,6 +52,7 @@
 				</c:if>
 				<a href="<c:url value='/utlogging'/>"><button>Logg ut</button></a>
 				<a href="<c:url value='/spillhistorikk/${spiller.brukernavn}'/>" class="unstyled-link"><p>Mine spill→</p></a>
+				<a href="<c:url value='/leaderboard'/>" class="unstyled-link"><p>Leaderboard→</p></a>
 			</div>
 		</div>
 		<div class="main">
