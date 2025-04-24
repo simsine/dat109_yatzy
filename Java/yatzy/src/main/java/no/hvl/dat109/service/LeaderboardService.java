@@ -31,7 +31,12 @@ public class LeaderboardService {
 		alleSpillere.stream().forEach(t -> spillerPoengMap.put(t.getBrukernavn(), 0));
 
 		ferdigeSpill.stream().flatMap(t -> t.getPoengtabeller().stream()) // konverter List til Stream
-				.forEach(poeng -> spillerPoengMap.put(poeng.getPoengtabellId().getBrukernavn(), poeng.getSum()));
+				.forEach(poeng -> {
+					String brukernavn = poeng.getPoengtabellId().getBrukernavn();
+					if (poeng.getSum()>spillerPoengMap.get(brukernavn)) {
+						spillerPoengMap.put(brukernavn, poeng.getSum());						
+					}
+				});
 
 		return spillerPoengMap.entrySet().stream().sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
 				.collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
