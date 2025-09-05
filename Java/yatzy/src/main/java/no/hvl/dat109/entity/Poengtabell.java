@@ -1,12 +1,10 @@
 package no.hvl.dat109.entity;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Optional;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.hibernate.annotations.JdbcTypeCode;

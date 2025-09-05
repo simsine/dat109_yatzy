@@ -11,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(schema = "yatzy")
@@ -23,6 +24,7 @@ public class Spill {
 	@JoinColumn(name = "spillnr")
 	private List<Poengtabell> poengtabeller;
 
+	@NotNull
 	private LocalDateTime tidopprettet;
 
 	private LocalDateTime tidavsluttet;
