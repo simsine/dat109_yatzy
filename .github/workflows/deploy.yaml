@@ -24,7 +24,7 @@ jobs:
       uses: burnett01/rsync-deployments@7.1.0
       with:
         switches: -vz
-        path: target/yatzy.war
+        path: ./target/yatzy.war
         remote_path: /srv/yatzy/
         remote_host: ${{ secrets.HOST }}
         remote_user: ${{ secrets.USERNAME }}
