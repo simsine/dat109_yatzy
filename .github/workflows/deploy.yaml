@@ -23,7 +23,7 @@ jobs:
     - name: rsync package aritfact
       uses: burnett01/rsync-deployments@7.1.0
       with:
-        switches: -avzr --delete
+        switches: -vz
         path: target/yatzy.war
         remote_path: /srv/yatzy/
         remote_host: ${{ secrets.HOST }}
